@@ -10,16 +10,16 @@ number:
 date:
 consensus: true
 v: 3
-area: AREA
-workgroup: TIGRESS
+# area: AREA
+# workgroup: TIGRESS
 keyword: TODO
 venue:
-  group: WG
-  type: Working Group
-  mail: WG@example.com
-  arch: https://example.com/WG
-  github: USER/REPO
-  latest: https://example.com/LATEST
+#  group: WG
+#  type: Working Group
+#  mail: WG@example.com
+#  arch: https://example.com/WG
+  github: "dimmyvi/tigress-requirements"
+  latest: "https://dimmyvi.github.io/tigress-requirements/draft-tigress-requirements.html"
 
 author:
  -
