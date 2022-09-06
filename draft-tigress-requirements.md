@@ -110,7 +110,7 @@ General terms:
 - Security: Communication between Sender / Receiver and Provisioning Partner SHOULD be trusted.
 - The choice of intermediary SHALL be defined by the application initiating the credential transfer.
 - Sender and Receiver SHALL both be able to manage the shared credential at any point by communicating with the Provisioning Partner. Credential lifecycle management is out of scope for this proposal.
-- Any device OEM with a digital credential implementation SHALL be able to receive shares, whether or not they can originate shares or host their own intermediary.
+- Any device OEM with a digital credential implementation adherent to Tigress SHALL be able to receive shares, whether or not they can originate shares or host their own intermediary.
 
 
 # Requirements
