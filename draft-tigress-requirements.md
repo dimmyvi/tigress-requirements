@@ -52,14 +52,34 @@ author:
     name: Nick Sha
     organization: Alphabet Inc
     email: nicksha@google.com
+ -
+    ins: M. Byington
+    name: Matt Byington
+    organization: Apple Inc
+    email: mbyington@apple.com
+
+
+normative:
+
+  CCC-Digital-Key-30:
+    author:
+      org: Car Connectivity Consortium
+    title: "Digital Key – The Future of Vehicle Access"
+    date: 2021-11
+    target: https://global-carconnectivity.org/wp-content/uploads/2021/11/CCC_Digital_Key_Whitepaper_Approved.pdf
+
+Tigress:
+    author: D. Vinokurov, M. Byington, M. Lerch, A. Pelletier, N. Sha
+    title: "Transferring Digital Credentials Securely"
+    date: 2022-02
+    target: https://datatracker.ietf.org/doc/draft-secure-credential-transfer
 
 
 informative:
 
-
 --- abstract
 
-This document describes use cases for transfer digital credentials securely proposal, defines requirements and the scope.
+This document describes the use cases necessitating the secure transfer of digital credentials. The document also comprises a proposal, and defines requirements and scope.
 
 
 --- middle
@@ -76,7 +96,7 @@ TODO Introduction
 General terms:
 
 - Credential information - data used to authenticate the user with an access point.
-- Provisioning information* - data transferred from Sender to Receiver device that is both necessary and sufficient for the Receiver to request a new credential from Provisioning Partner to provision it to the Receiver device.
+- Provisioning information - data transferred from Sender to Receiver device that is both necessary and sufficient for the Receiver to request a new credential from Provisioning Partner to provision it to the Receiver device.
 - Provisioning - A process of adding a new credential to the device.
 - Provisioning Partner - an entity which facilitates Credential Information lifecycle on a device. Lifecycle may include provisioning of credential, credential termination, credential update.
 - Sender (device) - a device initiating a transfer of Provisioning Information to a Receiver that can provision this credential.
@@ -85,9 +105,9 @@ General terms:
 
 # Use Cases
 
-- Let's say Ben owns a vehicle that supports digital keys which comply with the CCC open standard. Ben would like to let Ryan borrow the car for the weekend. Ryan and Ben are using two different mobile phones with different operating systems. In order for Ben to share his car key to Ryan for a weekend, he must transfer some data to the receiver device. The data structure shared between the two participants is defined in the CCC. In addition, the CCC requires the receiver to generate required key material and return it to the sender to sign and return back to the receiver. At this point, the receiver now has a token that will allow them to provision their new key with the car.
+- Let's say Ben owns a vehicle that supports digital keys which comply with the CCC {{CCC-Digital-Key-30}} open standard. Ben would like to let Ryan borrow the car for the weekend. Ryan and Ben are using two different mobile phones with different operating systems. In order for Ben to share his car key to Ryan for a weekend, he must transfer some data to the receiver device. The data structure shared between the two participants is defined in the CCC. In addition, the CCC requires the receiver to generate required key material and return it to the sender to sign and return back to the receiver. At this point, the receiver now has a token that will allow them to provision their new key with the car.
 
-- Bob booked a room at a hotel for the weekend, but will be arriving late at night . Alice, his partner, comes to the hotel first, so Bob wants to share his key to the room with Alice. Bob and Alice are using two different mobile phones with different operating systems. In order for Bob to share his key to the hotel to Alice for a weekend, he must transfer some data to the her device. The data structure shared between the two participants is proprietary to the given hotel chain (or Provisioning Partner). This data transfer is a one-time, unidirectional from Bob’s device to Alice’s. Once Alice receives this data, she can provision a new pass to her device, making a call to Provisioning Partner to receive a new credential.
+- Bob booked a room at a hotel for the weekend, but will be arriving late at night . Alice, his partner, comes to the hotel first, so Bob wants to share his key to the room with Alice. Bob and Alice are using two different mobile phones with different operating systems. In order for Bob to share his key to the hotel to Alice for a weekend, he must transfer some data to her device. The data structure shared between the two participants is proprietary to the given hotel chain (or Provisioning Partner). This data transfer is a one-time, unidirectional from Bob’s device to Alice’s. Once Alice receives this data, she can provision a new pass to her device, making a call to Provisioning Partner to receive a new credential.
 
 # Assumptions
 
@@ -96,7 +116,7 @@ General terms:
 - Security: Communication between Sender / Receiver and Provisioning Partner SHOULD be trusted.
 - The choice of intermediary SHALL be defined by the application initiating the credential transfer.
 - Sender and Receiver SHALL both be able to manage the shared credential at any point by communicating with the Provisioning Partner. Credential lifecycle management is out of scope for this proposal.
-- Any device OEM with a digital credential implementation SHALL be able to receive shares, whether or not they can originate shares or host their own intermediary.
+- Any device OEM with a digital credential implementation adherent to Tigress SHALL be able to receive shares, whether or not they can originate shares or host their own intermediary.
 
 
 # Requirements
@@ -107,7 +127,7 @@ General terms:
 - [Req-Connectivity] Sender and Receiver SHALL be allowed to be online at different times. Sender and Receiver SHALL never need to be online at the same time.
 - [Req-init] Solution SHOULD allow Sender to initiate credential transfer to Receiver over any messaging channel, with various degrees of security.
 - [Req-P2P] A credential transfer SHALL be strictly from one device to another (group sharing is not a goal).
-- [Req-Privacy] If Intermediary server is required - it SHALL not be able to correlate users between exchanges, or create a social graph. Intermediary server shall no be an arbiter of Identity.
+- [Req-Privacy] If Intermediary server is required - it SHALL not be able to correlate users between exchanges, or create a social graph. Intermediary server shall not be an arbiter of Identity.
 - [Req-Security] Solution SHOULD provide security of the provisioning data transferred (MITM, brute-force attacks on the content, DDOS attacks etc).
 - [Req-Notify] Solution SHOULD support a notification mechanism to inform devices on the content update on Intermediary server.
 - [Req-Revoke] Solution SHALL maintain access control, allowing Sender to revoke before the share has been accepted, and for Receiver to end transfer at any time.
@@ -126,7 +146,7 @@ General terms:
 
 A number of existing solutions / protocols have been reviewed in order to be used for secure credential transfer based on the requirements: GSS-API, Kerberos, AWS S3, email, Signal. None of the existing protocols comply with the requirements; the effort of modifying the existing protocols has been accessed to be significantly higher than introducing a new solution to solve this problem.
 
-## Arbitrary Messaging Channel (Email / What’s App / SMS / Signal / etc.)
+## Arbitrary Messaging Channel (Email / WhatsApp / SMS / Signal / etc.)
 
 The Provisioning Information MAY be sent from Sender to Receiver over an arbitrary messaging channel, but that would not provide a good user experience. Users MAY need to copy and paste the Provisioning Information, or need a special application to handle some new file type. This violates [Req-SmoothUX].
 If multiple round trips were required the user would need to manually managing multiple payloads of Provisioning Information. This would be very hard for anyone non technical and greatly limit adoption. This violates [Req-NontechnicalUX].
@@ -142,7 +162,7 @@ As a messaging protocol, Signal could be used between Sender, Receiver and Inter
 The system will however support the Signal service for share initiation, in line with [Req-init].
 
 # Out of Scope:
-- Identification and Authorization.
+- Identification and Authorization - solution shall not require strong identification and authentication from user (e.g. using PKI certificates).
 - Fully stopping people from sharing malicious content ("cat pictures").
 - Solving problem of sharing to groups.
 
