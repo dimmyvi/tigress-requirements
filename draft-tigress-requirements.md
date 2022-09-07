@@ -48,15 +48,15 @@ author:
     organization: Apple Inc
     email: abulgakov@apple.com
  -
-    ins: N. Sha
-    name: Nick Sha
-    organization: Alphabet Inc
-    email: nicksha@google.com
- -
     ins: M. Byington
     name: Matt Byington
     organization: Apple Inc
     email: mbyington@apple.com
+ -
+    ins: N. Sha
+    name: Nick Sha
+    organization: Alphabet Inc
+    email: nicksha@google.com
 
 
 normative:
