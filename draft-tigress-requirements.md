@@ -123,7 +123,7 @@ General terms:
 
 - [Req-AnyPlatorm] Solution SHOULD be able to communicate with any mobile devices of any operating system and allow easy implementation of server-side components without requiring a specific Cloud stack.
 - [Req-NontechnicalUX] Solution SHALL enable secure credential transfer for non technical users.
-- [Req-SmoothUX] Solution SHALL allow smooth user experience when Sender initiates the share of Provisioning Information, and when Receiver redeems the shared Provisioning Information.
+- [Req-SmoothUX] Solution SHALL allow for user experience where neither Sender nor Receiver is presented with raw data required only by the secure transfer protocol. Data that is only parsed programmatically and not required to be presented to the end user should never be visible to said user in whichever messaging application the sender chose to initiate the transfer on. This eliminates the possibility of merely sending the requisite data inline, through an SMS or email for example, rather than leveraging an Intermediary server.
 - [Req-Connectivity] Sender and Receiver SHALL be allowed to be online at different times. Sender and Receiver SHALL never need to be online at the same time.
 - [Req-init] Solution SHOULD allow Sender to initiate credential transfer to Receiver over any messaging channel, with various degrees of security.
 - [Req-P2P] A credential transfer SHALL be strictly from one device to another (group sharing is not a goal).
