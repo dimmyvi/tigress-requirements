@@ -31,7 +31,7 @@ author:
     ins: C. Astiz
     name: Casey Astiz
     organization: Apple Inc
-    email: mbyington@apple.com
+    email: castiz@apple.com
  -
     ins: A. Pelletier
     name: Alex Pelletier
@@ -48,16 +48,15 @@ author:
     organization: Apple Inc
     email: abulgakov@apple.com
  -
-    ins: N. Sha
-    name: Nick Sha
-    organization: Alphabet Inc
-    email: nicksha@google.com
- -
     ins: M. Byington
     name: Matt Byington
     organization: Apple Inc
     email: mbyington@apple.com
-
+ -
+    ins: N. Sha
+    name: Nick Sha
+    organization: Alphabet Inc
+    email: nicksha@google.com
 
 normative:
 
@@ -68,14 +67,14 @@ normative:
     date: 2021-11
     target: https://global-carconnectivity.org/wp-content/uploads/2021/11/CCC_Digital_Key_Whitepaper_Approved.pdf
 
-Tigress:
-    author: D. Vinokurov, M. Byington, M. Lerch, A. Pelletier, N. Sha
-    title: "Transferring Digital Credentials Securely"
-    date: 2022-02
-    target: https://datatracker.ietf.org/doc/draft-secure-credential-transfer
-
 
 informative:
+  
+  Tigress:
+    author: D. Vinokurov, M. Byington, M. Lerch, A. Pelletier, N. Sha
+    title: "Transferring Digital Credentials Securely"
+    date: 2022-07
+    target: https://datatracker.ietf.org/doc/draft-secure-credential-transfer
 
 --- abstract
 
