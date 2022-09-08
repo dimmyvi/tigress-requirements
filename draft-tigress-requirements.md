@@ -26,7 +26,7 @@ author:
     ins: D. Vinokurov
     name: Dmitry Vinokurov
     organization: Apple Inc
-    email: dvinokurov@dezcom.org
+    email: dvinokurov@apple.com
  -
     ins: C. Astiz
     name: Casey Astiz
@@ -47,7 +47,16 @@ author:
     name: Alexey Bulgakov
     organization: Apple Inc
     email: abulgakov@apple.com
-
+ -
+    ins: M. Byington
+    name: Matt Byington
+    organization: Apple Inc
+    email: mbyington@apple.com
+ -
+    ins: N. Sha
+    name: Nick Sha
+    organization: Alphabet Inc
+    email: nicksha@google.com
 
 normative:
 
