@@ -26,7 +26,7 @@ author:
     ins: D. Vinokurov
     name: Dmitry Vinokurov
     organization: Apple Inc
-    email: dvinokurov@apple.com
+    email: dvinokurov@dezcom.org
  -
     ins: C. Astiz
     name: Casey Astiz
@@ -47,16 +47,6 @@ author:
     name: Alexey Bulgakov
     organization: Apple Inc
     email: abulgakov@apple.com
- -
-    ins: M. Byington
-    name: Matt Byington
-    organization: Apple Inc
-    email: mbyington@apple.com
- -
-    ins: N. Sha
-    name: Nick Sha
-    organization: Alphabet Inc
-    email: nicksha@google.com
 
 
 normative:
@@ -68,15 +58,15 @@ normative:
     date: 2021-11
     target: https://global-carconnectivity.org/wp-content/uploads/2021/11/CCC_Digital_Key_Whitepaper_Approved.pdf
 
+
+informative:
+
 Tigress:
     author: D. Vinokurov, M. Byington, M. Lerch, A. Pelletier, N. Sha
     title: "Transferring Digital Credentials Securely"
     date: 2022-07
     target: https://datatracker.ietf.org/doc/draft-secure-credential-transfer
-
-
-informative:
-
+    
 --- abstract
 
 This document describes the use cases necessitating the secure transfer of digital credentials. The document also comprises a proposal, and defines requirements and scope.
