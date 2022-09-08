@@ -149,7 +149,7 @@ A number of existing solutions / protocols have been reviewed in order to be use
 ## Arbitrary Messaging Channel (Email / WhatsApp / SMS / Signal / etc.)
 
 The Provisioning Information MAY be sent from Sender to Receiver over an arbitrary messaging channel, but that would not provide a good user experience. Users MAY need to copy and paste the Provisioning Information, or need a special application to handle some new file type. This violates (Req-SmoothUX).
-If multiple round trips were required the user would need to manually managing multiple payloads of Provisioning Information. This would be very hard for anyone non technical and greatly limit adoption. This violates (Req-Simplicity).
+If multiple round trips were required the user would need to manually managing multiple payloads of Provisioning Information. This would be very hard for anyone non technical and greatly limit adoption. This violates (Req-NontechnicalUX).
 
 ## GSS-API, Kerberos
 
