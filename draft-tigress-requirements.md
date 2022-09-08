@@ -112,7 +112,7 @@ General terms:
 # Assumptions
 
 - Original credential (with cryptographic key material) MUST NOT be sent or shared. Instead, sender SHALL be transferring its approval token for Receiver to acquire a new credential.
-- Credential Authority SHALL NOT allow for two users to use the same credential / cryptographic keys.
+- Provisioning Partner SHALL NOT allow for two users to use the same credential / cryptographic keys.
 - Security: Communication between Sender / Receiver and Provisioning Partner SHOULD be trusted.
 - The choice of intermediary SHALL be defined by the application initiating the credential transfer.
 - Sender and Receiver SHALL both be able to manage the shared credential at any point by communicating with the Provisioning Partner. Credential lifecycle management is out of scope for this proposal.
