@@ -71,7 +71,7 @@ normative:
 Tigress:
     author: D. Vinokurov, M. Byington, M. Lerch, A. Pelletier, N. Sha
     title: "Transferring Digital Credentials Securely"
-    date: 2022-02
+    date: 2022-07
     target: https://datatracker.ietf.org/doc/draft-secure-credential-transfer
 
 
