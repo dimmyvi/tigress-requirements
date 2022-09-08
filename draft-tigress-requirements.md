@@ -66,7 +66,7 @@ Tigress:
     title: "Transferring Digital Credentials Securely"
     date: 2022-07
     target: https://datatracker.ietf.org/doc/draft-secure-credential-transfer
-    
+
 --- abstract
 
 This document describes the use cases necessitating the secure transfer of digital credentials. The document also comprises a proposal, and defines requirements and scope.
