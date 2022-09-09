@@ -26,7 +26,7 @@ author:
     ins: D. Vinokurov
     name: Dmitry Vinokurov
     organization: Apple Inc
-    email: dvinokurov@apple.com
+    email: dvinokurov@dezcom.org
  -
     ins: C. Astiz
     name: Casey Astiz
