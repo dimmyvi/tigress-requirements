@@ -31,7 +31,7 @@ author:
     ins: C. Astiz
     name: Casey Astiz
     organization: Apple Inc
-    email: mbyington@apple.com
+    email: castiz@apple.com
  -
     ins: A. Pelletier
     name: Alex Pelletier
@@ -164,6 +164,7 @@ The system will however support the Signal service for share initiation, in line
 - Identification and Authorization - solution shall not require strong identification and authentication from user (e.g. using PKI certificates).
 - Fully stopping people from sharing malicious content ("cat pictures").
 - Solving problem of sharing to groups.
+- Detailing how credentials are provisioned either on a device or with a provisioning partner.
 
 
 # Security Considerations
