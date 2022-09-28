@@ -166,7 +166,7 @@ AWS S3 could be used as an Intermediary server but it would force all participan
 As a messaging protocol, Signal could be used between Sender, Receiver and Intermediary but this protocol is fairly complex and its use would most like violate (Req-Simplicity).
 The system will however support the Signal service for share initiation, in line with (Req-init).
 
-# Out of Scope:
+# Out of Scope
 - Identification and Authorization - solution shall not require strong identification and authentication from user (e.g. using PKI certificates).
 - Fully stopping people from sharing malicious content ("cat pictures").
 - Solving problem of sharing to groups.
