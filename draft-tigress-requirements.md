@@ -57,6 +57,12 @@ author:
     name: Nick Sha
     organization: Alphabet Inc
     email: nicksha@google.com
+ -
+    ins: M. Gerster
+    name: Manuel Gerster
+    organization: Mercedes Benz
+    email: manuel.gerster@mercedes-benz.com
+
 
 normative:
 
@@ -69,18 +75,17 @@ normative:
 
 
 informative:
-
 Tigress:
     author: D. Vinokurov, M. Byington, M. Lerch, A. Pelletier, N. Sha
     title: "Transferring Digital Credentials Securely"
     date: 2022-07
     target: https://datatracker.ietf.org/doc/draft-secure-credential-transfer
 
+
 --- abstract
 
-This document describes the use cases necessitating the secure transfer of digital credentials between two devices. 
-Secure credentials may represent a digital key to a hotel room, a digital key to a door lock in a house or a digital key to a car. 
-The document also comprises a proposal, and defines requirements and scope.
+
+This document describes the use cases necessitating the secure transfer of digital credentials between two devices and defines general assumptions, requirements and the scope of the corresponding Internet-draft {{Tigress}}.
 
 --- middle
 
@@ -116,7 +121,7 @@ General terms:
 - Security: Communication between Sender / Receiver and Provisioning Partner SHOULD be trusted.
 - The choice of intermediary SHALL be defined by the application initiating the credential transfer.
 - Sender and Receiver SHALL both be able to manage the shared credential at any point by communicating with the Provisioning Partner. Credential lifecycle management is out of scope for this proposal.
-- Any device OEM with a digital credential implementation adherent to Tigress SHALL be able to receive shared provisioning information, whether or not they can originate provisioning information themselves or host their own intermediary.
+- Any device OEM with a digital credential implementation adherent to {{Tigress}} SHALL be able to receive shared provisioning information, whether or not they can originate provisioning information themselves or host their own intermediary.
 
 
 # Requirements
