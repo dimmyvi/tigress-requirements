@@ -73,13 +73,14 @@ normative:
     date: 2021-11
     target: https://global-carconnectivity.org/wp-content/uploads/2021/11/CCC_Digital_Key_Whitepaper_Approved.pdf
 
-
-informative:
 Tigress:
     author: D. Vinokurov, M. Byington, M. Lerch, A. Pelletier, N. Sha
     title: "Transferring Digital Credentials Securely"
     date: 2022-07
     target: https://datatracker.ietf.org/doc/draft-secure-credential-transfer
+
+
+informative:
 
 
 --- abstract
