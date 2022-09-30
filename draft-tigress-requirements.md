@@ -10,23 +10,23 @@ number:
 date:
 consensus: true
 v: 3
-# area: AREA
-# workgroup: TIGRESS
-keyword: TODO
+area: ART
+workgroup: TIGRESS
+keyword: Internet-Draft
 venue:
 #  group: WG
 #  type: Working Group
 #  mail: WG@example.com
 #  arch: https://example.com/WG
   github: "dimmyvi/tigress-requirements"
-  latest: "https://dimmyvi.github.io/tigress-requirements/draft-tigress-requirements.html"
+  latest: "https://datatracker.ietf.org/doc/draft-tigress-requirements/"
 
 author:
  -
     ins: D. Vinokurov
     name: Dmitry Vinokurov
     organization: Apple Inc
-    email: dvinokurov@dezcom.org
+    email: dvinokurov@apple.com
  -
     ins: C. Astiz
     name: Casey Astiz
@@ -57,8 +57,34 @@ author:
     name: Nick Sha
     organization: Alphabet Inc
     email: nicksha@google.com
+ -
+    ins: M. Gerster
+    name: Manuel Gerster
+    organization: Mercedes-Benz AG
+    email: manuel.gerster@mercedes-benz.com
+
 
 normative:
+  Tigress-00:
+    author:
+    -
+      ins: D. Vinokurov
+      name: Dmitry Vinokurov
+    -
+      ins: M. Byington
+      name: Matt Byington
+    -
+      ins: M. Lerch
+      name: Matthias Lerch
+    -
+      ins: A. Pelletier
+      name: Alex Pelletier
+    -
+      ins: N. Sha
+      name: Nick Sha
+    title: "Transfer Digital Credentials Securely"
+    date: 2022-09
+    target: https://datatracker.ietf.org/doc/draft-art-tigress/
 
   CCC-Digital-Key-30:
     author:
@@ -67,19 +93,13 @@ normative:
     date: 2021-11
     target: https://global-carconnectivity.org/wp-content/uploads/2021/11/CCC_Digital_Key_Whitepaper_Approved.pdf
 
-
 informative:
 
-Tigress:
-    author: D. Vinokurov, M. Byington, M. Lerch, A. Pelletier, N. Sha
-    title: "Transferring Digital Credentials Securely"
-    date: 2022-07
-    target: https://datatracker.ietf.org/doc/draft-secure-credential-transfer
 
 --- abstract
 
-This document describes the use cases necessitating the secure transfer of digital credentials. The document also comprises a proposal, and defines requirements and scope.
 
+This document describes the use cases necessitating the secure transfer of digital credentials between two devices and defines general assumptions, requirements and the scope of the corresponding Tigress Internet-draft {{Tigress-00}}.
 
 --- middle
 
@@ -100,27 +120,27 @@ General terms:
 - Provisioning Partner - an entity which facilitates Credential Information lifecycle on a device. Lifecycle may include provisioning of credential, credential termination, credential update.
 - Sender (device) - a device initiating a transfer of Provisioning Information to a Receiver that can provision this credential.
 - Receiver (device) - a device that receives Provisioning Information and uses it to provision a new credential.
-- Intermediary (server) - an intermediary server that facilitates transfer of provisioning information between Sender and Receiver.
+- Intermediary (server) - an intermediary server that provides a standardized and platform-independent way of transferring provisioning information between Sender and Receiver devices.
 
 # Use Cases
 
 - Let's say Ben owns a vehicle that supports digital keys which comply with the CCC {{CCC-Digital-Key-30}} open standard. Ben would like to let Ryan borrow the car for the weekend. Ryan and Ben are using two different mobile phones with different operating systems. In order for Ben to share his car key to Ryan for a weekend, he must transfer some data to the receiver device. The data structure shared between the two participants is defined in the CCC. In addition, the CCC requires the receiver to generate required key material and return it to the sender to sign and return back to the receiver. At this point, the receiver now has a token that will allow them to provision their new key with the car.
 
-- Bob booked a room at a hotel for the weekend, but will be arriving late at night . Alice, his partner, comes to the hotel first, so Bob wants to share his key to the room with Alice. Bob and Alice are using two different mobile phones with different operating systems. In order for Bob to share his key to the hotel to Alice for a weekend, he must transfer some data to her device. The data structure shared between the two participants is proprietary to the given hotel chain (or Provisioning Partner). This data transfer is a one-time, unidirectional from Bob’s device to Alice’s. Once Alice receives this data, she can provision a new pass to her device, making a call to Provisioning Partner to receive a new credential.
+- Bob booked a room at a hotel for the weekend, but will be arriving late at night. Alice, his partner, comes to the hotel first, so Bob wants to share his key to the room with Alice. Bob and Alice are using two different mobile phones with different operating systems. In order for Bob to share his key to the hotel to Alice for a weekend, he must transfer some data to her device. The data structure shared between the two participants is proprietary to the given hotel chain (or Provisioning Partner). This data transfer is a one-time, unidirectional from Bob’s device to Alice’s. Once Alice receives this data, she can provision a new key to her device, making a call to Provisioning Partner to receive new credential information.
 
 # Assumptions
 
-- Original credential (with cryptographic key material) MUST NOT be sent or shared. Instead, sender SHALL be transferring its approval token for Receiver to acquire a new credential.
+- Original credential information (with cryptographic key material) MUST NOT be sent or shared. Instead, sender SHALL be transferring its approval token for Receiver to acquire new credential information.
 - Provisioning Partner SHALL NOT allow for two users to use the same credential / cryptographic keys.
 - Security: Communication between Sender / Receiver and Provisioning Partner SHOULD be trusted.
 - The choice of intermediary SHALL be defined by the application initiating the credential transfer.
 - Sender and Receiver SHALL both be able to manage the shared credential at any point by communicating with the Provisioning Partner. Credential lifecycle management is out of scope for this proposal.
-- Any device OEM with a digital credential implementation adherent to Tigress SHALL be able to receive shares, whether or not they can originate shares or host their own intermediary.
+- Any device OEM with a digital credential implementation adherent to Tigress {{Tigress-00}} SHALL be able to receive shared provisioning information, whether or not they can originate provisioning information themselves or host their own intermediary.
 
 
 # Requirements
 
-- (Req-AnyPlatorm) Solution SHOULD be able to communicate with any mobile devices of any operating system and allow easy implementation of server-side components without requiring a specific Cloud stack.
+- (Req-AnyPlatform) Solution SHOULD be able to communicate with any mobile device of any operating system and allow easy implementation of server-side components without requiring a specific Cloud stack.
 - (Req-NontechnicalUX) Solution SHALL enable secure credential transfer for non technical users.
 - (Req-SmoothUX) Solution SHALL allow for user experience where neither Sender nor Receiver is presented with raw data required only by the secure transfer protocol. The data SHOULD only be parsed programmatically and not required to be presented to the end user. This data SHOULD never be visible to said user in whichever messaging application the sender chose to initiate the transfer on. This eliminates the possibility of merely sending the requisite data inline, through an SMS or email for example, rather than leveraging an Intermediary server.
 - (Req-Connectivity) Sender and Receiver SHALL be allowed to be online at different times. Sender and Receiver SHALL never need to be online at the same time.
@@ -139,11 +159,11 @@ General terms:
 - (Req-RoundTrips) Solution SHALL allow for multiple round trips or multiple reads/writes between one set of Sender and Receiver devices.
 - (Req-ReceiverTrust) If any Intermediary is required - the Receiver device SHOULD evaluate the trustworthiness of the Intermediary using a list of trusted/approved intermediaries.
 - (Req-Preview) Solution SHOULD allow for extensibility and discoverable extensions (preview of share invitation).
-- (Req-RedemptionHandling) ShareURL SHOULD route Receiver to redeem Provisioning Information using the designated Credential Management Application (e.g. Wallet).
+- (Req-RedemptionHandling) Shared Provisioning Information SHOULD route Receiver to redeem Provisioning Information using the designated Credential Management Application (e.g. Wallet).
 
 # Review of existing solutions
 
-A number of existing solutions / protocols have been reviewed in order to be used for secure credential transfer based on the requirements: GSS-API, Kerberos, AWS S3, email, Signal. None of the existing protocols comply with the requirements; the effort of modifying the existing protocols has been accessed to be significantly higher than introducing a new solution to solve this problem.
+A number of existing solutions / protocols have been reviewed in order to be used for secure credential transfer based on the requirements: GSS-API, Kerberos, AWS S3, email, Signal. None of the existing protocols comply with the requirements; the effort of modifying the existing protocols has been accessed to be significantly higher than introducing a new solution to solve this problem. The goal of the Tigress draft {{Tigress-00}} is not to define a new encryption or secure message exchange protocol, but rather a standardized mechanism of exchanging access-specific encrypted credential information.
 
 ## Arbitrary Messaging Channel (Email / WhatsApp / SMS / Signal / etc.)
 
@@ -160,7 +180,7 @@ AWS S3 could be used as an Intermediary server but it would force all participan
 As a messaging protocol, Signal could be used between Sender, Receiver and Intermediary but this protocol is fairly complex and its use would most like violate (Req-Simplicity).
 The system will however support the Signal service for share initiation, in line with (Req-init).
 
-# Out of Scope:
+# Out of Scope
 - Identification and Authorization - solution shall not require strong identification and authentication from user (e.g. using PKI certificates).
 - Fully stopping people from sharing malicious content ("cat pictures").
 - Solving problem of sharing to groups.
