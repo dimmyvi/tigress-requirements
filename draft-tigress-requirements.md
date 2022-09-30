@@ -73,7 +73,7 @@ normative:
     date: 2021-11
     target: https://global-carconnectivity.org/wp-content/uploads/2021/11/CCC_Digital_Key_Whitepaper_Approved.pdf
 
-Tigress:
+Tigress-04:
     author: D. Vinokurov, M. Byington, M. Lerch, A. Pelletier, N. Sha
     title: "Transferring Digital Credentials Securely"
     date: 2022-07
@@ -86,7 +86,7 @@ informative:
 --- abstract
 
 
-This document describes the use cases necessitating the secure transfer of digital credentials between two devices and defines general assumptions, requirements and the scope of the corresponding Internet-draft {{CCC-Digital-Key-30}}.
+This document describes the use cases necessitating the secure transfer of digital credentials between two devices and defines general assumptions, requirements and the scope of the corresponding Tigress Internet-draft {{Tigress-04}}.
 
 --- middle
 
@@ -122,7 +122,7 @@ General terms:
 - Security: Communication between Sender / Receiver and Provisioning Partner SHOULD be trusted.
 - The choice of intermediary SHALL be defined by the application initiating the credential transfer.
 - Sender and Receiver SHALL both be able to manage the shared credential at any point by communicating with the Provisioning Partner. Credential lifecycle management is out of scope for this proposal.
-- Any device OEM with a digital credential implementation adherent to {{CCC-Digital-Key-30}} SHALL be able to receive shared provisioning information, whether or not they can originate provisioning information themselves or host their own intermediary.
+- Any device OEM with a digital credential implementation adherent to Tigress {{Tigress-04}} SHALL be able to receive shared provisioning information, whether or not they can originate provisioning information themselves or host their own intermediary.
 
 
 # Requirements
@@ -150,7 +150,7 @@ General terms:
 
 # Review of existing solutions
 
-A number of existing solutions / protocols have been reviewed in order to be used for secure credential transfer based on the requirements: GSS-API, Kerberos, AWS S3, email, Signal. None of the existing protocols comply with the requirements; the effort of modifying the existing protocols has been accessed to be significantly higher than introducing a new solution to solve this problem. The goal of the {{CCC-Digital-Key-30}} draft is not to define a new encryption or secure message exchange protocol, but rather a standardized mechanism of exchanging access-specific encrypted credential information.
+A number of existing solutions / protocols have been reviewed in order to be used for secure credential transfer based on the requirements: GSS-API, Kerberos, AWS S3, email, Signal. None of the existing protocols comply with the requirements; the effort of modifying the existing protocols has been accessed to be significantly higher than introducing a new solution to solve this problem. The goal of the Tigress draft {{Tigress-04}} is not to define a new encryption or secure message exchange protocol, but rather a standardized mechanism of exchanging access-specific encrypted credential information.
 
 ## Arbitrary Messaging Channel (Email / WhatsApp / SMS / Signal / etc.)
 
