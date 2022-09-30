@@ -60,7 +60,7 @@ author:
  -
     ins: M. Gerster
     name: Manuel Gerster
-    organization: Mercedes Benz
+    organization: Mercedes-Benz AG
     email: manuel.gerster@mercedes-benz.com
 
 
@@ -77,7 +77,7 @@ Tigress:
     author: D. Vinokurov, M. Byington, M. Lerch, A. Pelletier, N. Sha
     title: "Transferring Digital Credentials Securely"
     date: 2022-07
-    target: https://datatracker.ietf.org/doc/draft-secure-credential-transfer
+    target: https://datatracker.ietf.org/doc/pdf/draft-secure-credential-transfer-04
 
 
 informative:
