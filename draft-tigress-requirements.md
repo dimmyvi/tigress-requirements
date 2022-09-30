@@ -65,7 +65,6 @@ author:
 
 
 normative:
-
   CCC-Digital-Key-30:
     author:
       org: Car Connectivity Consortium
@@ -86,7 +85,7 @@ informative:
 --- abstract
 
 
-This document describes the use cases necessitating the secure transfer of digital credentials between two devices and defines general assumptions, requirements and the scope of the corresponding Tigress Internet-draft {{Tigress-04}}.
+This document describes the use cases necessitating the secure transfer of digital credentials between two devices and defines general assumptions, requirements and the scope of the corresponding Tigress Internet-draft {{!Tigress-04}}.
 
 --- middle
 
@@ -111,7 +110,7 @@ General terms:
 
 # Use Cases
 
-- Let's say Ben owns a vehicle that supports digital keys which comply with the CCC {{CCC-Digital-Key-30}} open standard. Ben would like to let Ryan borrow the car for the weekend. Ryan and Ben are using two different mobile phones with different operating systems. In order for Ben to share his car key to Ryan for a weekend, he must transfer some data to the receiver device. The data structure shared between the two participants is defined in the CCC. In addition, the CCC requires the receiver to generate required key material and return it to the sender to sign and return back to the receiver. At this point, the receiver now has a token that will allow them to provision their new key with the car.
+- Let's say Ben owns a vehicle that supports digital keys which comply with the CCC {{!CCC-Digital-Key-30}} open standard. Ben would like to let Ryan borrow the car for the weekend. Ryan and Ben are using two different mobile phones with different operating systems. In order for Ben to share his car key to Ryan for a weekend, he must transfer some data to the receiver device. The data structure shared between the two participants is defined in the CCC. In addition, the CCC requires the receiver to generate required key material and return it to the sender to sign and return back to the receiver. At this point, the receiver now has a token that will allow them to provision their new key with the car.
 
 - Bob booked a room at a hotel for the weekend, but will be arriving late at night. Alice, his partner, comes to the hotel first, so Bob wants to share his key to the room with Alice. Bob and Alice are using two different mobile phones with different operating systems. In order for Bob to share his key to the hotel to Alice for a weekend, he must transfer some data to her device. The data structure shared between the two participants is proprietary to the given hotel chain (or Provisioning Partner). This data transfer is a one-time, unidirectional from Bob’s device to Alice’s. Once Alice receives this data, she can provision a new key to her device, making a call to Provisioning Partner to receive new credential information.
 
@@ -122,7 +121,7 @@ General terms:
 - Security: Communication between Sender / Receiver and Provisioning Partner SHOULD be trusted.
 - The choice of intermediary SHALL be defined by the application initiating the credential transfer.
 - Sender and Receiver SHALL both be able to manage the shared credential at any point by communicating with the Provisioning Partner. Credential lifecycle management is out of scope for this proposal.
-- Any device OEM with a digital credential implementation adherent to Tigress {{Tigress-04}} SHALL be able to receive shared provisioning information, whether or not they can originate provisioning information themselves or host their own intermediary.
+- Any device OEM with a digital credential implementation adherent to Tigress {{!Tigress-04}} SHALL be able to receive shared provisioning information, whether or not they can originate provisioning information themselves or host their own intermediary.
 
 
 # Requirements
@@ -150,7 +149,7 @@ General terms:
 
 # Review of existing solutions
 
-A number of existing solutions / protocols have been reviewed in order to be used for secure credential transfer based on the requirements: GSS-API, Kerberos, AWS S3, email, Signal. None of the existing protocols comply with the requirements; the effort of modifying the existing protocols has been accessed to be significantly higher than introducing a new solution to solve this problem. The goal of the Tigress draft {{Tigress-04}} is not to define a new encryption or secure message exchange protocol, but rather a standardized mechanism of exchanging access-specific encrypted credential information.
+A number of existing solutions / protocols have been reviewed in order to be used for secure credential transfer based on the requirements: GSS-API, Kerberos, AWS S3, email, Signal. None of the existing protocols comply with the requirements; the effort of modifying the existing protocols has been accessed to be significantly higher than introducing a new solution to solve this problem. The goal of the Tigress draft {{!Tigress-04}} is not to define a new encryption or secure message exchange protocol, but rather a standardized mechanism of exchanging access-specific encrypted credential information.
 
 ## Arbitrary Messaging Channel (Email / WhatsApp / SMS / Signal / etc.)
 
