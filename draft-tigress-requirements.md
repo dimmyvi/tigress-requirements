@@ -66,7 +66,22 @@ author:
 
 normative:
   Tigress-04:
-    author: D. Vinokurov, M. Byington, M. Lerch, A. Pelletier, N. Sha
+    author:
+    -
+      ins: D. Vinokurov
+      name: Dmitry Vinokurov
+    -
+      ins: M. Byington
+      name: Matt Byington
+    -
+      ins: M. Lerch
+      name: Matthias Lerch
+    -
+      ins: A. Pelletier
+      name: Alex Pelletier
+    -
+      ins: N. Sha
+      name: Nick Sha
     title: "Secure Credential Transfer"
     date: 2022-07
     target: https://www.ietf.org/archive/id/draft-secure-credential-transfer-04.html
