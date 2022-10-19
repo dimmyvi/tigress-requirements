@@ -145,7 +145,7 @@ General terms:
 - (Req-SmoothUX) Solution SHALL allow for user experience where neither Sender nor Receiver is presented with raw data required only by the secure transfer protocol. The data SHOULD only be parsed programmatically and not required to be presented to the end user. This data SHOULD never be visible to said user in whichever messaging application the sender chose to initiate the transfer on. This eliminates the possibility of merely sending the requisite data inline, through an SMS or email for example, rather than leveraging an Intermediary server.
 - (Req-Connectivity) Sender and Receiver SHALL be allowed to be online at different times. Sender and Receiver SHALL never need to be online at the same time.
 - (Req-init) Solution SHOULD allow Sender to initiate credential transfer to Receiver over any messaging channel, with various degrees of security.
-- (Req-P2P) A credential transfer SHALL be strictly from one device to another (group sharing is not a goal).
+- (Req-P2P) A goal of credential transfer covered in this document SHALL include a transfer from one device to another only (group sharing SHALL not be a goal).
 - (Req-Privacy) If Intermediary server is required - it SHALL not be able to correlate users between exchanges, or create a social graph. Intermediary server shall not be an arbiter of Identity.
 - (Req-Security) Solution SHOULD provide security of the provisioning data transferred (MITM, brute-force attacks on the content, DDOS attacks etc).
 - (Req-Notify) Solution SHOULD support a notification mechanism to inform devices on the content update on Intermediary server.
