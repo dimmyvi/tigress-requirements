@@ -141,8 +141,7 @@ General terms:
 # Requirements
 
 - (Req-Connectivity) Sender and Receiver SHALL be allowed to be online at different times. Sender and Receiver SHALL never need to be online at the same time.
-- (Req-UrlLink) Solution SHALL allow to share credentials as a UrlLink to provisioning information stored on intermediary server. The link SHALL easily be shared between Sender and Receiver device over various communication channels.
-- (Req-init) Solution SHOULD allow Sender to send the UrlLink (Req-UrlLink) to Receiver over any messaging channel, with various degrees of security.
+- (Req-init) Solution SHOULD allow Sender to send the share invitation to Receiver over any messaging channel, with various degrees of security.
 - (Req-P2P) A goal of credential transfer covered in this document SHALL include transfer from one device to another (group sharing SHALL not be a goal).
 - (Req-Privacy) If Intermediary server is required - it SHALL not be able to correlate users between exchanges, or create a social graph. Intermediary server shall not be an arbiter of Identity.
 - (Req-Security) Solution SHOULD provide security of the provisioning data transferred (MITM, brute-force attacks on the content, DDOS attacks etc).
