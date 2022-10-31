@@ -140,7 +140,6 @@ General terms:
 
 # Requirements
 
-- (Req-AnyPlatform) Solution SHOULD be able to communicate with any mobile device of any operating system and allow easy implementation of server-side components without requiring a specific Cloud stack.
 - (Req-NontechnicalUX) Solution SHALL enable secure credential transfer for non technical users.
 - (Req-SmoothUX) Solution SHALL allow for user experience where neither Sender nor Receiver is presented with raw data required only by the secure transfer protocol. The data SHOULD only be parsed programmatically and not required to be presented to the end user. This data SHOULD never be visible to said user in whichever messaging application the sender chose to initiate the transfer on. This eliminates the possibility of merely sending the requisite data inline, through an SMS or email for example, rather than leveraging an Intermediary server.
 - (Req-Connectivity) Sender and Receiver SHALL be allowed to be online at different times. Sender and Receiver SHALL never need to be online at the same time.
