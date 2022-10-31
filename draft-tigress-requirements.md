@@ -140,16 +140,16 @@ General terms:
 
 # Requirements
 
-- (Req-AnyPlatform) Solution SHOULD be able to communicate with any mobile device of any operating system and allow easy implementation of server-side components without requiring a specific Cloud stack.
 - (Req-Connectivity) Sender and Receiver SHALL be allowed to be online at different times. Sender and Receiver SHALL never need to be online at the same time.
-- (Req-init) Solution SHOULD allow Sender to initiate credential transfer to Receiver over any messaging channel, with various degrees of security.
-- (Req-P2P) A credential transfer SHALL be strictly from one device to another (group sharing is not a goal).
+- (Req-UrlLink) Solution SHALL allow to share credentials as a UrlLink to provisioning information stored on intermediary server. The link SHALL easily be shared between Sender and Receiver device over various communication channels.
+- (Req-init) Solution SHOULD allow Sender to send the UrlLink (Req-UrlLink) to Receiver over any messaging channel, with various degrees of security.
+- (Req-P2P) A goal of credential transfer covered in this document SHALL include transfer from one device to another (group sharing SHALL not be a goal).
 - (Req-Privacy) If Intermediary server is required - it SHALL not be able to correlate users between exchanges, or create a social graph. Intermediary server shall not be an arbiter of Identity.
 - (Req-Security) Solution SHOULD provide security of the provisioning data transferred (MITM, brute-force attacks on the content, DDOS attacks etc).
 - (Req-Notify) Solution SHOULD support a notification mechanism to inform devices on the content update on Intermediary server.
 - (Req-Revoke) Solution SHALL maintain access control, allowing Sender to revoke before the share has been accepted, and for Receiver to end transfer at any time.
 - (Req-IntermediaryProvision) If Intermediary server is required - it MUST not be able to provision credential on their own.
-- (Req-Opaque) If Intermediary server is required - Message content between Sender and Receiver MUST be opaque to the Intermediary.
+- (Req-Opaque) If Intermediary server is required - message content between Sender and Receiver MUST be opaque to the Intermediary.
 - (Req-ArbitraryFormat) The solution SHALL support arbitrary message formats to support both keys that implement public standards like CCC as well as proprietary implementations of digital keys.
 - (Req-UnderstoodFormat) Both Sender application and Receiver application MUST be able to recognize the format.
 - (Req-Simplicity) Where possible, the system SHOULD rely on simple building blocks to facilitate adoption and implementation.
