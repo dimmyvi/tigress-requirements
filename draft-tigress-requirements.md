@@ -140,8 +140,6 @@ General terms:
 
 # Requirements
 
-- (Req-NontechnicalUX) Solution SHALL enable secure credential transfer for non technical users.
-- (Req-SmoothUX) Solution SHALL allow for user experience where neither Sender nor Receiver is presented with raw data required only by the secure transfer protocol. The data SHOULD only be parsed programmatically and not required to be presented to the end user. This data SHOULD never be visible to said user in whichever messaging application the sender chose to initiate the transfer on. This eliminates the possibility of merely sending the requisite data inline, through an SMS or email for example, rather than leveraging an Intermediary server.
 - (Req-Connectivity) Sender and Receiver SHALL be allowed to be online at different times. Sender and Receiver SHALL never need to be online at the same time.
 - (Req-UrlLink) Solution SHALL allow to share credentials as a UrlLink to provisioning information stored on intermediary server. The link SHALL easily be shared between Sender and Receiver device over various communication channels.
 - (Req-init) Solution SHOULD allow Sender to send the UrlLink (Req-UrlLink) to Receiver over any messaging channel, with various degrees of security.
