@@ -140,8 +140,10 @@ sequenceDiagram
     S ->> M : send invite
     M ->> R : deliver invite
     S ->> I : upload credential data
-    R ->> I : request credential data
-    I ->> R : deliver credetnai data
+    Loop Provision credential
+      R ->> I : request credential data
+      I ->> R : deliver credetnai data
+    end
 ```
 
 
