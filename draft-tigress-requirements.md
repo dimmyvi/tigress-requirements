@@ -128,6 +128,23 @@ General terms:
 
 - Bob booked a room at a hotel for the weekend, but will be arriving late at night. Alice, his partner, comes to the hotel first, so Bob wants to share his key to the room with Alice. Bob and Alice are using two different mobile phones with different operating systems. In order for Bob to share his key to the hotel to Alice for a weekend, he must transfer some data to her device. The data structure shared between the two participants is proprietary to the given hotel chain (or Provisioning Partner). This data transfer is a one-time, unidirectional from Bob’s device to Alice’s. Once Alice receives this data, she can provision a new key to her device, making a call to Provisioning Partner to receive new credential information.
 
+# Relationships
+
+
+```mermaid
+sequenceDiagram
+    actor S as Sender
+    participant I as Intermediary
+    participant M as Message-Transport
+    actor R as Reciver
+    S ->> M : send invite
+    M ->> R : deliver invite
+    S ->> I : upload credential data
+    R ->> I : request credential data
+    I ->> R : deliver credetnai data
+```
+
+
 # Assumptions
 
 - Original credential information (with cryptographic key material) MUST NOT be sent or shared. Instead, sender SHALL be transferring its approval token for Receiver to acquire new credential information.
