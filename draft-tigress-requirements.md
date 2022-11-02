@@ -142,7 +142,7 @@ sequenceDiagram
     end
     Loop Provision credential
       R ->> I : request credential data
-      I ->> R : deliver credetnai data
+      I ->> R : deliver credential data
     end
 ```
 
