@@ -135,11 +135,11 @@ General terms:
 sequenceDiagram
     actor S as Sender
     participant I as Intermediary
-    participant M as Message-Transport
-    actor R as Reciver
-    S ->> M : send invite
-    M ->> R : deliver invite
+    actor R as Receiver
     S ->> I : upload credential data
+    break Generic messaging channel
+      S ->> R : send invite
+    end
     Loop Provision credential
       R ->> I : request credential data
       I ->> R : deliver credetnai data
