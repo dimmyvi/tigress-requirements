@@ -152,7 +152,7 @@ General terms:
 - (Req-RedemptionHandling) Shared Provisioning Information SHOULD route Receiver to redeem Provisioning Information using the designated Credential Management Application (e.g. Wallet).
 
 ## Intermediary server requirments
-If the solution requires an intermediary server, it should have the folling requirements.
+If the solution requires an intermediary server, it should have the following requirements.
 
 - (Req-Privacy) An Intermediary server SHALL not be able to correlate users between exchanges, or create a social graph. Intermediary server shall not be an arbiter of Identity.
 - (Req-Notify) Solution SHOULD support a notification mechanism to inform devices on the content update on Intermediary server.
