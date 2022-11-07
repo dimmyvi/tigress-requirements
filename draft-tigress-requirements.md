@@ -169,7 +169,6 @@ sequenceDiagram
 - (Req-UnderstoodFormat) Both Sender application and Receiver application MUST be able to recognize the format.
 - (Req-RoundTrips) Solution SHALL allow for multiple round trips or multiple reads/writes between one set of Sender and Receiver devices.
 - (Req-Preview) Solution SHOULD allow for extensibility and discoverable extensions (preview of share invitation).
-- (Req-RedemptionHandling) Shared Provisioning Information SHOULD route Receiver to redeem Provisioning Information using the designated Credential Management Application (e.g. Wallet).
 
 ## Intermediary server requirments
 If the solution requires an intermediary server, it should have the following requirements.
