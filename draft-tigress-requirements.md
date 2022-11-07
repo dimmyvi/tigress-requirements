@@ -105,9 +105,19 @@ This document describes the use cases necessitating the secure transfer of digit
 
 # Introduction
 
-When sharing digital secure credentials, there are several actors involved. While the Tigress working group's solution will focus on sharing information between two devices, a sender and receiver, there are a couple more actors involved. First of all, each device communicates with its own servers. These are sometimes referenced as the OEM server or the Device OEM server. In addition, there are the companies that are providing the digital credential. These are the provisioning partners. They are in control of the provisioning information and the lifecycle of the credentials. 
+Today, there is no standard way of transferring digital credentials securely between two devices belonging to the same platform or two different platforms. This document describes the problem space and the requirements for the solution the working group creates.
 
-Without Tigress, devices are already connected with their Device OEM Servers and those servers already connect with provisioning partners. Tigress allows for a connection between devices so the devices can pass up the provisioning information to the Device OEM and the provisioning partner using their exisiting rails. The sender device gets provisioning information, either creating it on device or from the provisioning partner, then shares it to the recipient device. The recipient then takes that data and sends it to the Device OEM server and then to the provisioning partner. This process allows anyone that works with the provisioning partner to accept the shares without exposing that complexity to the device. All the requirements are created around these general parameters. In addition, the solution the working group creates must be done with the user's security and privacy at the forefront. When the solution is complete, two devices should be able to communicate provisioning inforamation with each other and provision a secure credential. 
+# General Setting
+
+When sharing digital secure credentials, there are several actors involved. While the Tigress working group's solution will focus on sharing information between two devices and potentially an interemediary server, there are a couple more actors involved. First of all, each device communicates with its own servers. These are referenced as the OEM server or the Device OEM server. In addition, there are the companies that are providing the digital credential. These are the provisioning partners. They are in control of the provisioning information and the lifecycle of the credentials. 
+
+Without Tigress, devices are already connected with their Device OEM Servers and those servers already connect with provisioning partners. We assume that all devices follow this paradigm. 
+
+Device <-> Device OEM <-> Provisioning Partner
+
+Tigress allows for a connection between devices so the devices can exchange provisioning information. This provisioning information is then passed to the Device OEM and then the provisioning partner using exisiting rails. The interfaces between Device OEM and Provisioning Partner can be proprietary or part of a public standard such as the CCC. The sender device obtains provisioning information, either from the provisioning partner or by creating it on device, then shares it to the recipient device. The recipient then takes that data and sends it to the Device OEM server and the provisioning partner. 
+
+By having the devices communicate provisioning information to eachother, we achieve a couple goals. First, this negates the need for either device to connect directly to a provisioning partner. Devices need only connect with their OEM server rather than the N supported provisioning partners. In addition, this abstracts a user or user device from knowing if a credential is supported on the recipient device. Senders only have to send some information over to the receiver and the receiver's device handles everything else. Lastly, in combination with the requirements below, the solution the working group creates will protect user's privacy and avoid any entity except the users and provisioning partners from knowing who has shared with whom. 
 
 # Conventions and Definitions
 
