@@ -105,8 +105,9 @@ This document describes the use cases necessitating the secure transfer of digit
 
 # Introduction
 
-TODO Introduction
+When sharing digital secure credentials, there are several actors involved. While the Tigress working group's solution will focus on sharing information between two devices, a sender and receiver, there are a couple more actors involved. First of all, each device communicates with its own servers. These are sometimes referenced as the OEM server or the Device OEM server. In addition, there are the companies that are providing the digital credential. These are the provisioning partners. They are in control of the provisioning information and the lifecycle of the credentials. 
 
+Without Tigress, devices are already connected with their Device OEM Servers and those servers already connect with provisioning partners. Tigress allows for a connection between devices so the devices can pass up the provisioning information to the Device OEM and the provisioning partner using their exisiting rails. The sender device gets provisioning information, either creating it on device or from the provisioning partner, then shares it to the recipient device. The recipient then takes that data and sends it to the Device OEM server and then to the provisioning partner. This process allows anyone that works with the provisioning partner to accept the shares without exposing that complexity to the device. All the requirements are created around these general parameters. In addition, the solution the working group creates must be done with the user's security and privacy at the forefront. When the solution is complete, two devices should be able to communicate provisioning inforamation with each other and provision a secure credential. 
 
 # Conventions and Definitions
 
