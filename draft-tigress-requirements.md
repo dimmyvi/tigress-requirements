@@ -186,17 +186,12 @@ A number of existing solutions / protocols have been reviewed in order to be use
 
 ## Arbitrary Messaging Channel (Email / WhatsApp / SMS / Signal / etc.)
 
-The Provisioning Information MAY be sent from Sender to Receiver over an arbitrary messaging channel that supports binary file transfer, but this would not support provisioning flows which require multiple round trips as requied by (Req-RoundTrips).
+The Provisioning Information MAY be sent from Sender to Receiver over an arbitrary messaging channel that supports binary file transfer, but this would not support provisioning flows which require multiple round trips as requied by (Req-RoundTrips). The same requirement applies to Signal protocol outside of the Signal app, as the Req-RoundTrips would likely be difficult and add a lot of friction for the user. 
 
 ## GSS-API, Kerberos
 
 GSS-API {{!RFC2078}} and Kerberos {{!RFC4120}} are authentication technologies which could be used to authenticate Sender, Receiver and intermediary. However, as they provide strong authentication, they would allow the Intermediary server to build a social graph in violation of (Req-Privacy). Their setup also require strong coordination between the actors of the system which seems overly costly for the intended system.
 AWS S3 could be used as an Intermediary server but it would force all participants to use a specific cloud service which is in violation of (Req-AnyPlatorm).
-
-## Signal Protocol
-
-As a messaging protocol, Signal could be used between Sender, Receiver and Intermediary but this protocol is fairly complex and its use would most like violate (Req-Simplicity).
-The system will however support the Signal service for share initiation, in line with (Req-init).
 
 # Out of Scope
 - Identification and Authorization - solution shall not require strong identification and authentication from user (e.g. using PKI certificates).
