@@ -186,7 +186,7 @@ A number of existing solutions / protocols have been reviewed in order to be use
 
 ## Arbitrary Messaging Channel (Email / WhatsApp / SMS / Signal / etc.)
 
-The Provisioning Information MAY be sent from Sender to Receiver over an arbitrary messaging channel that supports binary file transfer, but this would not support provisioning flows which require multiple round trips as requied by (Req-RoundTrips). The same requirement applies to Signal protocol outside of the Signal app, as the Req-RoundTrips would likely be difficult and add a lot of friction for the user. 
+The Provisioning Information MAY be sent from Sender to Receiver over an arbitrary messaging channel that supports binary file transfer, but this would not support provisioning flows which require multiple round trips as requied by (Req-RoundTrips). The same requirement applies to Signal protocol outside of the Signal app, as the Req-RoundTrips would likely be difficult and add a lot of friction for the user.
 
 ## GSS-API, Kerberos
 
