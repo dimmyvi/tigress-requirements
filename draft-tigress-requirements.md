@@ -105,7 +105,7 @@ This document describes the use cases necessitating the secure transfer of digit
 
 # Introduction
 
-Today, there is no standard way of transferring digital credentials securely between two devices belonging to the same platform or two different platforms. This document describes the problem space and the requirements for the solution the working group creates.
+Today, there is no widely accepted way of transferring digital credentials securely between two devices belonging to the same platform or two different platforms. This document describes the problem space and the requirements for the solution the working group creates.
 
 # General Setting
 
