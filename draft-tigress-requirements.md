@@ -109,11 +109,9 @@ Today, there is no widely accepted way of transferring digital credentials secur
 
 # General Setting
 
-When sharing digital secure credentials, there are several actors involved. While the Tigress working group's solution will focus on sharing information between two devices and potentially an interemediary server, there are a couple more actors involved. First of all, each device communicates with its own servers. These are referenced as the OEM server or the Device OEM server. In addition, there are the companies that are providing the digital credential. These are the provisioning partners. They are in control of the provisioning information and the lifecycle of the credentials. 
+When sharing digital secure credentials, there are several actors involved. While the Tigress working group's solution will focus on sharing information between two devices, potentially through an interemediary server, there are a couple more actors involved. 
 
-Without Tigress, devices are already connected with their Device OEM Servers and those servers already connect with provisioning partners. We assume that all devices follow this paradigm. 
-
-Device <-> Device OEM <-> Provisioning Partner
+The companies that are providing the digital credential are the provisioning partners. They are in control of the provisioning information and the lifecycle of the credentials. Each device has a preexisting trust relationship between itself and the Provisioning Partner.
 
 Tigress allows for a connection between devices so the devices can exchange provisioning information. This provisioning information is then passed to the Device OEM and then the provisioning partner using exisiting rails. The interfaces between Device OEM and Provisioning Partner can be proprietary or part of a public standard such as the CCC. The sender device obtains provisioning information, either from the provisioning partner or by creating it on device, then shares it to the recipient device. The recipient then takes that data and sends it to the Device OEM server and the provisioning partner. 
 
