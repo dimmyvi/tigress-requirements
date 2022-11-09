@@ -118,11 +118,11 @@ Table of Contents
    Partner.
 
    The interface between the devices and the Provisioning Partner can be
-   proprietary or part of a public standard such as the CCC.  The sender
-   device obtains provisioning information from the provisioning
-   partner, then shares it to the recipient device via Tigress.  The
-   recipient then takes that data and sends it to the Provisioning
-   Partner to redeem a credential.
+   proprietary or part of published specifications such as the
+   [CCC-Digital-Key-30].  The sender device obtains provisioning
+   information from the provisioning partner, then shares it to the
+   recipient device via Tigress.  The recipient then takes that data and
+   sends it to the Provisioning Partner to redeem a credential.
 
    For some credential types the Provisioning Partner who mints new
    credentials is actually the sender device.  In that scenario the
@@ -168,17 +168,17 @@ Table of Contents
 4.  Use Cases
 
    *  Let's say Ben owns a vehicle that supports digital keys which
-      comply with the CCC [CCC-Digital-Key-30] open standard.  Ben would
+      comply with the CCC specification [CCC-Digital-Key-30] . Ben would
       like to let Ryan borrow the car for the weekend.  Ryan and Ben are
       using two different mobile phones with different operating
       systems.  In order for Ben to share his car key to Ryan for a
       weekend, he must transfer some data to the receiver device.  The
       data structure shared between the two participants is defined in
-      the CCC.  In addition, the CCC requires the receiver to generate
-      required key material and return it to the sender to sign and
-      return back to the receiver.  At this point, the receiver now has
-      a token that will allow them to provision their new key with the
-      car.
+      the [CCC-Digital-Key-30] . In addition, the [CCC-Digital-Key-30]
+      requires the receiver to generate required key material and return
+      it to the sender to sign and return back to the receiver.  At this
+      point, the receiver now has a token that will allow them to
+      provision their new key with the car.
 
    *  Bob booked a room at a hotel for the weekend, but will be arriving
       late at night.  Alice, his partner, comes to the hotel first, so
@@ -254,8 +254,9 @@ Table of Contents
       Receiver to end transfer at any time.
 
    *  (Req-ArbitraryFormat) The solution SHALL support arbitrary message
-      formats to support both keys that implement public standards like
-      CCC as well as proprietary implementations of digital keys.
+      formats to support both keys that implement published
+      specifications like [CCC-Digital-Key-30] as well as proprietary
+      implementations of digital keys.
 
    *  (Req-UnderstoodFormat) Both Sender application and Receiver
       application MUST be able to recognize the format.
