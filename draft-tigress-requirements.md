@@ -168,7 +168,7 @@ sequenceDiagram
 - (Req-ArbitraryFormat) The solution SHALL support arbitrary message formats to support both keys that implement public standards like CCC as well as proprietary implementations of digital keys.
 - (Req-UnderstoodFormat) Both Sender application and Receiver application MUST be able to recognize the format.
 - (Req-RoundTrips) Solution SHALL allow for multiple round trips or multiple reads/writes between one set of Sender and Receiver devices.
-- (Req-Preview) Provisioning Information MUST be preview-able in messaging channels before redemption. This preview SHOULD include a title, subtitle, and image.
+- (Req-Preview) Solution SHOULD alow for the reciever to show a preview of the invite before begining provisioning. To support this the receiver should be able to read a title, subtitle and image in the clear.
 
 ## Intermediary server requirments
 If the solution requires an intermediary server, it should have the following requirements.
