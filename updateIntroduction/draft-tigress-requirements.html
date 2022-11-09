@@ -1046,7 +1046,7 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Vinokurov, et al.</td>
-<td class="center">Expires 12 May 2023</td>
+<td class="center">Expires 13 May 2023</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1059,12 +1059,12 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-tigress-requirements-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2022-11-08" class="published">8 November 2022</time>
+<time datetime="2022-11-09" class="published">9 November 2022</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2023-05-12">12 May 2023</time></dd>
+<dd class="expires"><time datetime="2023-05-13">13 May 2023</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1137,7 +1137,7 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 12 May 2023.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 13 May 2023.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1234,6 +1234,7 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
 <p id="section-1-1">Today, there is no widely accepted way of transferring digital credentials securely between two devices belonging to the same platform or two different platforms. This document describes the problem space and the requirements for the solution the working group creates.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2">Tigress allows for a sender and receiver device to communicate in order to facilitate a secure credential transfer. Tigress also specifies certain privacy requirements in order to maintain a high level of user privacy.<a href="#section-1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="general-setting">
@@ -1241,10 +1242,10 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
       <h2 id="name-general-setting">
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-general-setting" class="section-name selfRef">General Setting</a>
       </h2>
-<p id="section-2-1">When sharing digital secure credentials, there are several actors involved. While the Tigress working group's solution will focus on sharing information between two devices, potentially through an interemediary server, there are a couple more actors involved.<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-1">When sharing digital secure credentials, there are several actors involved. While the Tigress working group's solution will focus on sharing information between two devices, potentially through an intermediary server, there are a couple more actors involved.<a href="#section-2-1" class="pilcrow">¶</a></p>
 <p id="section-2-2">The companies that are providing the digital credential are the provisioning partners. They are in control of the provisioning information and the lifecycle of the credentials. Each device has a preexisting trust relationship between itself and the Provisioning Partner.<a href="#section-2-2" class="pilcrow">¶</a></p>
-<p id="section-2-3">Tigress allows for a connection between devices so the devices can exchange provisioning information. This provisioning information is then passed to the Device OEM and then the provisioning partner using exisiting rails. The interfaces between Device OEM and Provisioning Partner can be proprietary or part of a public standard such as the CCC. The sender device obtains provisioning information, either from the provisioning partner or by creating it on device, then shares it to the recipient device. The recipient then takes that data and sends it to the Device OEM server and the provisioning partner.<a href="#section-2-3" class="pilcrow">¶</a></p>
-<p id="section-2-4">By having the devices communicate provisioning information to eachother, we achieve a couple goals. First, this negates the need for either device to connect directly to a provisioning partner. Devices need only connect with their OEM server rather than the N supported provisioning partners. In addition, this abstracts a user or user device from knowing if a credential is supported on the recipient device. Senders only have to send some information over to the receiver and the receiver's device handles everything else. Lastly, in combination with the requirements below, the solution the working group creates will protect user's privacy and avoid any entity except the users and provisioning partners from knowing who has shared with whom.<a href="#section-2-4" class="pilcrow">¶</a></p>
+<p id="section-2-3">The interface between the devices and the Provisioning Partner can be proprietary or part of a public standard such as the CCC. The sender device obtains provisioning information from the provisioning partner, then shares it to the recipient device via Tigress. The recipient then takes that data and sends it to the Provisioning Partner to redeem a credential.<a href="#section-2-3" class="pilcrow">¶</a></p>
+<p id="section-2-4">For some credential types the Provisioning Partner who mints new credentials is actually the sender device. In that scenario the receiver will generate new key material at the request of the sender device, and then communicate with the sender device over Tigress to its key material signed by the sender device.<a href="#section-2-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conventions-and-definitions">
