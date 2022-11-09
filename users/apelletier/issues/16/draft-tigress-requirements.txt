@@ -5,7 +5,7 @@
 TIGRESS                                                     D. Vinokurov
 Internet-Draft                                                  C. Astiz
 Intended status: Informational                              A. Pelletier
-Expires: 12 May 2023                                        J. L. Giraud
+Expires: 13 May 2023                                        J. L. Giraud
                                                              A. Bulgakov
                                                              M. Byington
                                                                Apple Inc
@@ -13,7 +13,7 @@ Expires: 12 May 2023                                        J. L. Giraud
                                                             Alphabet Inc
                                                               M. Gerster
                                                         Mercedes-Benz AG
-                                                         8 November 2022
+                                                         9 November 2022
 
 
           Transfer Digital Credentials Securely - Requirements
@@ -53,7 +53,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 May 2023.
+   This Internet-Draft will expire on 13 May 2023.
 
 Copyright Notice
 
@@ -228,9 +228,10 @@ Table of Contents
       multiple reads/writes between one set of Sender and Receiver
       devices.
 
-   *  (Req-Preview) Provisioning Information MUST be preview-able in
-      messaging channels before redemption.  This preview SHOULD include
-      a title, subtitle, and image.
+   *  (Req-Preview) Solution SHOULD alow for the reciever to show a
+      preview of the invite before begining provisioning.  To support
+      this the receiver should be able to read a title, subtitle and
+      image in the clear.
 
 6.1.  Intermediary server requirments
 
