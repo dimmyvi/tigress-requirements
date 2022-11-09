@@ -89,9 +89,9 @@ normative:
   CCC-Digital-Key-30:
     author:
       org: Car Connectivity Consortium
-    title: "Digital Key – The Future of Vehicle Access"
-    date: 2021-11
-    target: https://global-carconnectivity.org/wp-content/uploads/2021/11/CCC_Digital_Key_Whitepaper_Approved.pdf
+    title: "Digital Key RELEASE 3"
+    date: 2022-07
+    target: https://carconnectivity.org/download-digital-key-3-specification/
 
 informative:
 
