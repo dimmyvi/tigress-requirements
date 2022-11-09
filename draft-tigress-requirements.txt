@@ -264,8 +264,10 @@ Table of Contents
       multiple reads/writes between one set of Sender and Receiver
       devices.
 
-   *  (Req-Preview) Solution SHOULD allow for extensibility and
-      discoverable extensions (preview of share invitation).
+   *  (Req-Preview) Solution SHOULD alow for the receiver to show a
+      preview of the invite before begining provisioning.  To support
+      this the receiver should be able to read a title, subtitle and
+      image in the clear.
 
 7.1.  Intermediary server requirments
 
