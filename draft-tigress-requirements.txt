@@ -362,10 +362,9 @@ Table of Contents
 12.  Normative References
 
    [CCC-Digital-Key-30]
-              Car Connectivity Consortium, "Digital Key – The Future of
-              Vehicle Access", November 2021, <https://global-
-              carconnectivity.org/wp-content/uploads/2021/11/
-              CCC_Digital_Key_Whitepaper_Approved.pdf>.
+              Car Connectivity Consortium, "Digital Key RELEASE 3", July
+              2022, <https://carconnectivity.org/download-digital-key-
+              3-specification/>.
 
    [RFC2078]  Linn, J., "Generic Security Service Application Program
               Interface, Version 2", RFC 2078, DOI 10.17487/RFC2078,
