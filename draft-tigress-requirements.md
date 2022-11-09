@@ -65,7 +65,7 @@ author:
 
 
 normative:
-  Tigress-00:
+  Tigress-01:
     author:
     -
       ins: D. Vinokurov
@@ -83,13 +83,13 @@ normative:
       ins: N. Sha
       name: Nick Sha
     title: "Transfer Digital Credentials Securely"
-    date: 2022-09
+    date: 2022-11
     target: https://datatracker.ietf.org/doc/draft-art-tigress/
 
   CCC-Digital-Key-30:
     author:
       org: Car Connectivity Consortium
-    title: "Digital Key RELEASE 3"
+    title: "Digital Key Release 3"
     date: 2022-07
     target: https://carconnectivity.org/download-digital-key-3-specification/
 
@@ -132,7 +132,7 @@ General terms:
 - Sender (device) - a device initiating a transfer of Provisioning Information to a Receiver that can provision this credential.
 - Receiver (device) - a device that receives Provisioning Information and uses it to provision a new credential.
 - Intermediary (server) - an intermediary server that provides a standardized and platform-independent way of transferring provisioning information between Sender and Receiver devices.
-- Digital Wallet - A device, service, and/or software that faciliates transactions either online or in-person via a technology like NFC. Digital Wallet's typically support payments, drivers licenses, loyalty cards, access credentials and more. 
+- Digital Wallet - A device, service, and/or software that faciliates transactions either online or in-person via a technology like NFC. Digital Wallet's typically support payments, drivers licenses, loyalty cards, access credentials and more.
 
 # Use Cases
 
