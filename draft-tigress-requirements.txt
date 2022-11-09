@@ -5,7 +5,7 @@
 TIGRESS                                                     D. Vinokurov
 Internet-Draft                                                  C. Astiz
 Intended status: Informational                              A. Pelletier
-Expires: 11 May 2023                                        J. L. Giraud
+Expires: 13 May 2023                                        J. L. Giraud
                                                              A. Bulgakov
                                                              M. Byington
                                                                Apple Inc
@@ -13,7 +13,7 @@ Expires: 11 May 2023                                        J. L. Giraud
                                                             Alphabet Inc
                                                               M. Gerster
                                                         Mercedes-Benz AG
-                                                         7 November 2022
+                                                         9 November 2022
 
 
           Transfer Digital Credentials Securely - Requirements
@@ -53,7 +53,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 May 2023.
+   This Internet-Draft will expire on 13 May 2023.
 
 Copyright Notice
 
@@ -72,29 +72,65 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction
-   2.  Conventions and Definitions
-   3.  Use Cases
-   4.  Relationships
-   5.  Assumptions
-   6.  Requirements
-     6.1.  Intermediary server requirments
-   7.  Review of existing solutions
-     7.1.  Arbitrary Messaging Channel (Email / WhatsApp / SMS /
+   2.  General Setting
+   3.  Conventions and Definitions
+   4.  Use Cases
+   5.  Relationships
+   6.  Assumptions
+   7.  Requirements
+     7.1.  Intermediary server requirments
+   8.  Review of existing solutions
+     8.1.  Arbitrary Messaging Channel (Email / WhatsApp / SMS /
            Signal / etc.)
-     7.2.  GSS-API, Kerberos
-     7.3.  Signal Protocol
-   8.  Out of Scope
-   9.  Security Considerations
-   10. IANA Considerations
-   11. Normative References
+     8.2.  GSS-API, Kerberos
+     8.3.  Signal Protocol
+   9.  Out of Scope
+   10. Security Considerations
+   11. IANA Considerations
+   12. Normative References
    Acknowledgments
    Authors' Addresses
 
 1.  Introduction
 
-   TODO Introduction
+   Today, there is no widely accepted way of transferring digital
+   credentials securely between two devices belonging to the same
+   platform or two different platforms.  This document describes the
+   problem space and the requirements for the solution the working group
+   creates.
 
-2.  Conventions and Definitions
+   Tigress allows for a sender and receiver device to communicate in
+   order to facilitate a secure credential transfer.  Tigress also
+   specifies certain privacy requirements in order to maintain a high
+   level of user privacy.
+
+2.  General Setting
+
+   When sharing digital secure credentials, there are several actors
+   involved.  While the Tigress working group's solution will focus on
+   sharing information between two devices, potentially through an
+   intermediary server, there are a couple more actors involved.
+
+   The companies that are providing the digital credential are the
+   provisioning partners.  They are in control of the provisioning
+   information and the lifecycle of the credentials.  Each device has a
+   preexisting trust relationship between itself and the Provisioning
+   Partner.
+
+   The interface between the devices and the Provisioning Partner can be
+   proprietary or part of a public standard such as the CCC.  The sender
+   device obtains provisioning information from the provisioning
+   partner, then shares it to the recipient device via Tigress.  The
+   recipient then takes that data and sends it to the Provisioning
+   Partner to redeem a credential.
+
+   For some credential types the Provisioning Partner who mints new
+   credentials is actually the sender device.  In that scenario the
+   receiver will generate new key material at the request of the sender
+   device, and then communicate with the sender device over Tigress to
+   its key material signed by the sender device.
+
+3.  Conventions and Definitions
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
@@ -129,7 +165,7 @@ Table of Contents
       standardized and platform-independent way of transferring
       provisioning information between Sender and Receiver devices.
 
-3.  Use Cases
+4.  Use Cases
 
    *  Let's say Ben owns a vehicle that supports digital keys which
       comply with the CCC [CCC-Digital-Key-30] open standard.  Ben would
@@ -157,7 +193,7 @@ Table of Contents
       key to her device, making a call to Provisioning Partner to
       receive new credential information.
 
-4.  Relationships
+5.  Relationships
 
    mermaid sequenceDiagram actor S as Sender participant I as
    Intermediary actor R as Receiver S ->> I : upload credential data
@@ -165,7 +201,7 @@ Table of Contents
    Provision credential R ->> I : request credential data I ->> R :
    deliver credential data end
 
-5.  Assumptions
+6.  Assumptions
 
    *  Original credential information (with cryptographic key material)
       MUST NOT be sent or shared.  Instead, sender SHALL be transferring
@@ -195,7 +231,7 @@ Table of Contents
    *  Provisioning a credential on the Receiver MAY require multiple
       round trips.
 
-6.  Requirements
+7.  Requirements
 
    *  (Req-Connectivity) Sender and Receiver SHALL be allowed to be
       online at different times.  Sender and Receiver SHALL never need
@@ -231,7 +267,7 @@ Table of Contents
    *  (Req-Preview) Solution SHOULD allow for extensibility and
       discoverable extensions (preview of share invitation).
 
-6.1.  Intermediary server requirments
+7.1.  Intermediary server requirments
 
    If the solution requires an intermediary server, it should have the
    following requirements.
@@ -260,7 +296,7 @@ Table of Contents
       the trustworthiness of the Intermediary using a list of trusted/
       approved intermediaries.
 
-7.  Review of existing solutions
+8.  Review of existing solutions
 
    A number of existing solutions / protocols have been reviewed in
    order to be used for secure credential transfer based on the
@@ -273,7 +309,7 @@ Table of Contents
    standardized mechanism of exchanging access-specific encrypted
    credential information.
 
-7.1.  Arbitrary Messaging Channel (Email / WhatsApp / SMS / Signal /
+8.1.  Arbitrary Messaging Channel (Email / WhatsApp / SMS / Signal /
       etc.)
 
    The Provisioning Information MAY be sent from Sender to Receiver over
@@ -281,7 +317,7 @@ Table of Contents
    but this would not support provisioning flows which require multiple
    round trips as requied by (Req-RoundTrips).
 
-7.2.  GSS-API, Kerberos
+8.2.  GSS-API, Kerberos
 
    GSS-API [RFC2078] and Kerberos [RFC4120] are authentication
    technologies which could be used to authenticate Sender, Receiver and
@@ -293,7 +329,7 @@ Table of Contents
    Intermediary server but it would force all participants to use a
    specific cloud service which is in violation of (Req-AnyPlatorm).
 
-7.3.  Signal Protocol
+8.3.  Signal Protocol
 
    As a messaging protocol, Signal could be used between Sender,
    Receiver and Intermediary but this protocol is fairly complex and its
@@ -301,7 +337,7 @@ Table of Contents
    however support the Signal service for share initiation, in line with
    (Req-init).
 
-8.  Out of Scope
+9.  Out of Scope
 
    *  Identification and Authorization - solution shall not require
       strong identification and authentication from user (e.g. using PKI
@@ -315,15 +351,15 @@ Table of Contents
    *  Detailing how credentials are provisioned either on a device or
       with a provisioning partner.
 
-9.  Security Considerations
+10.  Security Considerations
 
    TODO Security
 
-10.  IANA Considerations
+11.  IANA Considerations
 
    This document has no IANA actions.
 
-11.  Normative References
+12.  Normative References
 
    [CCC-Digital-Key-30]
               Car Connectivity Consortium, "Digital Key – The Future of
