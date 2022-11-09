@@ -115,7 +115,7 @@ When sharing digital secure credentials, there are several actors involved. Whil
 
 The companies that are providing the digital credential are the provisioning partners. They are in control of the provisioning information and the lifecycle of the credentials. Each device has a preexisting trust relationship between itself and the Provisioning Partner.
 
-The interface between the devices and the Provisioning Partner can be proprietary or part of a public standard such as the CCC. The sender device obtains provisioning information from the provisioning partner, then shares it to the recipient device via Tigress. The recipient then takes that data and sends it to the Provisioning Partner to redeem a credential.
+The interface between the devices and the Provisioning Partner can be proprietary or part of published specifications such as the {{CCC-Digital-Key-30}}. The sender device obtains provisioning information from the provisioning partner, then shares it to the recipient device via Tigress. The recipient then takes that data and sends it to the Provisioning Partner to redeem a credential.
 
 For some credential types the Provisioning Partner who mints new credentials is actually the sender device. In that scenario the receiver will generate new key material at the request of the sender device, and then communicate with the sender device over Tigress to its key material signed by the sender device.
 
@@ -135,7 +135,7 @@ General terms:
 
 # Use Cases
 
-- Let's say Ben owns a vehicle that supports digital keys which comply with the CCC {{CCC-Digital-Key-30}} open standard. Ben would like to let Ryan borrow the car for the weekend. Ryan and Ben are using two different mobile phones with different operating systems. In order for Ben to share his car key to Ryan for a weekend, he must transfer some data to the receiver device. The data structure shared between the two participants is defined in the CCC. In addition, the CCC requires the receiver to generate required key material and return it to the sender to sign and return back to the receiver. At this point, the receiver now has a token that will allow them to provision their new key with the car.
+- Let's say Ben owns a vehicle that supports digital keys which comply with the CCC specification {{CCC-Digital-Key-30}} . Ben would like to let Ryan borrow the car for the weekend. Ryan and Ben are using two different mobile phones with different operating systems. In order for Ben to share his car key to Ryan for a weekend, he must transfer some data to the receiver device. The data structure shared between the two participants is defined in the {{CCC-Digital-Key-30}} . In addition, the {{CCC-Digital-Key-30}}  requires the receiver to generate required key material and return it to the sender to sign and return back to the receiver. At this point, the receiver now has a token that will allow them to provision their new key with the car.
 
 - Bob booked a room at a hotel for the weekend, but will be arriving late at night. Alice, his partner, comes to the hotel first, so Bob wants to share his key to the room with Alice. Bob and Alice are using two different mobile phones with different operating systems. In order for Bob to share his key to the hotel to Alice for a weekend, he must transfer some data to her device. The data structure shared between the two participants is proprietary to the given hotel chain (or Provisioning Partner). This data transfer is a one-time, unidirectional from Bob’s device to Alice’s. Once Alice receives this data, she can provision a new key to her device, making a call to Provisioning Partner to receive new credential information.
 
@@ -176,7 +176,7 @@ sequenceDiagram
 - (Req-P2P) A goal of credential transfer covered in this document SHALL include transfer from one device to another (group sharing SHALL not be a goal).
 - (Req-Security) Solution SHOULD provide security of the provisioning data transferred (confidentiality, integrity and availability).
 - (Req-Revoke) Solution SHALL maintain access control, allowing Sender to revoke before the share has been accepted, and for Receiver to end transfer at any time.
-- (Req-ArbitraryFormat) The solution SHALL support arbitrary message formats to support both keys that implement public standards like CCC as well as proprietary implementations of digital keys.
+- (Req-ArbitraryFormat) The solution SHALL support arbitrary message formats to support both keys that implement published specifications like {{CCC-Digital-Key-30}} as well as proprietary implementations of digital keys.
 - (Req-UnderstoodFormat) Both Sender application and Receiver application MUST be able to recognize the format.
 - (Req-RoundTrips) Solution SHALL allow for multiple round trips or multiple reads/writes between one set of Sender and Receiver devices.
 - (Req-Preview) Solution SHOULD allow for extensibility and discoverable extensions (preview of share invitation).
