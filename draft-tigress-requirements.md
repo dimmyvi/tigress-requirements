@@ -107,15 +107,17 @@ This document describes the use cases necessitating the secure transfer of digit
 
 Today, there is no widely accepted way of transferring digital credentials securely between two devices belonging to the same platform or two different platforms. This document describes the problem space and the requirements for the solution the working group creates.
 
+Tigress allows for a sender and receiver device to communicate in order to facilitate a secure credential transfer. Tigress also specifies certain privacy requirements in order to maintain a high level of user privacy.
+
 # General Setting
 
-When sharing digital secure credentials, there are several actors involved. While the Tigress working group's solution will focus on sharing information between two devices, potentially through an interemediary server, there are a couple more actors involved.
+When sharing digital secure credentials, there are several actors involved. While the Tigress working group's solution will focus on sharing information between two devices, potentially through an intermediary server, there are a couple more actors involved.
 
 The companies that are providing the digital credential are the provisioning partners. They are in control of the provisioning information and the lifecycle of the credentials. Each device has a preexisting trust relationship between itself and the Provisioning Partner.
 
-Tigress allows for a connection between devices so the devices can exchange provisioning information. This provisioning information is then passed to the Device OEM and then the provisioning partner using exisiting rails. The interfaces between Device OEM and Provisioning Partner can be proprietary or part of a public standard such as the CCC. The sender device obtains provisioning information, either from the provisioning partner or by creating it on device, then shares it to the recipient device. The recipient then takes that data and sends it to the Device OEM server and the provisioning partner.
+The interface between the devices and the Provisioning Partner can be proprietary or part of a public standard such as the CCC. The sender device obtains provisioning information from the provisioning partner, then shares it to the recipient device via Tigress. The recipient then takes that data and sends it to the Provisioning Partner to redeem a credential.
 
-By having the devices communicate provisioning information to eachother, we achieve a couple goals. First, this negates the need for either device to connect directly to a provisioning partner. Devices need only connect with their OEM server rather than the N supported provisioning partners. In addition, this abstracts a user or user device from knowing if a credential is supported on the recipient device. Senders only have to send some information over to the receiver and the receiver's device handles everything else. Lastly, in combination with the requirements below, the solution the working group creates will protect user's privacy and avoid any entity except the users and provisioning partners from knowing who has shared with whom.
+For some credential types the Provisioning Partner who mints new credentials is actually the sender device. In that scenario the receiver will generate new key material at the request of the sender device, and then communicate with the sender device over Tigress to its key material signed by the sender device.
 
 # Conventions and Definitions
 
