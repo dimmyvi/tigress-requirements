@@ -203,7 +203,6 @@ The Provisioning Information MAY be sent from Sender to Receiver over an arbitra
 GSS-API {{!RFC2078}} and Kerberos {{!RFC4120}} are authentication technologies which could be used to authenticate Sender, Receiver and intermediary. However, as they provide strong authentication, they would allow the Intermediary server to build a social graph in violation of (Req-Privacy). Their setup also require strong coordination between the actors of the system which seems overly costly for the intended system.
 AWS S3 could be used as an Intermediary server but it would force all participants to use a specific cloud service which is in violation of (Req-AnyPlatorm).
 
-
 # Out of Scope
 - Identification and Authorization - solution shall not require strong identification and authentication from user (e.g. using PKI certificates).
 - Fully stopping people from sharing malicious content ("cat pictures").
