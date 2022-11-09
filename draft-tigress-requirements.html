@@ -1201,9 +1201,6 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.2">
                 <p id="section-toc.1-1.8.2.2.1"><a href="#section-8.2" class="auto internal xref">8.2</a>.  <a href="#name-gss-api-kerberos" class="internal xref">GSS-API, Kerberos</a></p>
 </li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.3">
-                <p id="section-toc.1-1.8.2.3.1"><a href="#section-8.3" class="auto internal xref">8.3</a>.  <a href="#name-signal-protocol" class="internal xref">Signal Protocol</a></p>
-</li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
@@ -1393,7 +1390,7 @@ sequenceDiagram
         <h3 id="name-arbitrary-messaging-channel">
 <a href="#section-8.1" class="section-number selfRef">8.1. </a><a href="#name-arbitrary-messaging-channel" class="section-name selfRef">Arbitrary Messaging Channel (Email / WhatsApp / SMS / Signal / etc.)</a>
         </h3>
-<p id="section-8.1-1">The Provisioning Information <span class="bcp14">MAY</span> be sent from Sender to Receiver over an arbitrary messaging channel that supports binary file transfer, but this would not support provisioning flows which require multiple round trips as requied by (Req-RoundTrips).<a href="#section-8.1-1" class="pilcrow">¶</a></p>
+<p id="section-8.1-1">The Provisioning Information <span class="bcp14">MAY</span> be sent from Sender to Receiver over an arbitrary messaging channel that supports binary file transfer, but this would not support provisioning flows which require multiple round trips as requied by (Req-RoundTrips). The same requirement applies to Signal protocol outside of the Signal app, as the Req-RoundTrips would likely be difficult and add a lot of friction for the user.<a href="#section-8.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="gss-api-kerberos">
@@ -1403,15 +1400,6 @@ sequenceDiagram
         </h3>
 <p id="section-8.2-1">GSS-API <span>[<a href="#RFC2078" class="cite xref">RFC2078</a>]</span> and Kerberos <span>[<a href="#RFC4120" class="cite xref">RFC4120</a>]</span> are authentication technologies which could be used to authenticate Sender, Receiver and intermediary. However, as they provide strong authentication, they would allow the Intermediary server to build a social graph in violation of (Req-Privacy). Their setup also require strong coordination between the actors of the system which seems overly costly for the intended system.
 AWS S3 could be used as an Intermediary server but it would force all participants to use a specific cloud service which is in violation of (Req-AnyPlatorm).<a href="#section-8.2-1" class="pilcrow">¶</a></p>
-</section>
-</div>
-<div id="signal-protocol">
-<section id="section-8.3">
-        <h3 id="name-signal-protocol">
-<a href="#section-8.3" class="section-number selfRef">8.3. </a><a href="#name-signal-protocol" class="section-name selfRef">Signal Protocol</a>
-        </h3>
-<p id="section-8.3-1">As a messaging protocol, Signal could be used between Sender, Receiver and Intermediary but this protocol is fairly complex and its use would most like violate (Req-Simplicity).
-The system will however support the Signal service for share initiation, in line with (Req-init).<a href="#section-8.3-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>

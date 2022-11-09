@@ -83,7 +83,6 @@ Table of Contents
      8.1.  Arbitrary Messaging Channel (Email / WhatsApp / SMS /
            Signal / etc.)
      8.2.  GSS-API, Kerberos
-     8.3.  Signal Protocol
    9.  Out of Scope
    10. Security Considerations
    11. IANA Considerations
@@ -316,7 +315,10 @@ Table of Contents
    The Provisioning Information MAY be sent from Sender to Receiver over
    an arbitrary messaging channel that supports binary file transfer,
    but this would not support provisioning flows which require multiple
-   round trips as requied by (Req-RoundTrips).
+   round trips as requied by (Req-RoundTrips).  The same requirement
+   applies to Signal protocol outside of the Signal app, as the Req-
+   RoundTrips would likely be difficult and add a lot of friction for
+   the user.
 
 8.2.  GSS-API, Kerberos
 
@@ -329,14 +331,6 @@ Table of Contents
    costly for the intended system.  AWS S3 could be used as an
    Intermediary server but it would force all participants to use a
    specific cloud service which is in violation of (Req-AnyPlatorm).
-
-8.3.  Signal Protocol
-
-   As a messaging protocol, Signal could be used between Sender,
-   Receiver and Intermediary but this protocol is fairly complex and its
-   use would most like violate (Req-Simplicity).  The system will
-   however support the Signal service for share initiation, in line with
-   (Req-init).
 
 9.  Out of Scope
 
