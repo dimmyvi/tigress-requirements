@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-11-10T02:13:42.353397+00:00",
+  "timestamp": "2022-11-13T02:06:56.655981+00:00",
   "repo": "dimmyvi/tigress-requirements",
   "labels": [
     {
@@ -131,7 +131,7 @@
       "labels": [],
       "body": "> (Req-Security) Solution SHOULD provide security of the provisioning data transferred (MITM, brute-force attacks on the content, DDOS attacks etc).\r\n\r\nIt is unclear to me what this requirement is trying to say. What are the threats we're trying to protect against?",
       "createdAt": "2022-10-14T17:53:15Z",
-      "updatedAt": "2022-11-04T20:54:11Z",
+      "updatedAt": "2022-11-10T16:33:04Z",
       "closedAt": null,
       "comments": [
         {
@@ -182,6 +182,20 @@
           "body": "Hi Brad, I finished updating the threat model document, planning to publish it tomorrow (5 November) on Datatracker.\r\nIf you could review and provide feedback, I'd very much appreciate it",
           "createdAt": "2022-11-04T20:54:11Z",
           "updatedAt": "2022-11-04T20:54:11Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "Sample solution and threat modeling document has been published on Datatracker. \r\nlink is here: https://datatracker.ietf.org/doc/draft-tigress-sample-implementation/01/\r\nI f noone objects, we can close this issue..",
+          "createdAt": "2022-11-10T14:31:27Z",
+          "updatedAt": "2022-11-10T14:31:27Z"
+        },
+        {
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I don't think publishing the security model resolves this, but it is an important step in getting a shared understanding of the security requirements such that they can be described accurately in this doc.\r\n\r\nApologies for not being able to review the security model yet, it is on my to-do list.",
+          "createdAt": "2022-11-10T16:33:03Z",
+          "updatedAt": "2022-11-10T16:33:03Z"
         }
       ]
     },
@@ -312,15 +326,15 @@
       "id": "I_kwDOH6qLrM5VQAfL",
       "title": "what is the relationship between previews and extensions ",
       "url": "https://github.com/dimmyvi/tigress-requirements/issues/16",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "bslassey",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "> (Req-Preview) Solution SHOULD allow for extensibility and discoverable extensions (preview of share invitation).\r\n\r\nWhat do extensions have to do with a preview?",
       "createdAt": "2022-10-31T18:02:46Z",
-      "updatedAt": "2022-11-08T21:54:42Z",
-      "closedAt": null,
+      "updatedAt": "2022-11-10T16:29:31Z",
+      "closedAt": "2022-11-10T16:29:31Z",
       "comments": [
         {
           "author": "dimmyvi",
@@ -405,6 +419,13 @@
           "body": "Sure thing!",
           "createdAt": "2022-11-08T21:54:42Z",
           "updatedAt": "2022-11-08T21:54:42Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "Should we close the issue - as it is resolved with the PR above?",
+          "createdAt": "2022-11-10T14:28:56Z",
+          "updatedAt": "2022-11-10T14:28:56Z"
         }
       ]
     },
@@ -548,7 +569,7 @@
       "labels": [],
       "body": "This question was asked at IETF 114 and should be addressed in the [Review of existing solutions](https://github.com/dimmyvi/tigress-requirements/blob/main/draft-tigress-requirements.md#review-of-existing-solutions)\r\n",
       "createdAt": "2022-11-02T15:12:02Z",
-      "updatedAt": "2022-11-08T19:26:41Z",
+      "updatedAt": "2022-11-10T14:25:11Z",
       "closedAt": null,
       "comments": [
         {
@@ -627,6 +648,13 @@
           "body": "> But, at a higher level, for this document we're describing the requirements and why various existing technology doesn't meet them. From everything I've read here so far, WebDAV is a perfectly valid option.\r\n\r\nI think this last sentence is the main point. It seems to me that this document should largely stick to the requirements for what the system needs and not why they can't be met with existing technologies.",
           "createdAt": "2022-11-08T19:26:21Z",
           "updatedAt": "2022-11-08T19:26:41Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "I can agree with the statement, that requirements should stick to what the system needs. Bringing it to review with the community is certainly more coming for an advice, not dictating the technology to solve the problem.\r\nIf someone makes an effort to propose an implementation involving other technologies than we proposed in Tigress, that better align with the requirements, this certainly should be reviewed and considered.",
+          "createdAt": "2022-11-10T14:25:11Z",
+          "updatedAt": "2022-11-10T14:25:11Z"
         }
       ]
     },
@@ -642,7 +670,7 @@
       "labels": [],
       "body": "https://github.com/dimmyvi/tigress-requirements/blob/main/draft-tigress-requirements.md#signal-protocol",
       "createdAt": "2022-11-02T15:26:13Z",
-      "updatedAt": "2022-11-07T17:58:11Z",
+      "updatedAt": "2022-11-10T14:16:58Z",
       "closedAt": null,
       "comments": [
         {
@@ -679,6 +707,13 @@
           "body": "We can remove it from its own section if that would be better? And include it in the messaging app section.",
           "createdAt": "2022-11-07T17:58:11Z",
           "updatedAt": "2022-11-07T17:58:11Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "With the latest change in the requirements draft, are we ok to close this issue?",
+          "createdAt": "2022-11-10T14:16:58Z",
+          "updatedAt": "2022-11-10T14:16:58Z"
         }
       ]
     }
@@ -2717,6 +2752,72 @@
               "updatedAt": "2022-11-09T15:04:16Z"
             }
           ]
+        }
+      ]
+    },
+    {
+      "number": 32,
+      "id": "PR_kwDOH6qLrM5CnUmP",
+      "title": "Update draft-tigress-requirements.md",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/32",
+      "state": "OPEN",
+      "author": "bleventh",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-11-10T12:02:32Z",
+      "updatedAt": "2022-11-10T18:50:03Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "1061696c56d28d264dcefedaf49ea23e919c245d",
+      "headRepository": "bleventh/tigress-requirements",
+      "headRefName": "patch-2",
+      "headRefOid": "878fa9202b09819fe6de3fe78528a1fa33f02767",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOH6qLrM5GElSV",
+          "commit": {
+            "abbreviatedOid": "878fa92"
+          },
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-11-10T12:05:38Z",
+          "updatedAt": "2022-11-10T12:05:38Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5GFktS",
+          "commit": {
+            "abbreviatedOid": "878fa92"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-11-10T14:18:19Z",
+          "updatedAt": "2022-11-10T14:18:19Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5GHT9t",
+          "commit": {
+            "abbreviatedOid": "878fa92"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-11-10T18:50:03Z",
+          "updatedAt": "2022-11-10T18:50:03Z",
+          "comments": []
         }
       ]
     }
