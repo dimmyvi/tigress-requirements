@@ -5,7 +5,7 @@
 TIGRESS                                                     D. Vinokurov
 Internet-Draft                                                  C. Astiz
 Intended status: Informational                              A. Pelletier
-Expires: 13 May 2023                                        J. L. Giraud
+Expires: 11 June 2023                                       J. L. Giraud
                                                              A. Bulgakov
                                                              M. Byington
                                                                Apple Inc
@@ -13,7 +13,7 @@ Expires: 13 May 2023                                        J. L. Giraud
                                                             Alphabet Inc
                                                               M. Gerster
                                                         Mercedes-Benz AG
-                                                         9 November 2022
+                                                         8 December 2022
 
 
           Transfer Digital Credentials Securely - Requirements
@@ -53,7 +53,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 May 2023.
+   This Internet-Draft will expire on 11 June 2023.
 
 Copyright Notice
 
@@ -208,12 +208,13 @@ Table of Contents
 
 6.  Assumptions
 
-   *  Original credential information (with cryptographic key material)
-      MUST NOT be sent or shared.  Instead, sender SHALL be transferring
-      its approval token for Receiver to acquire new credential
-      information.
+   *  User may not have the ability to revoke a credential that a
+      Provisioning Partner has issued
 
-   *  Provisioning Partner SHALL NOT allow for two users to use the same
+   *  User may not have the ability to create new digital keys without
+      Provisioning Partner interaction
+
+   *  Provisioning Partner may not allow for two users to use the same
       credential / cryptographic keys.
 
    *  Security: Communication between Sender / Receiver and Provisioning
