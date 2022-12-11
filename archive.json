@@ -1,0 +1,2827 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2022-12-11T01:51:21.011330+00:00",
+  "repo": "dimmyvi/tigress-requirements",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [
+    {
+      "number": 7,
+      "id": "I_kwDOH6qLrM5UBc7K",
+      "title": "Why should the user not be able to see the data if they want to?",
+      "url": "https://github.com/dimmyvi/tigress-requirements/issues/7",
+      "state": "CLOSED",
+      "author": "bslassey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "> This data SHOULD never be visible to said user in whichever messaging application the sender chose to initiate the transfer on. This eliminates the possibility of merely sending the requisite data inline, through an SMS or email for example, rather than leveraging an Intermediary server.\r\n\r\nWhy should the user not be able to see the data if they want to?",
+      "createdAt": "2022-10-14T17:48:24Z",
+      "updatedAt": "2022-10-31T20:55:40Z",
+      "closedAt": "2022-10-31T20:55:40Z",
+      "comments": [
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "here we tried to say that the provisioning data itself won't be sent over whatever email/messaging app uses choses. This data will be temporary stored on Relay server and the link to the content stored there will be sent over SMS/email etc. Did not realize it was unclear from this sentence...",
+          "createdAt": "2022-10-17T20:50:25Z",
+          "updatedAt": "2022-10-17T20:51:03Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "ack",
+          "createdAt": "2022-10-26T17:11:42Z",
+          "updatedAt": "2022-10-26T17:11:42Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "Per  #11 we agreed to dismiss the requirement of separation of provisioning information and URL link",
+          "createdAt": "2022-10-31T20:55:36Z",
+          "updatedAt": "2022-10-31T20:55:36Z"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "id": "I_kwDOH6qLrM5UBdbq",
+      "title": "Is disallowing group sharing a goal?",
+      "url": "https://github.com/dimmyvi/tigress-requirements/issues/8",
+      "state": "CLOSED",
+      "author": "bslassey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "> (Req-P2P) A credential transfer SHALL be strictly from one device to another (group sharing is not a goal).\r\nThere is a difference between group sharing not being a goal and it being a goal to not allow group sharing. As I read this line it says the latter thing first and the former thing second. Which is intended?",
+      "createdAt": "2022-10-14T17:50:55Z",
+      "updatedAt": "2022-10-24T16:30:54Z",
+      "closedAt": "2022-10-24T16:30:53Z",
+      "comments": [
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "eh, it's the former, we wanted to limit the scope to just peer-to-peer sharing (even though this may be a base for B2P in the future). Agree, this needs to be adjusted for clarity",
+          "createdAt": "2022-10-17T20:48:07Z",
+          "updatedAt": "2022-10-17T20:48:07Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "Hope that https://github.com/dimmyvi/tigress-requirements/pull/10 has addressed this issue",
+          "createdAt": "2022-10-24T16:30:53Z",
+          "updatedAt": "2022-10-24T16:30:53Z"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "id": "I_kwDOH6qLrM5UBd8O",
+      "title": "Req-security is unclear",
+      "url": "https://github.com/dimmyvi/tigress-requirements/issues/9",
+      "state": "OPEN",
+      "author": "bslassey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "> (Req-Security) Solution SHOULD provide security of the provisioning data transferred (MITM, brute-force attacks on the content, DDOS attacks etc).\r\n\r\nIt is unclear to me what this requirement is trying to say. What are the threats we're trying to protect against?",
+      "createdAt": "2022-10-14T17:53:15Z",
+      "updatedAt": "2022-11-10T16:33:04Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "Protect content in transit on relay server - confidentiality (encrypt content stored on relay), integrity (impersonation attacks by storing malicious content - protect by device attestation at the time of creation) and availability - introduce measures against denial of service - protect the webapp on the network level. ",
+          "createdAt": "2022-10-17T20:44:44Z",
+          "updatedAt": "2022-10-17T20:44:44Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "This may came a bit vague, if you could suggest a better wording, it would be very much appreciated!",
+          "createdAt": "2022-10-17T20:46:01Z",
+          "updatedAt": "2022-10-17T20:46:01Z"
+        },
+        {
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@dimmyvi do you have a threat model document that we can work off of here?",
+          "createdAt": "2022-10-31T17:41:55Z",
+          "updatedAt": "2022-10-31T17:41:55Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "Yes, we have a review tomorrow with security team and will publish it - probably in a day. Will add a link to it here. Do you feel it needs to be a separate document or shall it be appended to the requirement draft?",
+          "createdAt": "2022-10-31T20:52:36Z",
+          "updatedAt": "2022-10-31T20:53:29Z"
+        },
+        {
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Thanks, I look forward to reading it.",
+          "createdAt": "2022-11-01T14:56:41Z",
+          "updatedAt": "2022-11-01T14:56:41Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "We added a threat model draft, still adding content to it: https://github.com/dimmyvi/tigress-sample-implementation/blob/main/draft-tigress-sample-implementation.md",
+          "createdAt": "2022-11-02T16:11:14Z",
+          "updatedAt": "2022-11-02T16:11:38Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "Hi Brad, I finished updating the threat model document, planning to publish it tomorrow (5 November) on Datatracker.\r\nIf you could review and provide feedback, I'd very much appreciate it",
+          "createdAt": "2022-11-04T20:54:11Z",
+          "updatedAt": "2022-11-04T20:54:11Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "Sample solution and threat modeling document has been published on Datatracker. \r\nlink is here: https://datatracker.ietf.org/doc/draft-tigress-sample-implementation/01/\r\nI f noone objects, we can close this issue..",
+          "createdAt": "2022-11-10T14:31:27Z",
+          "updatedAt": "2022-11-10T14:31:27Z"
+        },
+        {
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I don't think publishing the security model resolves this, but it is an important step in getting a shared understanding of the security requirements such that they can be described accurately in this doc.\r\n\r\nApologies for not being able to review the security model yet, it is on my to-do list.",
+          "createdAt": "2022-11-10T16:33:03Z",
+          "updatedAt": "2022-11-10T16:33:03Z"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "id": "I_kwDOH6qLrM5Uc3Ip",
+      "title": "Suggestion: focus on sharing via link rather than via a messaging app",
+      "url": "https://github.com/dimmyvi/tigress-requirements/issues/11",
+      "state": "CLOSED",
+      "author": "bslassey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "When discussing with @nicksha we made the observation that the _real_ goal that folks have in mind is the ability to share credentials with link (which can then be sent via a messaging application). By framing this as specifying the ability to send a key via a messaging application, we invite a lot of questions around why we're using a helper server and a link rather than the messaging services ability to transmit arbitrary blobs of data. ",
+      "createdAt": "2022-10-20T15:38:15Z",
+      "updatedAt": "2022-10-31T20:47:09Z",
+      "closedAt": "2022-10-31T20:47:09Z",
+      "comments": [
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "That's a very precise observation. \r\nI think the main idea behind separation of the share link and credential data is two-fold - \r\n1) We wanted to be able to use variety of regular comms  channels  to pass the link between sender and receiver devices - for simpler user experience\r\n2) Wanted to separate sensitive data - encrypted provisioning info (temporarily stored on intermediate server) and secret that can be passed along with shareURL that allows to decrypt the data. Plus we wanted to avoid additional preliminary secure channel establishment between sender and receiver devices that would be required in case of pure messaging protocols (e.g. Signal or WhatsApp)",
+          "createdAt": "2022-10-20T17:07:17Z",
+          "updatedAt": "2022-10-20T17:07:17Z"
+        },
+        {
+          "author": "nicksha",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I think @bslassey's suggestion here is to frame our goal as the ability to share credentials via link rather than sharing credentials over any messaging application.  \r\n\r\nWith sharing via link, it clarify the mental model of how this credential sharing works, and it's implicit that any messaging channel can be used. This may help persuade those caught up in wanting to send data blobs over messaging services as to the simplicity of sharing via a link.\r\n\r\n",
+          "createdAt": "2022-10-20T21:05:46Z",
+          "updatedAt": "2022-10-20T21:05:46Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "Got it, thanks Nick. I will try to frame this idea into text in the draft",
+          "createdAt": "2022-10-20T23:38:19Z",
+          "updatedAt": "2022-10-20T23:38:19Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "Updated https://github.com/dimmyvi/tigress-requirements/pull/10 with this.",
+          "createdAt": "2022-10-20T23:50:10Z",
+          "updatedAt": "2022-10-20T23:50:10Z"
+        },
+        {
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@bslassey I think sharing a url is our goal with our existing draft in mind, but I think that requirement is a bit specific for these general requirements. There could be a valid solution that is file extension based (i.e. a new `.invite` mime type) instead of url based. I agree that a url based solution is best, but I think we should describe why a url based solution is needed with abstract requirements.",
+          "createdAt": "2022-10-25T20:35:37Z",
+          "updatedAt": "2022-10-25T20:35:37Z"
+        },
+        {
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> @bslassey I think sharing a url is our goal with our existing draft in mind, but I think that requirement is a bit specific for these general requirements. There could be a valid solution that is file extension based (i.e. a new `.invite` mime type) instead of url based. I agree that a url based solution is best, but I think we should describe why a url based solution is needed with abstract requirements.\r\n\r\nI agree that sending binary data is an entirely plausible solution that has some nice benefits. However, I read these requirements as having selected the url-based approach and elevating some side benefits of that approach to requirements to necessitate that being the only viable solution. For example:\r\n\r\n```\r\n(Req-SmoothUX) Solution SHALL allow for user experience where neither Sender nor Receiver is presented with\r\nraw data required only by the secure transfer protocol. The data SHOULD only be parsed programmatically and\r\nnot required to be presented to the end user. This data SHOULD never be visible to said user in whichever\r\nmessaging application the sender chose to initiate the transfer on. This eliminates the possibility of\r\nmerely sending the requisite data inline, through an SMS or email for example, rather than leveraging an\r\nintermediary server.\r\n```\r\n\r\nThis requirement seems to rule out anything besides a url-based solution. If this is the direction we want to go, then we should be clear about the intentions. If we are open to other solutions then we should scope these requirements to things that really are required and perhaps have a separate discussion of nice-to-haves.",
+          "createdAt": "2022-10-25T21:15:55Z",
+          "updatedAt": "2022-10-25T21:18:58Z"
+        },
+        {
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I agree that the \"(Req-SmoothUX)\" requirement, and others, probably rule out anything other than a url-based solution. But  I don't think that because other requirements force this design it is in its own right a requirement. Similarly, \"(Req-Connectivity)\" probably necessitates an intermediary server, but that doesn't mean we should have a requirement for an intermediary server.\r\n\r\nOr, do you think we should include \"derived requirements\" maybe in a new sub section?",
+          "createdAt": "2022-10-25T23:24:38Z",
+          "updatedAt": "2022-10-25T23:24:38Z"
+        },
+        {
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I think \"we should be able to have a smooth UX\" is an entirely unobjectionable notion, but as it pertains to requirements its very subjective and can't be defined in such a way that offers an indisputable yes or no answer. As such, I think it is more of a consideration or evaluation criteria we may want to document and not a requirement.\r\n\r\nGetting beyond the initial notion of `Solution SHALL allow for user experience `  you can see that the additional details in the requirement have nothing to do with the protocol. For example, I could write a messaging app that fetches the raw data from the URL and presents that to the user. Conversely if we sent the data in binary form I could (and would presumably) present UX to the user about accepting a key and never show them the raw data. IMO these are entirely decisions for messaging apps to make that have very little to do with the underlying protocol and thus don't belong in this document. \r\n\r\nAll that said, this is probably a discussion better had in issue #7. My suggestion here is that if the authors are actually very committed to the URL approach, we should say that rather than work backwards from that and right the requirements to fit it. ",
+          "createdAt": "2022-10-26T14:55:37Z",
+          "updatedAt": "2022-10-26T14:55:37Z"
+        },
+        {
+          "author": "tfpauly",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I agree that the UX requirement is very hard to understand as a real requirement, and should not be in the formal list. It can be a guiding principle mentioned in text, but isn't about the actual protocol.",
+          "createdAt": "2022-10-26T15:54:22Z",
+          "updatedAt": "2022-10-26T15:54:22Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "I think that the intend is to present TIGRESS not as just a protocol, but rather \"a combination of communication protocol, defined roles and relations between actors, recommendations to implementors, security rules and guidelines.\" If we define it so, then UI and UX become valid requirements, don't you think so?\r\n",
+          "createdAt": "2022-10-26T17:14:14Z",
+          "updatedAt": "2022-10-26T17:15:28Z"
+        },
+        {
+          "author": "tfpauly",
+          "authorAssociation": "COLLABORATOR",
+          "body": "No, I don't think that the UX (or the cross-platform, since _every_ standard protocol must be cross-platform) aspects are protocol requirements. The point of this requirements list is to help people figure out what the right shape of the protocol is. Having a good UX is up to apps or OSes to deal with. Saying that an app or OS needs to recognize this as a particular content/message type so it can choose the right thing to display would be a better requirement.",
+          "createdAt": "2022-10-26T20:28:14Z",
+          "updatedAt": "2022-10-26T20:28:14Z"
+        },
+        {
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> I think \"we should be able to have a smooth UX\" is an entirely unobjectionable notion, but as it pertains to requirements its very subjective and can't be defined in such a way that offers an indisputable yes or no answer.\r\n\r\nI agree with this. We can work on rewriting the wording so that it isn't objective. Or we could just remove it.\r\n\r\n---\r\n\r\nCan we have a requirement as prescriptive as to say that the solution must use a URL for the invitations? I thought we would need to come up with requirements that described the capabilities that we want, and a URL invite would then meet those required capabilities.",
+          "createdAt": "2022-10-27T19:10:11Z",
+          "updatedAt": "2022-10-27T19:10:11Z"
+        },
+        {
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> Can we have a requirement as prescriptive as to say that the solution must use a URL for the invitations? I thought we would need to come up with requirements that described the capabilities that we want, and a URL invite would then meet those required capabilities.\r\n\r\nI would very much encourage you not to try to write the requirements such that they preclude all other solutions other than a URL-based solution. If your end goal is to have a URL-based solution, then just go ahead and say that and let's have that debate. And that was why I originally filed this issue, to tease out if the authors were trying to preclude all non-URL based solution in these requirements.\r\n\r\nMy prefered approach would be to narrow the requirements down to just the requirements and leave the solution space as open as possible. \r\n\r\n",
+          "createdAt": "2022-10-27T20:01:49Z",
+          "updatedAt": "2022-10-27T20:01:49Z"
+        },
+        {
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> I would very much encourage you not to try to write the requirements such that they preclude all other solutions other than a URL-based solution. If your end goal is to have a URL-based solution, then just go ahead and say that and let's have that debate. And that was why I originally filed this issue, to tease out if the authors were trying to preclude all non-URL based solution in these requirements.\r\n\r\nI think it is important that the authors, me included, are open to other solutions and changes to the draft we originally submitted. I feel like that is the whole point of the working group. We believe that a url invite is the best option, but if there is something else better that we haven't considered that would be worth considering. I worry that if we start defining requirements like \"url invite\" we will accidentally preclude good ideas that we hadn't thought of.\r\n\r\n> My prefered approach would be to narrow the requirements down to just the requirements and leave the solution space as open as possible.\r\n\r\nI think we are saying the same thing, but we've done this in a confusing way with some of our requirements.\r\n\r\nI think we should delete the smooth UX requirement and rely on this existing requirement:\r\n> (Req-RedemptionHandling) Shared Provisioning Information SHOULD route Receiver to redeem Provisioning Information using the designated Credential Management Application (e.g. Wallet).\r\n\r\nWhat we really want is an invitation type that is routable to a specific application or service (i.e. when a user taps a link in a chat app another app or website is opened). Which we can do with a url or a new mime type.",
+          "createdAt": "2022-10-27T21:22:33Z",
+          "updatedAt": "2022-10-27T21:22:33Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "Ok, agree on removing requirement about URL-link",
+          "createdAt": "2022-10-31T20:47:09Z",
+          "updatedAt": "2022-10-31T20:47:09Z"
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "id": "I_kwDOH6qLrM5VQAfL",
+      "title": "what is the relationship between previews and extensions ",
+      "url": "https://github.com/dimmyvi/tigress-requirements/issues/16",
+      "state": "CLOSED",
+      "author": "bslassey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "> (Req-Preview) Solution SHOULD allow for extensibility and discoverable extensions (preview of share invitation).\r\n\r\nWhat do extensions have to do with a preview?",
+      "createdAt": "2022-10-31T18:02:46Z",
+      "updatedAt": "2022-11-10T16:29:31Z",
+      "closedAt": "2022-11-10T16:29:31Z",
+      "comments": [
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": " It's the ability to preview the credential sent via a URL-link (e.g. Opengraph format or similar) and ability to \"forward\" the link to a wallet app (e.g. deep-links mechanism)",
+          "createdAt": "2022-10-31T20:51:02Z",
+          "updatedAt": "2022-10-31T20:51:02Z"
+        },
+        {
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I'm still missing what this has to do with extensions",
+          "createdAt": "2022-11-01T14:19:19Z",
+          "updatedAt": "2022-11-01T14:19:19Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "ok, agree, will rephrase this ",
+          "createdAt": "2022-11-01T16:39:04Z",
+          "updatedAt": "2022-11-01T16:39:04Z"
+        },
+        {
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Separately, in terms of enabling an app to show a preview, is there a way the protocol could prohibit this? In the very least if none of the information is readable, an application can show an icon. Are there requirements or nice-to-haves around this preview?",
+          "createdAt": "2022-11-01T16:53:36Z",
+          "updatedAt": "2022-11-01T16:53:36Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "I think the idea is to use a single URL link in order to 1) read preview information (in some recognizable format) and 2) read secure Provisioning information to redeem it for a credential in a wallet. If solution/protocol does plan for it/ facilitate it, then it shall be in the requirements list. That is our vision. Do you think this a valid argument?",
+          "createdAt": "2022-11-01T20:43:31Z",
+          "updatedAt": "2022-11-01T20:43:31Z"
+        },
+        {
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I think the key thing is to separate the requirements from the solution. What I am hearing is that you want the solution to make available in the initial message format some sort of data such that the receiver can show a preview. Is that correct? If so, what sort of data should be made available?",
+          "createdAt": "2022-11-01T20:57:05Z",
+          "updatedAt": "2022-11-01T20:57:05Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "In a few words - preview should contain data that can describe a pass that being received by a device - before provisioning it - Title, short description, some visuals (i.g image). The format shall be recognizable by most messaging applications - hence, we propose OpenGraph in our implementation. At the same time, for simplicity and best user experience,  separating the transfer of credential info from the message that 1 device sends to another (in a form of URL) we want the same URL to return 1) a Preview in the format that can be recognized by most messaging apps - and automatically generate a preview of the pass, 2) some web-page to be shown in a web-browser (in case when the application does not recognize the format in 1)) , and 3) encrypted provisioning information - recognized by a specialized mobile application that can handle provisioning flow (e.g. wallet) and have implemented existing provisioning protocols integration protocols (e.g. CCC) or integrated with existing Credential Authorities (e.g. Multi-Family homes - Unified Credentials)",
+          "createdAt": "2022-11-08T17:47:32Z",
+          "updatedAt": "2022-11-08T17:55:13Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "We simply don't want to re-invent the provisioning wheel and offer a new provisioning protocol, but maximally reuse existing protocols, applications and device features to solve a particular problem. That's why we so insist on just transfer of credentials, without the actual provisioning part.",
+          "createdAt": "2022-11-08T17:57:21Z",
+          "updatedAt": "2022-11-08T17:57:33Z"
+        },
+        {
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This is the requirements doc, so we need to list the requirements. I don't see how describing the requirements of a preview implies re-inventing the provisioning wheel.",
+          "createdAt": "2022-11-08T18:36:32Z",
+          "updatedAt": "2022-11-08T18:36:32Z"
+        },
+        {
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This is kind of a UX requirement. We want to say the protocol must enable provisioning info preview functionality. What do you think about something like:\r\n\r\n> (Req-Preview) Provisioning Information MUST be preview-able in messaging channels before redemption. This preview SHOULD include a title, subtitle, and image.",
+          "createdAt": "2022-11-08T21:17:53Z",
+          "updatedAt": "2022-11-08T21:17:53Z"
+        },
+        {
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "That's certainly an improvement, can you make a PR for it? ",
+          "createdAt": "2022-11-08T21:42:27Z",
+          "updatedAt": "2022-11-08T21:42:27Z"
+        },
+        {
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Sure thing!",
+          "createdAt": "2022-11-08T21:54:42Z",
+          "updatedAt": "2022-11-08T21:54:42Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "Should we close the issue - as it is resolved with the PR above?",
+          "createdAt": "2022-11-10T14:28:56Z",
+          "updatedAt": "2022-11-10T14:28:56Z"
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "id": "I_kwDOH6qLrM5VQ5fy",
+      "title": "Some requirements describe application best practices",
+      "url": "https://github.com/dimmyvi/tigress-requirements/issues/17",
+      "state": "OPEN",
+      "author": "bslassey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "A few of the requirements specify application behavior or best practices that don't have any bearing on a protocol. Such as:\r\n\r\n> (Req-IntermediaryAttestation) An Intermediary SHALL implement mechanisms to prevent abuse by share initiating device, verifying that the device is in good standing and content generated by the sender device can be trusted by the Intermediary. The trust mechanism could be proprietary or publicly verifiable ( e.g. WebAuthN).\r\n> (Req-ReceiverTrust) The Receiver device SHOULD be able to evaluate the trustworthiness of the Intermediary using a list of trusted/approved intermediaries.\r\n> (Req-RedemptionHandling) Shared Provisioning Information SHOULD route Receiver to redeem Provisioning Information using the designated Credential Management Application (e.g. Wallet).\r\n> ",
+      "createdAt": "2022-10-31T21:01:56Z",
+      "updatedAt": "2022-11-08T21:01:55Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "We are trying to declare here trust relationship between Sender (share initiating device) and Relay (intermediary) server. \r\nIt does not affect the protocol per se,  but it affects the logical flow - who can start the flow, and what device can relay trust to create a mailbox. I believe this is important to this solution and we received multiple questions in IETF 114 to explain this.",
+          "createdAt": "2022-10-31T23:02:38Z",
+          "updatedAt": "2022-10-31T23:02:38Z"
+        },
+        {
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "It sounds like this is just definitional: the party that starts the transaction is the sender. \r\n\r\nAs I understand it, we're also not taking the relay server as a given, so it shouldn't be in the requirements.",
+          "createdAt": "2022-11-01T14:22:20Z",
+          "updatedAt": "2022-11-01T14:22:20Z"
+        },
+        {
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Is this issue good to close? The requirements related to the relay server are now in a section specifically for if an intermediary is required. ",
+          "createdAt": "2022-11-07T16:29:57Z",
+          "updatedAt": "2022-11-07T16:29:57Z"
+        },
+        {
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> Is this issue good to close? The requirements related to the relay server are now in a section specifically for if an intermediary is required.\r\n\r\nNo, that was just a separate formatting change. Best I can tell these requirements shouldn't be in the document as they are effectively saying \"these are good ideas for the implementors to think about\" (which, to be clear is helpful to include in a document defining a protocol) and not requirements that would impact the design of the protocol. As such  I think we should either delete them. Or, if there is some requirement on the protocol that I'm not seeing we should tease that out.",
+          "createdAt": "2022-11-07T18:20:29Z",
+          "updatedAt": "2022-11-07T18:20:29Z"
+        },
+        {
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Got it! Yes, we can work on this set of requirements. We also have an implementation guide now, so it might be worth adding pieces that don't make sense for requirements doc to be in the implementation guide.",
+          "createdAt": "2022-11-07T18:24:41Z",
+          "updatedAt": "2022-11-07T18:24:41Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "Although I agree with the statement that the Relay server should not be a given - and we potentially can remove (Req-IntermediaryAttestation) and (Req-ReceiverTrust) - since they are bound to this particular server, I still feel that (Req-RedemptionHandling) is important to have - if we want to direct the solution to handle provisioning information(passed b/w 2 devices) in an application that can recognize and use it for provisioning. I'm afraid that removing this requirement will require us to either 1) document the format of provisioning information (that will bring in scope a whole multitude of proprietary provisioning protocols) or 2) document the provisioning flow in a protocol, or both. Both will require us to bring into scope the provisioning path with exponential growth of  complexity. We strongly feel that we want to decouple transfer of  provisioning info from provisioning it to a new device, keeping only the transfer in scope - and reusing existing protocols (e.g. CCC) for provisioning - separately from Tigress.",
+          "createdAt": "2022-11-08T17:43:44Z",
+          "updatedAt": "2022-11-08T17:43:44Z"
+        },
+        {
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "(Req-RedemptionHandling) is System and/or app behavior that has nothing to do with the protocol.  I disagree that removing this will result in documenting the provisioning format or protocol and therefore I don't think this expands scope at all.",
+          "createdAt": "2022-11-08T18:25:37Z",
+          "updatedAt": "2022-11-08T18:25:37Z"
+        },
+        {
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> (Req-RedemptionHandling) is System and/or app behavior that has nothing to do with the protocol.\r\n\r\nThis requirement isn't necessarily around app behavior, but more saying that our protocol should allow this type of app behavior.\r\n\r\nI think most of our requirements fall into a similar bucket. Requirements on the protocol to make it usable for the system / app. If we didn't have these types of technical usability requirements then we  could use any established secure messaging protocol.\r\n\r\n--\r\n\r\nI agree our wording is off on these types of requirements, and that we have phased it like an app requirement. What do you think about something like:\r\n> Provisioning Information MUST be able to specify the applications or entities that should handle and facilitate its redemption with the Provisioning Partner.\r\n\r\nThis would be solvable in a litany of ways.\r\n\r\n",
+          "createdAt": "2022-11-08T21:01:55Z",
+          "updatedAt": "2022-11-08T21:01:55Z"
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "id": "I_kwDOH6qLrM5VbjQR",
+      "title": "Is SMS trusted?",
+      "url": "https://github.com/dimmyvi/tigress-requirements/issues/19",
+      "state": "CLOSED",
+      "author": "bslassey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "In the assumptions section \r\n> Security: Communication between Sender / Receiver and Provisioning Partner SHOULD be trusted.\r\n\r\nDo we consider SMS to be trusted? If so, what is the definition of trust that we're working with?",
+      "createdAt": "2022-11-02T14:51:35Z",
+      "updatedAt": "2022-11-02T15:47:06Z",
+      "closedAt": "2022-11-02T14:54:29Z",
+      "comments": [
+        {
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "re-reading, I'm assuming this is saying that the transport between the Provisioning Partner and the Sender and between the Provisioning Partner and the Receiver is trusted, but isn't commenting on the messaging channel between the Sender and Receiver, which answers my question",
+          "createdAt": "2022-11-02T14:54:29Z",
+          "updatedAt": "2022-11-02T14:54:29Z"
+        },
+        {
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Yes, that is correct.",
+          "createdAt": "2022-11-02T15:47:06Z",
+          "updatedAt": "2022-11-02T15:47:06Z"
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "id": "I_kwDOH6qLrM5VboHb",
+      "title": "Arbitrary message channel review needs to be updated",
+      "url": "https://github.com/dimmyvi/tigress-requirements/issues/20",
+      "state": "CLOSED",
+      "author": "bslassey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "In the existing solutions review for [arbitrary message channels](https://github.com/dimmyvi/tigress-requirements/blob/main/draft-tigress-requirements.md#arbitrary-messaging-channel-email--whatsapp--sms--signal--etc)\r\n\r\n> The Provisioning Information MAY be sent from Sender to Receiver over an arbitrary messaging channel, but that would not provide a good user experience. Users MAY need to copy and paste the Provisioning Information, or need a special application to handle some new file type. This violates (Req-SmoothUX). If multiple round trips were required the user would need to manually managing multiple payloads of Provisioning Information. This would be very hard for anyone non technical and greatly limit adoption. This violates (Req-NontechnicalUX).\r\n\r\nFirst, this references the two UX requirements that we removed (and besides that, I don't think it is the case that copy and pasting would be required). The one bit that remains is that provisioning may require multiple round trips. That seems like an assumption that we're making that should be documented and substantiated.",
+      "createdAt": "2022-11-02T15:03:24Z",
+      "updatedAt": "2022-11-07T16:30:41Z",
+      "closedAt": "2022-11-07T16:30:41Z",
+      "comments": [
+        {
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Closing this issue since Brad put up a PR and it has merged.",
+          "createdAt": "2022-11-07T16:30:41Z",
+          "updatedAt": "2022-11-07T16:30:41Z"
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "id": "I_kwDOH6qLrM5Vbr-f",
+      "title": "Why is WebDAV not sufficient",
+      "url": "https://github.com/dimmyvi/tigress-requirements/issues/23",
+      "state": "OPEN",
+      "author": "bslassey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "This question was asked at IETF 114 and should be addressed in the [Review of existing solutions](https://github.com/dimmyvi/tigress-requirements/blob/main/draft-tigress-requirements.md#review-of-existing-solutions)\r\n",
+      "createdAt": "2022-11-02T15:12:02Z",
+      "updatedAt": "2022-11-10T14:25:11Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Looking at the comments, I think @ekr suggested this. Eric, what part of the solution were you envisioning replacing with webDAV? I wasn't sure if you're thinking of replacing the relay server or some other element.",
+          "createdAt": "2022-11-07T18:00:02Z",
+          "updatedAt": "2022-11-07T18:00:02Z"
+        },
+        {
+          "author": "ekr",
+          "authorAssociation": "NONE",
+          "body": "Yes, my question was why the relay server can't simply be a profile of WebDAV. Your main critique of S3 is that it is proprietary, but WebDAV is not.",
+          "createdAt": "2022-11-07T18:02:13Z",
+          "updatedAt": "2022-11-07T18:02:37Z"
+        },
+        {
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "body": "In theory, we could rewrite the solution to use WebDAV. Some of the functionality matches, like the lock & unlock verbs. WebDAV isn\u2019t widely supported by Web Frameworks out of the box so it seems like an extra barrier to entry for implementing a solution and would reduce the number of entities that would adopt a standard. Could you elaborate more on where you see the benefits of adding WebDAV to this solution?",
+          "createdAt": "2022-11-07T18:27:39Z",
+          "updatedAt": "2022-11-07T18:27:39Z"
+        },
+        {
+          "author": "ekr",
+          "authorAssociation": "NONE",
+          "body": "Sure. It provides pre-existing functionality that you would otherwise have to invent.",
+          "createdAt": "2022-11-07T18:29:19Z",
+          "updatedAt": "2022-11-07T18:29:19Z"
+        },
+        {
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "body": "In my opinion, the main reason not to use it is because it is not widely supported by web frameworks. We want to make sure there are limited barriers to entry, and use widely accepted technologies. I'd love to hear other's thoughts here though. @bslassey @nicksha  what do you think? ",
+          "createdAt": "2022-11-08T14:45:42Z",
+          "updatedAt": "2022-11-08T14:45:42Z"
+        },
+        {
+          "author": "ekr",
+          "authorAssociation": "NONE",
+          "body": "What do you mean \"by Web frameworks\"? For instance, which frameworks?",
+          "createdAt": "2022-11-08T15:04:27Z",
+          "updatedAt": "2022-11-08T15:04:27Z"
+        },
+        {
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I have the same question as to what you mean by \"web frameworks\" here. There are certainly many implementations of WebDAV in existence already, so I would be in favor or reusing existing tech rather than inventing new things.",
+          "createdAt": "2022-11-08T16:00:00Z",
+          "updatedAt": "2022-11-08T16:00:00Z"
+        },
+        {
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Sorry maybe I didn't use the best wording. So if we used webDAV instead of an intermediary server, wouldn't both iOS devices and Android (etc) need to support webDAV? I am pretty sure iOS does not already, and based on my limited knowledge it doesn't seem Android does either. I see there are some webDAV apps, but presumably the credential management app would need to use webDAV in some capacity. \r\n\r\nLet me know if you were envisioning something else and I'm not understanding? ",
+          "createdAt": "2022-11-08T16:49:24Z",
+          "updatedAt": "2022-11-08T16:49:24Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "Hi Eric, thanks for clarifying the question. While the solution to the problem can be implemented in a number of ways, including, but not limited to, WebDAV, S3, Signal, etc, we believe that the complexity of implementation for the particular problem that we had, would be much higher if we chose other protocols. We have a problem transferring sensitive credential info between 2 mobile devices, want users of these 2 devices not to be traceable during the exchange, users to have the best and easiest possible experience, transfer to be done just between 2 particular devices. WebDav (or other alternatives fo that matter), will require a some sort of full-fledged web server (such as Apache, Nginx or other similar solution). We don't believe, that implementing a web application with just just 5 HTTP endpoints is heavier, then taking an existing WebDav implementation and updating it to address our requirements. Please feel free to disagree, but the Relay server app, as we propose, can be implemented by 1 developer in just a few weeks (depending on additional tweaks - such as integration with PushNotification servers or validation of WebAuthn) , while setting up an Apache server and extending it's functionality with manual code, just to reuse an existing web server that supports WebDav (half of which functionality we don't really need for our use case) requires a person who has deep knowledge in particular implementation.",
+          "createdAt": "2022-11-08T17:10:32Z",
+          "updatedAt": "2022-11-08T17:23:34Z"
+        },
+        {
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@castiz from some quick google searching, it seems supporting WebDAV with existing Android APIs is relatively strait forward.\r\n\r\n@dimmyvi  I think you overstate the complexity of an implementation using WebDAV. \r\n\r\nBut, at a higher level, for this document we're describing the requirements and why various existing technology doesn't meet them. From everything I've read here so far, WebDAV is a perfectly valid option. ",
+          "createdAt": "2022-11-08T18:09:40Z",
+          "updatedAt": "2022-11-08T18:09:40Z"
+        },
+        {
+          "author": "ekr",
+          "authorAssociation": "NONE",
+          "body": "> But, at a higher level, for this document we're describing the requirements and why various existing technology doesn't meet them. From everything I've read here so far, WebDAV is a perfectly valid option.\r\n\r\nI think this last sentence is the main point. It seems to me that this document should largely stick to the requirements for what the system needs and not why they can't be met with existing technologies.",
+          "createdAt": "2022-11-08T19:26:21Z",
+          "updatedAt": "2022-11-08T19:26:41Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "I can agree with the statement, that requirements should stick to what the system needs. Bringing it to review with the community is certainly more coming for an advice, not dictating the technology to solve the problem.\r\nIf someone makes an effort to propose an implementation involving other technologies than we proposed in Tigress, that better align with the requirements, this certainly should be reviewed and considered.",
+          "createdAt": "2022-11-10T14:25:11Z",
+          "updatedAt": "2022-11-10T14:25:11Z"
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "id": "I_kwDOH6qLrM5VbzFD",
+      "title": "How is Signal different than WhatsApp (or other generic messaging systems)?",
+      "url": "https://github.com/dimmyvi/tigress-requirements/issues/25",
+      "state": "OPEN",
+      "author": "bslassey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "https://github.com/dimmyvi/tigress-requirements/blob/main/draft-tigress-requirements.md#signal-protocol",
+      "createdAt": "2022-11-02T15:26:13Z",
+      "updatedAt": "2022-11-10T14:16:58Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I think in this section we were trying to specify the Signal protocol specifically rather than the Signal App. The Signal App is the same as WhatsApp I believe but using the protocol outside the app is what we were trying to address.",
+          "createdAt": "2022-11-02T17:54:21Z",
+          "updatedAt": "2022-11-02T17:54:21Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "We are just answering questions asked in IETF 114 by Eric Rescorla - he specifically mentioned signal. \r\nYou're right, it does not really matter what protocol can be used as an alternative, it still doesn't satisfy the requirements the way we put it - separation of channels.",
+          "createdAt": "2022-11-04T20:38:58Z",
+          "updatedAt": "2022-11-04T20:40:21Z"
+        },
+        {
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> We are just answering questions asked in IETF 114 by Eric Rescorla - he specifically mentioned signal. You're right, it does not really matter what protocol can be used as an alternative, it still doesn't satisfy the requirements the way we put it - separation of channels.\r\n\r\nI think @ekr also asked about WhatsApp, SMS and others at the mic as well and it is important to be able to answer questions about individual messaging platforms/protocols. But in the document we should be describing the characteristics of a class of solutions. I can't tell from the text right now what is different about Signal such that it is addressed separately from other generic messaging platforms or what characteristics would cause other platforms to be addressed by the same reasoning.",
+          "createdAt": "2022-11-07T17:51:14Z",
+          "updatedAt": "2022-11-07T17:51:14Z"
+        },
+        {
+          "author": "ekr",
+          "authorAssociation": "NONE",
+          "body": "Yeah, it was just an example. Like \"I have a secure messaging system....\"",
+          "createdAt": "2022-11-07T17:53:07Z",
+          "updatedAt": "2022-11-07T17:53:07Z"
+        },
+        {
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "body": "We can remove it from its own section if that would be better? And include it in the messaging app section.",
+          "createdAt": "2022-11-07T17:58:11Z",
+          "updatedAt": "2022-11-07T17:58:11Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "With the latest change in the requirements draft, are we ok to close this issue?",
+          "createdAt": "2022-11-10T14:16:58Z",
+          "updatedAt": "2022-11-10T14:16:58Z"
+        }
+      ]
+    }
+  ],
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOH6qLrM4-O9LR",
+      "title": "Update draft-tigress-requirements.md",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/1",
+      "state": "MERGED",
+      "author": "dimmyvi",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-09-01T18:54:18Z",
+      "updatedAt": "2022-09-02T19:39:03Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "1009a31110cbd272a8ced1c7f4a3c6770480e85b",
+      "headRepository": "dimmyvi/tigress-requirements",
+      "headRefName": "Add-use-cases-and-terminology",
+      "headRefOid": "b35b805d71222fdb920362ec8e09fd49766a8584",
+      "closedAt": "2022-09-02T19:39:03Z",
+      "mergedAt": "2022-09-02T19:39:03Z",
+      "mergedBy": "dimmyvi",
+      "mergeCommit": {
+        "oid": "9697e7427abf51641a965ad40b012f033e705fa3"
+      },
+      "comments": [
+        {
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "body": "It looks like the build checks passed, does that mean the format is good?",
+          "createdAt": "2022-09-01T20:54:23Z",
+          "updatedAt": "2022-09-01T20:54:23Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "Most Probably.\r\nThere still possible issues when we start converting it to xml - as a part of submission to data tracker, but we\u2019ll handle it at that time",
+          "createdAt": "2022-09-01T20:56:13Z",
+          "updatedAt": "2022-09-01T20:56:41Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOH6qLrM5BNi1H",
+          "commit": {
+            "abbreviatedOid": "5ca237a"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-09-01T21:16:55Z",
+          "updatedAt": "2022-09-01T21:16:55Z",
+          "comments": [
+            {
+              "originalPosition": 25,
+              "body": "You don't want to put a `##` here. The formatting looks very weird, see https://dimmyvi.github.io/tigress-requirements/Add-use-cases-and-terminology/draft-tigress-requirements.html#name-1-lets-say-ben-owns-a-vehic",
+              "createdAt": "2022-09-01T21:16:55Z",
+              "updatedAt": "2022-09-01T21:16:55Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5BNla5",
+          "commit": {
+            "abbreviatedOid": "5ca237a"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-09-01T21:24:49Z",
+          "updatedAt": "2022-09-01T21:24:49Z",
+          "comments": [
+            {
+              "originalPosition": 25,
+              "body": "Thanks for catching this, I should've looked at the preview generating. Removing numbers",
+              "createdAt": "2022-09-01T21:24:49Z",
+              "updatedAt": "2022-09-01T21:24:49Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5BNpx1",
+          "commit": {
+            "abbreviatedOid": "5ca237a"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-09-01T21:47:47Z",
+          "updatedAt": "2022-09-01T21:47:47Z",
+          "comments": [
+            {
+              "originalPosition": 25,
+              "body": "@dimmyvi no, the problem isn't the numbers, it's the `##`. That marks these lines as headers.",
+              "createdAt": "2022-09-01T21:47:47Z",
+              "updatedAt": "2022-09-01T21:47:47Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5BN0Dc",
+          "commit": {
+            "abbreviatedOid": "5ca237a"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-09-01T22:46:06Z",
+          "updatedAt": "2022-09-01T22:46:06Z",
+          "comments": [
+            {
+              "originalPosition": 25,
+              "body": "fixed",
+              "createdAt": "2022-09-01T22:46:06Z",
+              "updatedAt": "2022-09-01T22:46:06Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "id": "PR_kwDOH6qLrM4-dyXz",
+      "title": "Update draft-tigress-requirements.md",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/2",
+      "state": "MERGED",
+      "author": "dimmyvi",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-09-06T20:30:02Z",
+      "updatedAt": "2022-09-06T20:52:15Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "9697e7427abf51641a965ad40b012f033e705fa3",
+      "headRepository": "dimmyvi/tigress-requirements",
+      "headRefName": "dimmyvi-patch-matts-review",
+      "headRefOid": "540b5d7ed59b8d92431786e17a56dc6a9b5c6cde",
+      "closedAt": "2022-09-06T20:52:15Z",
+      "mergedAt": "2022-09-06T20:52:15Z",
+      "mergedBy": "dimmyvi",
+      "mergeCommit": {
+        "oid": "788876ba4aa45d11aa327c1027fa0b5c218b460c"
+      },
+      "comments": [
+        {
+          "author": "matthewcbyington",
+          "authorAssociation": "NONE",
+          "body": "+1 LGTM",
+          "createdAt": "2022-09-06T20:34:03Z",
+          "updatedAt": "2022-09-06T20:34:03Z"
+        }
+      ],
+      "reviews": []
+    },
+    {
+      "number": 3,
+      "id": "PR_kwDOH6qLrM4-eQl2",
+      "title": "Update draft-tigress-requirements.md",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/3",
+      "state": "MERGED",
+      "author": "dimmyvi",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-09-06T23:54:08Z",
+      "updatedAt": "2022-09-07T03:21:15Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "788876ba4aa45d11aa327c1027fa0b5c218b460c",
+      "headRepository": "dimmyvi/tigress-requirements",
+      "headRefName": "dimmyvi-patch-matts-comments",
+      "headRefOid": "2da4d97d0624c7099f5d6f2a6a8d2510e907dac1",
+      "closedAt": "2022-09-07T03:21:14Z",
+      "mergedAt": "2022-09-07T03:21:14Z",
+      "mergedBy": "dimmyvi",
+      "mergeCommit": {
+        "oid": "c06706263aa22afd7699c5bf5695a7d2bd92841b"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 4,
+      "id": "PR_kwDOH6qLrM4-eqRH",
+      "title": "Update draft-tigress-requirements.md",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/4",
+      "state": "MERGED",
+      "author": "dimmyvi",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-09-07T03:48:45Z",
+      "updatedAt": "2022-09-08T16:20:12Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "c06706263aa22afd7699c5bf5695a7d2bd92841b",
+      "headRepository": "dimmyvi/tigress-requirements",
+      "headRefName": "dimmyvi-patch-fixing-tag-00",
+      "headRefOid": "a08bae30f5027d42694efd9bc98582d3157fae8a",
+      "closedAt": "2022-09-08T16:20:12Z",
+      "mergedAt": "2022-09-08T16:20:12Z",
+      "mergedBy": "dimmyvi",
+      "mergeCommit": {
+        "oid": "4d579149afeb7bc00e9a7425752287427e55d269"
+      },
+      "comments": [
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "[] are reserved to mark URLs, datatracker file failed publishing because of that. This PR changes marki of Requirements from [] to ()",
+          "createdAt": "2022-09-07T04:01:37Z",
+          "updatedAt": "2022-09-07T04:01:37Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOH6qLrM5BegOa",
+          "commit": {
+            "abbreviatedOid": "214882a"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-09-07T04:46:05Z",
+          "updatedAt": "2022-09-07T04:46:07Z",
+          "comments": [
+            {
+              "originalPosition": 76,
+              "body": "I think this should stay as \"Req-NontechnicalUX\".",
+              "createdAt": "2022-09-07T04:46:05Z",
+              "updatedAt": "2022-09-07T04:46:07Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5BoHxM",
+          "commit": {
+            "abbreviatedOid": "214882a"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-09-08T16:20:04Z",
+          "updatedAt": "2022-09-08T16:20:04Z",
+          "comments": [
+            {
+              "originalPosition": 76,
+              "body": "reverted to Req-NontechnicalUX",
+              "createdAt": "2022-09-08T16:20:04Z",
+              "updatedAt": "2022-09-08T16:20:04Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "id": "PR_kwDOH6qLrM4-jvIK",
+      "title": "Update draft-tigress-requirements.md",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/5",
+      "state": "MERGED",
+      "author": "nicksha",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Minor edits and included additional out of scope time.",
+      "createdAt": "2022-09-08T05:52:05Z",
+      "updatedAt": "2022-09-09T00:26:10Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "718390dfd77d251e83c8b69bd66f28b7326840e5",
+      "headRepository": "dimmyvi/tigress-requirements",
+      "headRefName": "nicksha-patch-1",
+      "headRefOid": "608747263a3d4d32ad2682e370a5e39471aee356",
+      "closedAt": "2022-09-09T00:26:10Z",
+      "mergedAt": "2022-09-09T00:26:09Z",
+      "mergedBy": "nicksha",
+      "mergeCommit": {
+        "oid": "ac7d3087b87487eb9370bd61bfb72da50e62c508"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOH6qLrM5BkqY9",
+          "commit": {
+            "abbreviatedOid": "b9cdfbd"
+          },
+          "author": "nicksha",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-09-08T05:57:28Z",
+          "updatedAt": "2022-09-08T05:59:07Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "`Solution SHALL allow for user experience where neither Sender nor Receiver is presented with raw data required only by the secure transfer protocol.`, sounds a bit awkward, but wasn't too sure what point you wanted to make with the second half of the sentence. ",
+              "createdAt": "2022-09-08T05:57:28Z",
+              "updatedAt": "2022-09-08T05:59:07Z"
+            },
+            {
+              "originalPosition": 5,
+              "body": "Credential Authority was not defined, did we mean to say, \"Provisioning Partner\"? ",
+              "createdAt": "2022-09-08T05:58:46Z",
+              "updatedAt": "2022-09-08T05:59:07Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5BoShp",
+          "commit": {
+            "abbreviatedOid": "b9cdfbd"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-09-08T16:53:39Z",
+          "updatedAt": "2022-09-08T16:53:39Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "You're right Nick, this shall be Prov Partner.  Thanks for catching this",
+              "createdAt": "2022-09-08T16:53:39Z",
+              "updatedAt": "2022-09-08T16:53:39Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5BoTqt",
+          "commit": {
+            "abbreviatedOid": "b9cdfbd"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-09-08T16:56:33Z",
+          "updatedAt": "2022-09-08T16:56:33Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "This was Matt's proposal to say that we can't just serialize credential data from wallet and send it over email/WhatsApp to another device and somehow manually add it to the wallet on receiving device",
+              "createdAt": "2022-09-08T16:56:33Z",
+              "updatedAt": "2022-09-08T16:56:33Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5BoXeB",
+          "commit": {
+            "abbreviatedOid": "b9cdfbd"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-09-08T17:05:29Z",
+          "updatedAt": "2022-09-08T17:05:30Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "I am not an expert in punctuation, but logically, and is not required here, since it changes the logic of the sentence.\r\nWe could possibly use commas to separate a logic block like:\r\n\"Data, that is only parsed programmatically and not required to be presented to the end user, should never be visible to said user ...\"",
+              "createdAt": "2022-09-08T17:05:29Z",
+              "updatedAt": "2022-09-08T17:05:30Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5BoecC",
+          "commit": {
+            "abbreviatedOid": "b9cdfbd"
+          },
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-09-08T17:21:51Z",
+          "updatedAt": "2022-09-08T17:21:51Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "I think the sentence needs to be either the original or split into two sentences to be clearest:\r\n\r\nThe data is only parsed programmatically and not required to be presented to the end user. This data should never be visible to said user in whichever messaging application the sender chose to initiate the transfer on.\r\n\r\nOtherwise, it is a bit of a run on sentence.",
+              "createdAt": "2022-09-08T17:21:51Z",
+              "updatedAt": "2022-09-08T17:21:51Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5BofP1",
+          "commit": {
+            "abbreviatedOid": "b9cdfbd"
+          },
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-09-08T17:24:27Z",
+          "updatedAt": "2022-09-08T17:24:28Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "@dimmyvi I think we need to remove the sentence @nicksha mentioned in his comment as that is not true. On android, there are ways to literally take the data and manually add it (potentially from a third party app). ",
+              "createdAt": "2022-09-08T17:24:27Z",
+              "updatedAt": "2022-09-08T17:24:28Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5Borx8",
+          "commit": {
+            "abbreviatedOid": "72a11fd"
+          },
+          "author": "nicksha",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-09-08T18:05:35Z",
+          "updatedAt": "2022-09-08T18:05:45Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "We can keep the requirement, just wanted to clarify the sentence.  We also have limitation when it comes to third party apps, we won't be able to just extract provisioning information. ",
+              "createdAt": "2022-09-08T18:05:35Z",
+              "updatedAt": "2022-09-08T18:05:45Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5BpsvT",
+          "commit": {
+            "abbreviatedOid": "b9cdfbd"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-09-08T21:36:21Z",
+          "updatedAt": "2022-09-08T21:36:21Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "Split the sentence into 2 per Casey's suggestion",
+              "createdAt": "2022-09-08T21:36:21Z",
+              "updatedAt": "2022-09-08T21:36:21Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5Bpuq5",
+          "commit": {
+            "abbreviatedOid": "7092d5e"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-09-08T21:46:31Z",
+          "updatedAt": "2022-09-08T21:46:32Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "```suggestion\r\n- [Req-SmoothUX] Solution SHALL allow for a user experience where neither Sender nor Receiver is presented with raw data required only by the secure transfer protocol. The data SHOULD only be parsed programmatically and not required to be presented to the end user. This data SHOULD never be visible to said user in whichever messaging application the sender chose to initiate the transfer on. This eliminates the possibility of merely sending the requisite data inline, through an SMS or email for example, rather than leveraging an Intermediary server.\r\n```\r\nAdded missing article.",
+              "createdAt": "2022-09-08T21:46:32Z",
+              "updatedAt": "2022-09-08T21:46:32Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5Bpusx",
+          "commit": {
+            "abbreviatedOid": "7092d5e"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-09-08T21:46:41Z",
+          "updatedAt": "2022-09-08T21:46:44Z",
+          "comments": [
+            {
+              "originalPosition": 22,
+              "body": "Good call!",
+              "createdAt": "2022-09-08T21:46:41Z",
+              "updatedAt": "2022-09-08T21:46:44Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5Bp9Jl",
+          "commit": {
+            "abbreviatedOid": "7092d5e"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-09-08T23:10:28Z",
+          "updatedAt": "2022-09-08T23:10:28Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDOH6qLrM4_uktg",
+      "title": "Update draft-tigress-requirements.md",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/6",
+      "state": "MERGED",
+      "author": "dimmyvi",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Update based on Manuel's review",
+      "createdAt": "2022-09-27T21:10:07Z",
+      "updatedAt": "2022-09-30T22:52:51Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "6501f3f23c6885af39d5bfbdee89cd2bb7603557",
+      "headRepository": "dimmyvi/tigress-requirements",
+      "headRefName": "manuel-review-patch-1",
+      "headRefOid": "3dea371a87bd07287d5415e3383b6dc7278f1379",
+      "closedAt": "2022-09-30T22:52:51Z",
+      "mergedAt": "2022-09-30T22:52:51Z",
+      "mergedBy": "dimmyvi",
+      "mergeCommit": {
+        "oid": "28dd8bf02dc0969e4dc8e732e8ed8f17960d0028"
+      },
+      "comments": [
+        {
+          "author": "ManuelGersterB",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@dimmyvi: Just now I have observed one little point. The \":\" should be removed here: \r\n![image](https://user-images.githubusercontent.com/98893287/192690291-4fddcdf9-54e4-45ac-b01e-e3d198f9016b.png)\r\n",
+          "createdAt": "2022-09-28T04:53:25Z",
+          "updatedAt": "2022-09-28T04:53:44Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOH6qLrM5C77-X",
+          "commit": {
+            "abbreviatedOid": "b81d7c5"
+          },
+          "author": "ManuelGersterB",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-09-28T04:47:37Z",
+          "updatedAt": "2022-09-28T04:47:38Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "@dimmyvi: I really like the new sentence in line 82, but unfortunately the sentence in line 83 seems to be lost a bit now.\r\nMaybe we can add line 83 to line 81, e. g.:\r\n\"This document describes the use cases necessitating the secure transfer of digital credentials between two devices and defines general assumptions, requirements and the scope of the corresponding Internet-draft.\"",
+              "createdAt": "2022-09-28T04:47:37Z",
+              "updatedAt": "2022-09-28T04:47:38Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5DAboq",
+          "commit": {
+            "abbreviatedOid": "b81d7c5"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-09-28T18:35:28Z",
+          "updatedAt": "2022-09-28T18:35:29Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "Done.",
+              "createdAt": "2022-09-28T18:35:28Z",
+              "updatedAt": "2022-09-28T18:35:29Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5DIUOq",
+          "commit": {
+            "abbreviatedOid": "9bb62a1"
+          },
+          "author": "ManuelGersterB",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-09-30T05:11:08Z",
+          "updatedAt": "2022-09-30T05:11:08Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "@dimmyvi: Thx for adding me :) Just one request: Could you please change the organization to \"Mercedes-Benz AG\"?",
+              "createdAt": "2022-09-30T05:11:08Z",
+              "updatedAt": "2022-09-30T05:11:08Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5DMWqD",
+          "commit": {
+            "abbreviatedOid": "9bb62a1"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-09-30T20:06:43Z",
+          "updatedAt": "2022-09-30T20:06:43Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "Of course! Did the change in the org name",
+              "createdAt": "2022-09-30T20:06:43Z",
+              "updatedAt": "2022-09-30T20:06:43Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "id": "PR_kwDOH6qLrM5BI33f",
+      "title": "Update draft-tigress-requirements.md",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/10",
+      "state": "MERGED",
+      "author": "dimmyvi",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Addressing comments from Brad's review",
+      "createdAt": "2022-10-19T20:26:46Z",
+      "updatedAt": "2022-10-28T17:16:14Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "28dd8bf02dc0969e4dc8e732e8ed8f17960d0028",
+      "headRepository": "dimmyvi/tigress-requirements",
+      "headRefName": "brads_review",
+      "headRefOid": "51ce7137c22520f03fb1758f0ca1ba340491e4a7",
+      "closedAt": "2022-10-28T17:16:14Z",
+      "mergedAt": "2022-10-28T17:16:14Z",
+      "mergedBy": "dimmyvi",
+      "mergeCommit": {
+        "oid": "a3df61ce04a55cd3f40b1ec4548b1bf7eed8c0df"
+      },
+      "comments": [
+        {
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "body": "+1",
+          "createdAt": "2022-10-19T20:29:41Z",
+          "updatedAt": "2022-10-19T20:29:41Z"
+        },
+        {
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "body": "> Thanks. As I'm reading this now, the requirement is to support transferring a credential to a single device but that doesn't preclude it from supporting sharing with a group.\r\n\r\nThanks Brad, we wanted to leave an option to extend the solution in the future for B2P / P2B applications. Hence the \"open ending\". But for the time being, to present this proposal to community, we believe it needs to be simple - hence, P2P application is in scope now.   Hope this makes sense",
+          "createdAt": "2022-10-20T16:53:04Z",
+          "updatedAt": "2022-10-20T16:54:53Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOH6qLrM5Eg-8X",
+          "commit": {
+            "abbreviatedOid": "01510a1"
+          },
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Thanks. As I'm reading this now, the requirement is to support transferring a credential to a single device but that doesn't preclude it from supporting sharing with a group. ",
+          "createdAt": "2022-10-20T15:31:36Z",
+          "updatedAt": "2022-10-20T15:31:36Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5EkFGt",
+          "commit": {
+            "abbreviatedOid": "51ce713"
+          },
+          "author": "ManuelGersterB",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-10-21T04:21:50Z",
+          "updatedAt": "2022-10-21T04:21:50Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5E3vpc",
+          "commit": {
+            "abbreviatedOid": "51ce713"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-10-25T20:35:56Z",
+          "updatedAt": "2022-10-25T20:35:56Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "I followed up in https://github.com/dimmyvi/tigress-requirements/issues/11 about this. I don't think we should add it.",
+              "createdAt": "2022-10-25T20:35:56Z",
+              "updatedAt": "2022-10-25T20:35:56Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "id": "PR_kwDOH6qLrM5Bw6Ga",
+      "title": "Remove Req-AnyPlatform",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/12",
+      "state": "MERGED",
+      "author": "bslassey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Being cross-platform is taken for a given for an IETF protocol\r\n",
+      "createdAt": "2022-10-28T16:57:34Z",
+      "updatedAt": "2022-10-31T17:42:19Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "28dd8bf02dc0969e4dc8e732e8ed8f17960d0028",
+      "headRepository": "bslassey/tigress-requirements",
+      "headRefName": "main",
+      "headRefOid": "6234669d4526ef78b58b8c8802ea9054f9974b08",
+      "closedAt": "2022-10-31T17:42:18Z",
+      "mergedAt": "2022-10-31T17:42:18Z",
+      "mergedBy": "bslassey",
+      "mergeCommit": {
+        "oid": "ae266d037d086ecd2f25c59ffa68ee97147a8e29"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOH6qLrM5FKn1k",
+          "commit": {
+            "abbreviatedOid": "6234669"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-10-28T17:38:07Z",
+          "updatedAt": "2022-10-28T17:38:07Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FKrPs",
+          "commit": {
+            "abbreviatedOid": "6234669"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-10-28T17:51:11Z",
+          "updatedAt": "2022-10-28T17:51:11Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FK41H",
+          "commit": {
+            "abbreviatedOid": "6234669"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-10-28T18:42:43Z",
+          "updatedAt": "2022-10-28T18:42:43Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "id": "PR_kwDOH6qLrM5Bw6ps",
+      "title": "Remove UX requirements",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/13",
+      "state": "MERGED",
+      "author": "bslassey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "We shouldn't be specifying UX in an protocol doc",
+      "createdAt": "2022-10-28T17:00:20Z",
+      "updatedAt": "2022-10-31T17:53:47Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "ae266d037d086ecd2f25c59ffa68ee97147a8e29",
+      "headRepository": "dimmyvi/tigress-requirements",
+      "headRefName": "bslassey-remove-ux",
+      "headRefOid": "f373e89ea04f6c24b43cfe141b612e9ac794695e",
+      "closedAt": "2022-10-31T17:53:47Z",
+      "mergedAt": "2022-10-31T17:53:46Z",
+      "mergedBy": "bslassey",
+      "mergeCommit": {
+        "oid": "f5bccda736674dd489a62a74910457aa2a93dde6"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOH6qLrM5FKrF1",
+          "commit": {
+            "abbreviatedOid": "bf1b47a"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-10-28T17:50:34Z",
+          "updatedAt": "2022-10-28T17:50:34Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FKvAD",
+          "commit": {
+            "abbreviatedOid": "bf1b47a"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-10-28T18:05:45Z",
+          "updatedAt": "2022-10-28T18:05:45Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "I think this requirement is important because it precludes sending a raw data blob that needs to be copy and pasted to be redeemed. Without this requirement there is not as big of a need for a new protocol because people could send key sign requests over an already secure messaging channel.\r\n\r\nI have a feeling this type of requirement is common the IETF ART area. Is there a common way to phase this that would be acceptable? \"The protocol should be usable\"",
+              "createdAt": "2022-10-28T18:05:45Z",
+              "updatedAt": "2022-10-28T18:05:45Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FKxGc",
+          "commit": {
+            "abbreviatedOid": "bf1b47a"
+          },
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-10-28T18:14:05Z",
+          "updatedAt": "2022-10-28T18:14:06Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "are there any examples of these types of requirements in the ART area that we can use as a pattern?",
+              "createdAt": "2022-10-28T18:14:06Z",
+              "updatedAt": "2022-10-28T18:14:06Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FK22Y",
+          "commit": {
+            "abbreviatedOid": "bf1b47a"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-10-28T18:34:38Z",
+          "updatedAt": "2022-10-28T18:34:38Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FMCPa",
+          "commit": {
+            "abbreviatedOid": "bf1b47a"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-10-28T21:58:59Z",
+          "updatedAt": "2022-10-28T21:58:59Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "I did not find an example, if you have not seem similar requirements in the past then I am ok to remove both UX requirements.",
+              "createdAt": "2022-10-28T21:58:59Z",
+              "updatedAt": "2022-10-28T21:59:10Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FR1gl",
+          "commit": {
+            "abbreviatedOid": "f373e89"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-10-31T17:53:32Z",
+          "updatedAt": "2022-10-31T17:53:32Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "id": "PR_kwDOH6qLrM5B58wO",
+      "title": "Allow non-uri solutions",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/14",
+      "state": "MERGED",
+      "author": "bslassey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "I believe we ended up not wanting to scope the solution space to only URIs",
+      "createdAt": "2022-10-31T17:57:59Z",
+      "updatedAt": "2022-10-31T20:47:54Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "f5bccda736674dd489a62a74910457aa2a93dde6",
+      "headRepository": "dimmyvi/tigress-requirements",
+      "headRefName": "bslassey-not-just-uris",
+      "headRefOid": "ce2ebe4297804c97df7664562be61133a1023e00",
+      "closedAt": "2022-10-31T20:47:48Z",
+      "mergedAt": "2022-10-31T20:47:48Z",
+      "mergedBy": "dimmyvi",
+      "mergeCommit": {
+        "oid": "dcce777c7412d9d1b4d9d53c30c5d0e182cc0c53"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOH6qLrM5FR34G",
+          "commit": {
+            "abbreviatedOid": "ce2ebe4"
+          },
+          "author": "nicksha",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-10-31T18:00:23Z",
+          "updatedAt": "2022-10-31T18:00:23Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FSvHf",
+          "commit": {
+            "abbreviatedOid": "ce2ebe4"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-10-31T20:47:43Z",
+          "updatedAt": "2022-10-31T20:47:43Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "id": "PR_kwDOH6qLrM5B59Tc",
+      "title": "simplicity isn't a requirement",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/15",
+      "state": "MERGED",
+      "author": "bslassey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-10-31T18:00:11Z",
+      "updatedAt": "2022-10-31T20:44:45Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "f5bccda736674dd489a62a74910457aa2a93dde6",
+      "headRepository": "dimmyvi/tigress-requirements",
+      "headRefName": "bslassey-not-simple",
+      "headRefOid": "b7afac3fd59c83b22a9b8014ae971e4e2c5bc0a7",
+      "closedAt": "2022-10-31T20:44:38Z",
+      "mergedAt": "2022-10-31T20:44:38Z",
+      "mergedBy": "dimmyvi",
+      "mergeCommit": {
+        "oid": "4ba19e5b946c170f72522694ecceb00097ba3e14"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOH6qLrM5FR4f5",
+          "commit": {
+            "abbreviatedOid": "b7afac3"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-10-31T18:02:06Z",
+          "updatedAt": "2022-10-31T18:02:06Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FSVmp",
+          "commit": {
+            "abbreviatedOid": "b7afac3"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-10-31T19:33:01Z",
+          "updatedAt": "2022-10-31T19:33:01Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FSuOQ",
+          "commit": {
+            "abbreviatedOid": "b7afac3"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-10-31T20:44:28Z",
+          "updatedAt": "2022-10-31T20:44:28Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "id": "PR_kwDOH6qLrM5CEGqq",
+      "title": "Actors diagram ",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/18",
+      "state": "MERGED",
+      "author": "bslassey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Created a diagram to illustrate the relationships between actors",
+      "createdAt": "2022-11-02T14:45:17Z",
+      "updatedAt": "2022-11-04T20:34:46Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "6b2b1f1b32b6768ab7d56164ff2850f517221dd0",
+      "headRepository": "bslassey/tigress-requirements",
+      "headRefName": "bslassey-actors-diagra,",
+      "headRefOid": "4aca1ea7e286638133368507117a7cef313d3fa7",
+      "closedAt": "2022-11-04T20:34:46Z",
+      "mergedAt": "2022-11-04T20:34:46Z",
+      "mergedBy": "dimmyvi",
+      "mergeCommit": {
+        "oid": "c7301acfa2e6943210cd43cdb64c74279f50e8cd"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOH6qLrM5FeK1_",
+          "commit": {
+            "abbreviatedOid": "76f0d86"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-11-02T15:46:24Z",
+          "updatedAt": "2022-11-02T15:46:31Z",
+          "comments": [
+            {
+              "originalPosition": 18,
+              "body": "```suggestion\r\n      R ->> I : request credential data\r\n      I ->> S : request credential data\r\n      S ->> I : deliver credential data\r\n      I ->> R : deliver credential data\r\n```\r\nShould we also include going to the sender to get the credential data?",
+              "createdAt": "2022-11-02T15:46:24Z",
+              "updatedAt": "2022-11-02T17:55:01Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5Fe9ko",
+          "commit": {
+            "abbreviatedOid": "76f0d86"
+          },
+          "author": "nicksha",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-02T17:46:55Z",
+          "updatedAt": "2022-11-02T17:46:55Z",
+          "comments": [
+            {
+              "originalPosition": 18,
+              "body": "I'm confused with  `S ->> R : deliver credential data`, this looks to bypass the intermediary.  It would also mean the devices have to be online at the same time\r\n\r\nAre you suggesting to illustrate the stateful flow? ",
+              "createdAt": "2022-11-02T17:46:55Z",
+              "updatedAt": "2022-11-02T17:46:55Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5Fe_3p",
+          "commit": {
+            "abbreviatedOid": "76f0d86"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-02T17:53:42Z",
+          "updatedAt": "2022-11-02T17:53:43Z",
+          "comments": [
+            {
+              "originalPosition": 18,
+              "body": "I think like 146 should be (i took the liberty of updating Alex's suggested change):\r\nS ->> I : deliver credential data\r\nThe rest looks correct",
+              "createdAt": "2022-11-02T17:53:42Z",
+              "updatedAt": "2022-11-02T17:55:44Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FgMMU",
+          "commit": {
+            "abbreviatedOid": "76f0d86"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-02T22:05:35Z",
+          "updatedAt": "2022-11-02T22:05:35Z",
+          "comments": [
+            {
+              "originalPosition": 18,
+              "body": "> I think like 146 should be (i took the liberty of updating Alex's suggested change):\r\n> S ->> I : deliver credential data\r\n> The rest looks correct\r\n\r\nAh yes, my bad. Thanks for updating!",
+              "createdAt": "2022-11-02T22:05:35Z",
+              "updatedAt": "2022-11-02T22:05:35Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FsAZ-",
+          "commit": {
+            "abbreviatedOid": "76f0d86"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-04T20:34:38Z",
+          "updatedAt": "2022-11-04T20:34:38Z",
+          "comments": [
+            {
+              "originalPosition": 18,
+              "body": "Merging",
+              "createdAt": "2022-11-04T20:34:38Z",
+              "updatedAt": "2022-11-04T20:34:38Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "id": "PR_kwDOH6qLrM5CEOLz",
+      "title": "Add an assumption around multiple round trips",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/21",
+      "state": "MERGED",
+      "author": "bslassey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "I see this assumption made in the document, but not documented. Separately we should confirm that this is something that is needed.",
+      "createdAt": "2022-11-02T15:06:43Z",
+      "updatedAt": "2022-11-04T20:33:48Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "6b2b1f1b32b6768ab7d56164ff2850f517221dd0",
+      "headRepository": "dimmyvi/tigress-requirements",
+      "headRefName": "bslassey-round-trip-assumption",
+      "headRefOid": "a4fbf209be4213c4a84f124c1e82ba533721995b",
+      "closedAt": "2022-11-04T20:33:47Z",
+      "mergedAt": "2022-11-04T20:33:47Z",
+      "mergedBy": "dimmyvi",
+      "mergeCommit": {
+        "oid": "2b997bc700da460edfeb60a220e6a11c61b26864"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOH6qLrM5Fe0wo",
+          "commit": {
+            "abbreviatedOid": "a4fbf20"
+          },
+          "author": "nicksha",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-11-02T17:23:27Z",
+          "updatedAt": "2022-11-02T17:23:27Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FsAMz",
+          "commit": {
+            "abbreviatedOid": "a4fbf20"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-11-04T20:33:42Z",
+          "updatedAt": "2022-11-04T20:33:42Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "id": "PR_kwDOH6qLrM5CEPdQ",
+      "title": "Rewrite arbitrary message channel",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/22",
+      "state": "MERGED",
+      "author": "bslassey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Focus on multiple round trips closes issue #20 ",
+      "createdAt": "2022-11-02T15:09:55Z",
+      "updatedAt": "2022-11-07T17:53:09Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "6b2b1f1b32b6768ab7d56164ff2850f517221dd0",
+      "headRepository": "dimmyvi/tigress-requirements",
+      "headRefName": "bslassey-message-channel-round-trips",
+      "headRefOid": "5fe993691526bc229386ea3678c8c15842b96a64",
+      "closedAt": "2022-11-05T16:10:11Z",
+      "mergedAt": "2022-11-05T16:10:11Z",
+      "mergedBy": "dimmyvi",
+      "mergeCommit": {
+        "oid": "d7a04b2a1554480c8c7fa99e600c259dc6f9d876"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOH6qLrM5FeNOf",
+          "commit": {
+            "abbreviatedOid": "5fe9936"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-02T15:51:25Z",
+          "updatedAt": "2022-11-02T15:51:25Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "Why couldn't the multiple round trips be performed over the arbitrary messaging channel? The receiver could send the reply over the messaging channel for the sender to handle. Then the sender could send the reply to be ingested by the receiver. Basically a certificate signing request or key signing request done over the messaging channel.\r\n\r\nThe only reasons I could think of that would preclude this flow are around user experience. Do you have an idea of other reasons that would preclude this?",
+              "createdAt": "2022-11-02T15:51:25Z",
+              "updatedAt": "2022-11-02T15:51:25Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FfqPX",
+          "commit": {
+            "abbreviatedOid": "5fe9936"
+          },
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-02T19:55:59Z",
+          "updatedAt": "2022-11-02T19:55:59Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "I can't think  of any other reasons and I'm wondering if we could solve it in a more elegant way. We can soften this to something like \"this may not easily support\" rather than \"this would not support\" ",
+              "createdAt": "2022-11-02T19:55:59Z",
+              "updatedAt": "2022-11-02T19:55:59Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FgMC_",
+          "commit": {
+            "abbreviatedOid": "5fe9936"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-02T22:04:47Z",
+          "updatedAt": "2022-11-02T22:04:48Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "I like the \"this may not easily support\" wording to soften the statement. \r\n\r\nIf this came in a working group meeting would it be best to not mention the UX or practical application of the protocol? If so, it will be interesting to defend why we need this protocol.",
+              "createdAt": "2022-11-02T22:04:48Z",
+              "updatedAt": "2022-11-02T22:04:48Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FkJxG",
+          "commit": {
+            "abbreviatedOid": "5fe9936"
+          },
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-03T15:11:22Z",
+          "updatedAt": "2022-11-03T15:11:22Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "I think we need to justify when the protocol needs to handle multiple round trip provisioning flows, since it adds complexity. But once we have that requirement justified, arguments for the protocol to support it well for pragmatic reasons are entirely valid.",
+              "createdAt": "2022-11-03T15:11:22Z",
+              "updatedAt": "2022-11-03T15:11:22Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5Fr_e0",
+          "commit": {
+            "abbreviatedOid": "5fe9936"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-04T20:30:28Z",
+          "updatedAt": "2022-11-04T20:30:29Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "Justification of multiple round trips lies in the format of encrypted provisioning information - simply put, Digital Car Key  (CCC spec) needs it, since Owner's signature is required over the Friend's device KeyImport request. \r\nBut this will bring us into getting into provisioning phase and close ties with CCC spec, which we tried to avoid in the first place....",
+              "createdAt": "2022-11-04T20:30:28Z",
+              "updatedAt": "2022-11-04T20:30:29Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FsAC1",
+          "commit": {
+            "abbreviatedOid": "5fe9936"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-04T20:33:00Z",
+          "updatedAt": "2022-11-04T20:33:01Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "We can possibly rephrase the sentence to  \"If multiple round trips were required by the credential vertical that provisioning information belongs to (e.g. Digital Car Key - defined by CCC specification) ...\"",
+              "createdAt": "2022-11-04T20:33:00Z",
+              "updatedAt": "2022-11-04T20:33:01Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FsAVm",
+          "commit": {
+            "abbreviatedOid": "5fe9936"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-04T20:34:19Z",
+          "updatedAt": "2022-11-04T20:34:19Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "I believe, this is covered in #21",
+              "createdAt": "2022-11-04T20:34:19Z",
+              "updatedAt": "2022-11-04T20:34:19Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5Fybi6",
+          "commit": {
+            "abbreviatedOid": "5fe9936"
+          },
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-07T17:53:09Z",
+          "updatedAt": "2022-11-07T17:53:09Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "I said in the PR #21 that we need to justify the assumption. I think we need to at least describe at a high level why the provisioning protocol requires multiple round trips.",
+              "createdAt": "2022-11-07T17:53:09Z",
+              "updatedAt": "2022-11-07T17:53:09Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "id": "PR_kwDOH6qLrM5CESiR",
+      "title": "remove Req-RedemptionHandling",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/24",
+      "state": "MERGED",
+      "author": "bslassey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "This is specifying application behavior. Is there a requirement on the protocol that is related to this?",
+      "createdAt": "2022-11-02T15:16:11Z",
+      "updatedAt": "2022-11-07T16:18:34Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "6b2b1f1b32b6768ab7d56164ff2850f517221dd0",
+      "headRepository": "dimmyvi/tigress-requirements",
+      "headRefName": "bslassey-remove-Req-RedemptionHandlin",
+      "headRefOid": "cab390ac386853b1686820aece0961a661b315c0",
+      "closedAt": "2022-11-07T16:18:31Z",
+      "mergedAt": "2022-11-07T16:18:31Z",
+      "mergedBy": "castiz",
+      "mergeCommit": {
+        "oid": "8ad6932ce7d5e053b960840f801d199caeffcab3"
+      },
+      "comments": [
+        {
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I'm going to merge this since it has two approvals.",
+          "createdAt": "2022-11-07T16:18:26Z",
+          "updatedAt": "2022-11-07T16:18:26Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOH6qLrM5FeOrO",
+          "commit": {
+            "abbreviatedOid": "cab390a"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-02T15:54:33Z",
+          "updatedAt": "2022-11-02T15:54:33Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "The goal of this requirement is to say that the solution must support some kind of universal linking / deep linking. Which url based or file type based solutions could support. This is kind of application behavior, but we need the protocol to not preclude this behavior.",
+              "createdAt": "2022-11-02T15:54:33Z",
+              "updatedAt": "2022-11-02T15:54:33Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FeVT2",
+          "commit": {
+            "abbreviatedOid": "cab390a"
+          },
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-02T16:08:59Z",
+          "updatedAt": "2022-11-02T16:08:59Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "Just to try to understand the requirement, we want to allow the messaging channel or OS to be able to recognize the invite as such and route it to the appropriate application. Do I have the right? If so, is that covered by (Req-UnderstoodFormat)?",
+              "createdAt": "2022-11-02T16:08:59Z",
+              "updatedAt": "2022-11-02T16:08:59Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FfCcu",
+          "commit": {
+            "abbreviatedOid": "cab390a"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-02T18:00:26Z",
+          "updatedAt": "2022-11-02T18:00:26Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "I believe, in a nutshell, this is an addition to the requirement of preview extension - once a user receives a shareURL in a message, they should be able to see a preview and easily forward the link to the proper application by tapping the preview image - this would require a support on the OS level (ref to deep-linking)",
+              "createdAt": "2022-11-02T18:00:26Z",
+              "updatedAt": "2022-11-02T18:00:26Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5Ffd9X",
+          "commit": {
+            "abbreviatedOid": "cab390a"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-02T19:21:16Z",
+          "updatedAt": "2022-11-02T19:21:16Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "I agree, that \"(Req-UnderstoodFormat)\" requirement covers this.",
+              "createdAt": "2022-11-02T19:21:16Z",
+              "updatedAt": "2022-11-02T19:21:16Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FfeAM",
+          "commit": {
+            "abbreviatedOid": "cab390a"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-11-02T19:21:25Z",
+          "updatedAt": "2022-11-02T19:21:25Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5FfqrH",
+          "commit": {
+            "abbreviatedOid": "cab390a"
+          },
+          "author": "nicksha",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-11-02T19:57:37Z",
+          "updatedAt": "2022-11-02T19:57:37Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "id": "PR_kwDOH6qLrM5CFCIU",
+      "title": "Update and rename draft-tigress-requirements.md to draft-dvinokurov-t\u2026",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/26",
+      "state": "CLOSED",
+      "author": "dimmyvi",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "\u2026igress-requirements.md\r\n\r\nAddressing review feedback from Richard Barnes",
+      "createdAt": "2022-11-02T17:49:05Z",
+      "updatedAt": "2022-11-04T20:25:13Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "6b2b1f1b32b6768ab7d56164ff2850f517221dd0",
+      "headRepository": "dimmyvi/tigress-requirements",
+      "headRefName": "dimmyvi-mailgroup-review",
+      "headRefOid": "a264919ab6d3f89e49bcf2c848f2077a360337b4",
+      "closedAt": "2022-11-04T20:25:13Z",
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOH6qLrM5FgMoK",
+          "commit": {
+            "abbreviatedOid": "a264919"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-11-02T22:07:39Z",
+          "updatedAt": "2022-11-02T22:07:39Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "id": "PR_kwDOH6qLrM5CU1Ya",
+      "title": "Updating the introduction",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/27",
+      "state": "MERGED",
+      "author": "castiz",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-11-07T13:10:36Z",
+      "updatedAt": "2022-11-09T11:10:49Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "d7a04b2a1554480c8c7fa99e600c259dc6f9d876",
+      "headRepository": "dimmyvi/tigress-requirements",
+      "headRefName": "updateIntroduction",
+      "headRefOid": "55ea205f2e0f2e300a95ecc88eada403070d4725",
+      "closedAt": "2022-11-09T11:10:46Z",
+      "mergedAt": "2022-11-09T11:10:46Z",
+      "mergedBy": "castiz",
+      "mergeCommit": {
+        "oid": "64f79a5cb494a52a008558b992918bdfbae1eb49"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOH6qLrM5FzOL9",
+          "commit": {
+            "abbreviatedOid": "209fff1"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-07T20:34:44Z",
+          "updatedAt": "2022-11-07T20:48:08Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```suggestion\r\nToday, there is no widely accepted way of transferring digital credentials securely between two devices belonging to the same platform or two different platforms. This document describes the problem space and the requirements for the solution the working group creates.\r\n```",
+              "createdAt": "2022-11-07T20:34:44Z",
+              "updatedAt": "2022-11-07T20:48:08Z"
+            },
+            {
+              "originalPosition": 13,
+              "body": "```suggestion\r\nWhen sharing digital secure credentials, there are several actors involved. While the Tigress working group's solution will focus on sharing information between two devices, potentially through an interemediary server, there are a couple more actors involved. \r\n\r\nThe companies that are providing the digital credential are the provisioning partners. They are in control of the provisioning information and the lifecycle of the credentials. Each device has a preexisting trust relationship between itself and the Provisioning Partner.\r\n```\r\nI don't think we should mention the \"Device OEM\" unless we  need to talk about something that only the device OEM can do. What do you think of something like this?\r\n\r\nI think we can omit the device OEM to provisioning partner interaction, and write it off as an implementation detail.",
+              "createdAt": "2022-11-07T20:42:53Z",
+              "updatedAt": "2022-11-07T20:48:08Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5F3-BC",
+          "commit": {
+            "abbreviatedOid": "209fff1"
+          },
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-08T15:04:42Z",
+          "updatedAt": "2022-11-08T15:04:42Z",
+          "comments": [
+            {
+              "originalPosition": 13,
+              "body": "I added your suggestion but my last paragraph still has OEM notes. I think it is helpful, but I can remove it if you don't find it necessary!",
+              "createdAt": "2022-11-08T15:04:42Z",
+              "updatedAt": "2022-11-08T15:04:42Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5F57eZ",
+          "commit": {
+            "abbreviatedOid": "93ea300"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-08T20:46:57Z",
+          "updatedAt": "2022-11-08T20:46:57Z",
+          "comments": [
+            {
+              "originalPosition": 15,
+              "body": "```suggestion\r\nToday, there is no widely accepted way of transferring digital credentials securely between two devices belonging to the same platform or two different platforms. This document describes the problem space and the requirements for the solution the working group creates.\r\n\r\nTigress allows for a sender and receiver device to communicate in order to facilitate a secure credential transfer. Tigress also specifies certain privacy requirements in order to maintain a high level of user privacy.\r\n\r\n# General Setting\r\n\r\nWhen sharing digital secure credentials, there are several actors involved. While the Tigress working group's solution will focus on sharing information between two devices, potentially through an intermediary server, there are a couple more actors involved.\r\n\r\nThe companies that are providing the digital credential are the provisioning partners. They are in control of the provisioning information and the lifecycle of the credentials. Each device has a preexisting trust relationship between itself and the Provisioning Partner.\r\n\r\nThe interface between the devices and the Provisioning Partner can be proprietary or part of a public standard such as the CCC. The sender device obtains provisioning information from the provisioning partner, then shares it to the recipient device via Tigress. The recipient then takes that data and sends it to the Provisioning Partner to redeem a credential.\r\n\r\nFor some credential types the Provisioning Partner who mints new credentials is actually the sender device. In that scenario the receiver will generate new key material at the request of the sender device, and then communicate with the sender device over Tigress to its key material signed by the sender device.\r\n```\r\nWhat do you think about something like this? I removed the Device OEM portion and the section about the Device OEM providing a 1 to many interaction for the device.",
+              "createdAt": "2022-11-08T20:46:57Z",
+              "updatedAt": "2022-11-08T20:46:57Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "id": "PR_kwDOH6qLrM5CbgoW",
+      "title": "Update draft-tigress-requirements.md",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/28",
+      "state": "MERGED",
+      "author": "castiz",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-11-08T14:27:04Z",
+      "updatedAt": "2022-11-09T14:33:39Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "8ad6932ce7d5e053b960840f801d199caeffcab3",
+      "headRepository": "dimmyvi/tigress-requirements",
+      "headRefName": "moveSignalSection",
+      "headRefOid": "6bb05dd0c1466c9556609fe0eb0ffe9cb7a3cd7a",
+      "closedAt": "2022-11-09T14:33:39Z",
+      "mergedAt": "2022-11-09T14:33:39Z",
+      "mergedBy": "dimmyvi",
+      "mergeCommit": {
+        "oid": "ae6a2a54d578af4cf4862b938387a9ba97d87cb2"
+      },
+      "comments": [
+        {
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This is in regards to this issue: https://github.com/dimmyvi/tigress-requirements/issues/25. I'm moving the signal pieces out of its own section and into the section for messaging application review.",
+          "createdAt": "2022-11-08T14:28:05Z",
+          "updatedAt": "2022-11-08T14:28:05Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOH6qLrM5F4wG6",
+          "commit": {
+            "abbreviatedOid": "59988b0"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-08T16:53:35Z",
+          "updatedAt": "2022-11-08T16:53:36Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "Having re-read issue #25, I suggest removing reference to Signal here altogether, since per Eric, the reference was to any secure-messaging protocol, and we mentioned Signal, among others, in the paragraph's title",
+              "createdAt": "2022-11-08T16:53:36Z",
+              "updatedAt": "2022-11-08T16:58:05Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5F4zy_",
+          "commit": {
+            "abbreviatedOid": "59988b0"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-08T17:02:19Z",
+          "updatedAt": "2022-11-08T17:02:19Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "What could be added here though, is a reference to the requirement of separation of channels - but we decided to remove this requirement...",
+              "createdAt": "2022-11-08T17:02:19Z",
+              "updatedAt": "2022-11-08T17:02:19Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5F58An",
+          "commit": {
+            "abbreviatedOid": "6bb05dd"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-08T20:48:54Z",
+          "updatedAt": "2022-11-08T20:48:55Z",
+          "comments": [
+            {
+              "originalPosition": 12,
+              "body": "I think we could merge this section into the \"## GSS-API, Kerberos\" section, or have a new section for \"Arbitrary Secure Messaging Protocol\".",
+              "createdAt": "2022-11-08T20:48:54Z",
+              "updatedAt": "2022-11-08T20:48:55Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "id": "PR_kwDOH6qLrM5CdwQh",
+      "title": "Updated (Req-Preview) Per Issue 16",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/29",
+      "state": "MERGED",
+      "author": "alexpell00",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Updating from the convo in https://github.com/dimmyvi/tigress-requirements/issues/16.",
+      "createdAt": "2022-11-08T22:06:25Z",
+      "updatedAt": "2022-11-09T17:14:27Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "8ad6932ce7d5e053b960840f801d199caeffcab3",
+      "headRepository": "dimmyvi/tigress-requirements",
+      "headRefName": "users/apelletier/issues/16",
+      "headRefOid": "1f6bdac5d73ed7ed7d492ab7288918da5b0af3a3",
+      "closedAt": "2022-11-09T17:14:27Z",
+      "mergedAt": "2022-11-09T17:14:27Z",
+      "mergedBy": "dimmyvi",
+      "mergeCommit": {
+        "oid": "7025212e012875623f38c6e32bc1f46252d28796"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOH6qLrM5F_KOx",
+          "commit": {
+            "abbreviatedOid": "35e777f"
+          },
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-09T14:44:07Z",
+          "updatedAt": "2022-11-09T14:44:08Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "small note -- receiver spelled wrong in first edit",
+              "createdAt": "2022-11-09T14:44:07Z",
+              "updatedAt": "2022-11-09T14:44:08Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5GALdH",
+          "commit": {
+            "abbreviatedOid": "1f6bdac"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-11-09T17:13:38Z",
+          "updatedAt": "2022-11-09T17:13:38Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "id": "PR_kwDOH6qLrM5ChmDW",
+      "title": "Update draft-tigress-requirements.md",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/30",
+      "state": "MERGED",
+      "author": "dimmyvi",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "re-defined reference to CCC from open standard to just published standard (proprietary to CCC)",
+      "createdAt": "2022-11-09T13:27:11Z",
+      "updatedAt": "2022-11-09T14:31:53Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "ce6a3d0fd363ef961b5c322258ed6fa7f15c8f85",
+      "headRepository": "dimmyvi/tigress-requirements",
+      "headRefName": "dimmyvi-patch-1",
+      "headRefOid": "b11c890c112e69be4ae9c78b412bb5f03f1218ef",
+      "closedAt": "2022-11-09T14:31:53Z",
+      "mergedAt": "2022-11-09T14:31:53Z",
+      "mergedBy": "dimmyvi",
+      "mergeCommit": {
+        "oid": "ab755f1ab8085294eee895cc1bd6af2d6fb3c6eb"
+      },
+      "comments": [
+        {
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This looks good to me",
+          "createdAt": "2022-11-09T13:33:20Z",
+          "updatedAt": "2022-11-09T13:33:20Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOH6qLrM5F-p3L",
+          "commit": {
+            "abbreviatedOid": "b11c890"
+          },
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-11-09T13:33:28Z",
+          "updatedAt": "2022-11-09T13:33:28Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 31,
+      "id": "PR_kwDOH6qLrM5CiB1I",
+      "title": "Update draft-tigress-requirements.md",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/31",
+      "state": "MERGED",
+      "author": "bleventh",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-11-09T14:43:58Z",
+      "updatedAt": "2022-11-09T21:07:39Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "7025212e012875623f38c6e32bc1f46252d28796",
+      "headRepository": "bleventh/tigress-requirements",
+      "headRefName": "patch-1",
+      "headRefOid": "f6920d4469f80bcda58f1551c8881cfd0d2c1576",
+      "closedAt": "2022-11-09T21:07:39Z",
+      "mergedAt": "2022-11-09T21:07:39Z",
+      "mergedBy": "dimmyvi",
+      "mergeCommit": {
+        "oid": "1061696c56d28d264dcefedaf49ea23e919c245d"
+      },
+      "comments": [
+        {
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I think these changes are overwriting some other changes. You might need to rebase and update the PR.",
+          "createdAt": "2022-11-09T19:16:40Z",
+          "updatedAt": "2022-11-09T19:16:58Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOH6qLrM5F_PN2",
+          "commit": {
+            "abbreviatedOid": "ec67d0e"
+          },
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-09T14:54:04Z",
+          "updatedAt": "2022-11-09T14:54:05Z",
+          "comments": [
+            {
+              "originalPosition": 26,
+              "body": "this undid the CCC piece that Dmitry just edited. Have to add that back and make it \"published specification\".",
+              "createdAt": "2022-11-09T14:54:04Z",
+              "updatedAt": "2022-11-09T14:54:05Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5F_PjJ",
+          "commit": {
+            "abbreviatedOid": "ec67d0e"
+          },
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-09T14:54:47Z",
+          "updatedAt": "2022-11-09T14:54:48Z",
+          "comments": [
+            {
+              "originalPosition": 29,
+              "body": "its",
+              "createdAt": "2022-11-09T14:54:47Z",
+              "updatedAt": "2022-11-09T14:54:48Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5F_QEt",
+          "commit": {
+            "abbreviatedOid": "ec67d0e"
+          },
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-09T14:55:53Z",
+          "updatedAt": "2022-11-09T14:55:54Z",
+          "comments": [
+            {
+              "originalPosition": 42,
+              "body": "re-add Dmitry's changes",
+              "createdAt": "2022-11-09T14:55:53Z",
+              "updatedAt": "2022-11-09T14:55:54Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5F_Qi0",
+          "commit": {
+            "abbreviatedOid": "ec67d0e"
+          },
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-09T14:56:53Z",
+          "updatedAt": "2022-11-09T14:56:53Z",
+          "comments": [
+            {
+              "originalPosition": 57,
+              "body": "fix public standard",
+              "createdAt": "2022-11-09T14:56:53Z",
+              "updatedAt": "2022-11-09T14:56:53Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5F_UAt",
+          "commit": {
+            "abbreviatedOid": "ec67d0e"
+          },
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-11-09T15:04:16Z",
+          "updatedAt": "2022-11-09T15:04:16Z",
+          "comments": [
+            {
+              "originalPosition": 75,
+              "body": "this part undid the Signal changes.",
+              "createdAt": "2022-11-09T15:04:16Z",
+              "updatedAt": "2022-11-09T15:04:16Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 32,
+      "id": "PR_kwDOH6qLrM5CnUmP",
+      "title": "Update draft-tigress-requirements.md",
+      "url": "https://github.com/dimmyvi/tigress-requirements/pull/32",
+      "state": "MERGED",
+      "author": "bleventh",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-11-10T12:02:32Z",
+      "updatedAt": "2022-12-08T20:00:52Z",
+      "baseRepository": "dimmyvi/tigress-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "1061696c56d28d264dcefedaf49ea23e919c245d",
+      "headRepository": "bleventh/tigress-requirements",
+      "headRefName": "patch-2",
+      "headRefOid": "878fa9202b09819fe6de3fe78528a1fa33f02767",
+      "closedAt": "2022-12-08T20:00:51Z",
+      "mergedAt": "2022-12-08T20:00:51Z",
+      "mergedBy": "dimmyvi",
+      "mergeCommit": {
+        "oid": "754941dc640205eb82a0057959616133df25012e"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOH6qLrM5GElSV",
+          "commit": {
+            "abbreviatedOid": "878fa92"
+          },
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-11-10T12:05:38Z",
+          "updatedAt": "2022-11-10T12:05:38Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5GFktS",
+          "commit": {
+            "abbreviatedOid": "878fa92"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-11-10T14:18:19Z",
+          "updatedAt": "2022-11-10T14:18:19Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOH6qLrM5GHT9t",
+          "commit": {
+            "abbreviatedOid": "878fa92"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-11-10T18:50:03Z",
+          "updatedAt": "2022-11-10T18:50:03Z",
+          "comments": []
+        }
+      ]
+    }
+  ]
+}
