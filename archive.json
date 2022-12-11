@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-11-13T02:06:56.655981+00:00",
+  "timestamp": "2022-12-11T01:51:21.011330+00:00",
   "repo": "dimmyvi/tigress-requirements",
   "labels": [
     {
@@ -2760,24 +2760,26 @@
       "id": "PR_kwDOH6qLrM5CnUmP",
       "title": "Update draft-tigress-requirements.md",
       "url": "https://github.com/dimmyvi/tigress-requirements/pull/32",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "bleventh",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2022-11-10T12:02:32Z",
-      "updatedAt": "2022-11-10T18:50:03Z",
+      "updatedAt": "2022-12-08T20:00:52Z",
       "baseRepository": "dimmyvi/tigress-requirements",
       "baseRefName": "main",
       "baseRefOid": "1061696c56d28d264dcefedaf49ea23e919c245d",
       "headRepository": "bleventh/tigress-requirements",
       "headRefName": "patch-2",
       "headRefOid": "878fa9202b09819fe6de3fe78528a1fa33f02767",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2022-12-08T20:00:51Z",
+      "mergedAt": "2022-12-08T20:00:51Z",
+      "mergedBy": "dimmyvi",
+      "mergeCommit": {
+        "oid": "754941dc640205eb82a0057959616133df25012e"
+      },
       "comments": [],
       "reviews": [
         {
