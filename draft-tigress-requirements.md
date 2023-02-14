@@ -163,7 +163,7 @@ sequenceDiagram
 
 - User may not have the ability to revoke a credential that a Provisioning Partner has issued
 - User may not have the ability to create new digital keys without Provisioning Partner interaction
-- Provisioning Partner may not allow for two users to use the same credential / cryptographic keys.
+- To share a key, sender may be exchanging a provisioning token to redeem a cryptographic key or may be sending the same cryptographic key.
 - Security: Communication between Sender / Receiver and Provisioning Partner SHOULD be trusted.
 - The choice of intermediary SHALL be defined by the application initiating the credential transfer.
 - Sender and Receiver SHALL both be able to manage the shared credential at any point by communicating with the Provisioning Partner. Credential lifecycle management is out of scope for this proposal.
