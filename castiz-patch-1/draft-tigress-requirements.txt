@@ -5,7 +5,7 @@
 TIGRESS                                                     D. Vinokurov
 Internet-Draft                                                  C. Astiz
 Intended status: Informational                              A. Pelletier
-Expires: 13 May 2023                                        J. L. Giraud
+Expires: 18 August 2023                                     J. L. Giraud
                                                              A. Bulgakov
                                                              M. Byington
                                                                Apple Inc
@@ -13,7 +13,7 @@ Expires: 13 May 2023                                        J. L. Giraud
                                                             Alphabet Inc
                                                               M. Gerster
                                                         Mercedes-Benz AG
-                                                         9 November 2022
+                                                        14 February 2023
 
 
           Transfer Digital Credentials Securely - Requirements
@@ -22,9 +22,9 @@ Expires: 13 May 2023                                        J. L. Giraud
 Abstract
 
    This document describes the use cases necessitating the secure
-   transfer of digital credentials between two devices and defines
-   general assumptions, requirements and the scope of the corresponding
-   Tigress Internet-draft [Tigress-00].
+   transfer of digital credentials, residing in a digital wallet,
+   between two devices and defines general assumptions, requirements and
+   the scope of the corresponding Tigress Internet-draft [Tigress-00].
 
 About This Document
 
@@ -53,11 +53,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 May 2023.
+   This Internet-Draft will expire on 18 August 2023.
 
 Copyright Notice
 
-   Copyright (c) 2022 IETF Trust and the persons identified as the
+   Copyright (c) 2023 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -83,7 +83,6 @@ Table of Contents
      8.1.  Arbitrary Messaging Channel (Email / WhatsApp / SMS /
            Signal / etc.)
      8.2.  GSS-API, Kerberos
-     8.3.  Signal Protocol
    9.  Out of Scope
    10. Security Considerations
    11. IANA Considerations
@@ -94,41 +93,42 @@ Table of Contents
 1.  Introduction
 
    Today, there is no widely accepted way of transferring digital
-   credentials securely between two devices belonging to the same
-   platform or two different platforms.  This document describes the
+   credentials securely between two digital wallets independent of
+   hardware and software manufacturer.  This document describes the
    problem space and the requirements for the solution the working group
    creates.
 
-   Tigress allows for a sender and receiver device to communicate in
-   order to facilitate a secure credential transfer.  Tigress also
-   specifies certain privacy requirements in order to maintain a high
-   level of user privacy.
+   Tigress allows for a sender and receiver to communicate in order to
+   facilitate a secure credential transfer between two digital wallets.
+   Tigress also specifies certain privacy requirements in order to
+   maintain a high level of user privacy.
 
 2.  General Setting
 
    When sharing digital secure credentials, there are several actors
    involved.  While the Tigress working group's solution will focus on
-   sharing information between two devices, potentially through an
-   intermediary server, there are a couple more actors involved.
+   sharing information between two digital wallets, potentially through
+   an intermediary server, there are a couple more actors involved.
 
-   The companies that are providing the digital credential are the
-   provisioning partners.  They are in control of the provisioning
-   information and the lifecycle of the credentials.  Each device has a
-   preexisting trust relationship between itself and the Provisioning
-   Partner.
+   The companies that are providing the digital credential for
+   consumption by a digital wallet are the provisioning partners.  They
+   are in control of the provisioning information and the lifecycle of
+   the credentials.  Each digital wallet has a preexisting trust
+   relationship between itself and the Provisioning Partner.
 
    The interface between the devices and the Provisioning Partner can be
-   proprietary or part of a public standard such as the CCC.  The sender
-   device obtains provisioning information from the provisioning
-   partner, then shares it to the recipient device via Tigress.  The
-   recipient then takes that data and sends it to the Provisioning
-   Partner to redeem a credential.
+   proprietary or a part of published specifications such as the
+   [CCC-Digital-Key-30].  The sender obtains provisioning information
+   from the provisioning partner, then shares it to the recipient via
+   Tigress.  The recipient then takes that data and sends it to the
+   Provisioning Partner to redeem a credential for consumption in a
+   digital wallet.
 
    For some credential types the Provisioning Partner who mints new
-   credentials is actually the sender device.  In that scenario the
-   receiver will generate new key material at the request of the sender
-   device, and then communicate with the sender device over Tigress to
-   its key material signed by the sender device.
+   credentials is actually the sender.  In that scenario the receiver
+   will generate a new key material at the request of the sender, and
+   then communicate with the sender over Tigress to have its key
+   material signed by the sender.
 
 3.  Conventions and Definitions
 
@@ -165,33 +165,38 @@ Table of Contents
       standardized and platform-independent way of transferring
       provisioning information between Sender and Receiver devices.
 
+   *  Digital Wallet - A device, service, and/or software that
+      faciliates transactions either online or in-person via a
+      technology like NFC.  Digital Wallet's typically support payments,
+      drivers licenses, loyalty cards, access credentials and more.
+
 4.  Use Cases
 
    *  Let's say Ben owns a vehicle that supports digital keys which
-      comply with the CCC [CCC-Digital-Key-30] open standard.  Ben would
+      comply with the CCC specification [CCC-Digital-Key-30].  Ben would
       like to let Ryan borrow the car for the weekend.  Ryan and Ben are
       using two different mobile phones with different operating
-      systems.  In order for Ben to share his car key to Ryan for a
-      weekend, he must transfer some data to the receiver device.  The
-      data structure shared between the two participants is defined in
-      the CCC.  In addition, the CCC requires the receiver to generate
-      required key material and return it to the sender to sign and
-      return back to the receiver.  At this point, the receiver now has
-      a token that will allow them to provision their new key with the
-      car.
+      systems.  In order for Ben to share his digital car key to Ryan
+      for a weekend, he must transfer some data to the receiver device.
+      The data structure shared between the two participants is defined
+      in the [CCC-Digital-Key-30].  In addition, the
+      [CCC-Digital-Key-30] requires the receiver to generate required
+      key material and return it to the sender to sign and return back
+      to the receiver.  At this point, the receiver now has a token that
+      will allow them to provision their new key with the car.
 
    *  Bob booked a room at a hotel for the weekend, but will be arriving
       late at night.  Alice, his partner, comes to the hotel first, so
-      Bob wants to share his key to the room with Alice.  Bob and Alice
+      Bob wants to share his digital room key with Alice.  Bob and Alice
       are using two different mobile phones with different operating
-      systems.  In order for Bob to share his key to the hotel to Alice
+      systems.  In order for Bob to share his digital room key to Alice
       for a weekend, he must transfer some data to her device.  The data
       structure shared between the two participants is proprietary to
       the given hotel chain (or Provisioning Partner).  This data
-      transfer is a one-time, unidirectional from Bob's device to
-      Alice's.  Once Alice receives this data, she can provision a new
-      key to her device, making a call to Provisioning Partner to
-      receive new credential information.
+      transfer is a one-time, unidirectional transfer from Bob's device
+      to Alice's.  Once Alice receives this data, she can provision a
+      new key to her digital wallet, making a call to Provisioning
+      Partner to receive new credential information.
 
 5.  Relationships
 
@@ -203,13 +208,15 @@ Table of Contents
 
 6.  Assumptions
 
-   *  Original credential information (with cryptographic key material)
-      MUST NOT be sent or shared.  Instead, sender SHALL be transferring
-      its approval token for Receiver to acquire new credential
-      information.
+   *  User may not have the ability to revoke a credential that a
+      Provisioning Partner has issued
 
-   *  Provisioning Partner SHALL NOT allow for two users to use the same
-      credential / cryptographic keys.
+   *  User may not have the ability to create new digital keys without
+      Provisioning Partner interaction
+
+   *  To share a key, sender may be exchanging a provisioning token to
+      redeem a cryptographic key or may be sending the same
+      cryptographic key.
 
    *  Security: Communication between Sender / Receiver and Provisioning
       Partner SHOULD be trusted.
@@ -254,22 +261,16 @@ Table of Contents
       Receiver to end transfer at any time.
 
    *  (Req-ArbitraryFormat) The solution SHALL support arbitrary message
-      formats to support both keys that implement public standards like
-      CCC as well as proprietary implementations of digital keys.
+      formats to support both digital keys that implement public
+      standards like [CCC-Digital-Key-30] as well as proprietary
+      implementations of digital keys.
 
-   *  (Req-UnderstoodFormat) Both Sender application and Receiver
-      application MUST be able to recognize the format.
+   *  (Req-RoundTrips) Solution SHALL allow for stateful requests
+      between Sender and Receiver to support stateful actions like key
+      signing requests.
 
-   *  (Req-RoundTrips) Solution SHALL allow for multiple round trips or
-      multiple reads/writes between one set of Sender and Receiver
-      devices.
-
-   *  (Req-Preview) Solution SHOULD allow for extensibility and
-      discoverable extensions (preview of share invitation).
-
-   *  (Req-RedemptionHandling) Shared Provisioning Information SHOULD
-      route Receiver to redeem Provisioning Information using the
-      designated Credential Management Application (e.g.  Wallet).
+   *  (Req-Preview) Solution SHOULD allow for receiver to know what is
+      being added to their digital wallet.
 
 7.1.  Intermediary server requirments
 
@@ -282,9 +283,6 @@ Table of Contents
 
    *  (Req-Notify) Solution SHOULD support a notification mechanism to
       inform devices on the content update on Intermediary server.
-
-   *  (Req-IntermediaryProvision) An Intermediary server MUST not be
-      able to provision credential on their own.
 
    *  (Req-Opaque) Message content between Sender and Receiver MUST be
       opaque to an Intermediary.
@@ -319,7 +317,10 @@ Table of Contents
    The Provisioning Information MAY be sent from Sender to Receiver over
    an arbitrary messaging channel that supports binary file transfer,
    but this would not support provisioning flows which require multiple
-   round trips as requied by (Req-RoundTrips).
+   round trips as requied by (Req-RoundTrips).  The same requirement
+   applies to Signal protocol outside of the Signal app, as the Req-
+   RoundTrips would likely be difficult and add a lot of friction for
+   the user.
 
 8.2.  GSS-API, Kerberos
 
@@ -332,14 +333,6 @@ Table of Contents
    costly for the intended system.  AWS S3 could be used as an
    Intermediary server but it would force all participants to use a
    specific cloud service which is in violation of (Req-AnyPlatorm).
-
-8.3.  Signal Protocol
-
-   As a messaging protocol, Signal could be used between Sender,
-   Receiver and Intermediary but this protocol is fairly complex and its
-   use would most like violate (Req-Simplicity).  The system will
-   however support the Signal service for share initiation, in line with
-   (Req-init).
 
 9.  Out of Scope
 
@@ -366,10 +359,9 @@ Table of Contents
 12.  Normative References
 
    [CCC-Digital-Key-30]
-              Car Connectivity Consortium, "Digital Key – The Future of
-              Vehicle Access", November 2021, <https://global-
-              carconnectivity.org/wp-content/uploads/2021/11/
-              CCC_Digital_Key_Whitepaper_Approved.pdf>.
+              Car Connectivity Consortium, "Digital Key Release 3", July
+              2022, <https://carconnectivity.org/download-digital-key-
+              3-specification/>.
 
    [RFC2078]  Linn, J., "Generic Security Service Application Program
               Interface, Version 2", RFC 2078, DOI 10.17487/RFC2078,
@@ -391,7 +383,7 @@ Table of Contents
 
    [Tigress-00]
               Vinokurov, D., Byington, M., Lerch, M., Pelletier, A., and
-              N. Sha, "Transfer Digital Credentials Securely", September
+              N. Sha, "Transfer Digital Credentials Securely", November
               2022,
               <https://datatracker.ietf.org/doc/draft-art-tigress/>.
 
