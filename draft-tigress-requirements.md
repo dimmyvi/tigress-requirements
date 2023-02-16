@@ -113,7 +113,7 @@ Tigress allows for a sender and receiver to communicate in order to facilitate a
 
 When sharing digital secure credentials, there are several actors involved. While the Tigress working group's solution will focus on sharing information between two digital wallets, potentially through an intermediary server, there are a couple more actors involved.
 
-The companies that are providing the digital credential for consumption by a digital wallet are the provisioning partners. They are in control of the provisioning information and the lifecycle of the credentials. Each digital wallet has a preexisting trust relationship between itself and the Provisioning Partner.
+The entities that are providing the digital credential for consumption by a digital wallet are the provisioning partners. They are in control of the provisioning information and the lifecycle of the credentials. Each digital wallet has a preexisting trust relationship between itself and the Provisioning Partner.
 
 The interface between the devices and the Provisioning Partner can be proprietary or a part of published specifications such as the {{CCC-Digital-Key-30}}. The sender obtains provisioning information from the provisioning partner, then shares it to the recipient via Tigress. The recipient then takes that data and sends it to the Provisioning Partner to redeem a credential for consumption in a digital wallet.
 
