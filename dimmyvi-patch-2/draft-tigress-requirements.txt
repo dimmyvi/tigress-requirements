@@ -265,8 +265,8 @@ Table of Contents
       3) When Provisioning Entity does not exist in the transfer flow.
       For example, for a transfer of a digital car key both sender and
       receiver devices are used to generate new credential's
-      cryptographic key matherial and sign on the new cryptographic key
-      for it to be trusted by the access point.
+      cryptographic key matherial and sign over the new cryptographic
+      key for it to be trusted by the access point.
 
    *  Security: Communication between sender or receiver devices and
       Provisioning Entity should be trusted.  Since new credential's key
