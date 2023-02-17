@@ -261,12 +261,12 @@ Table of Contents
       the sender's device credential.  As a result, Sender and Receiver
       devices have 2 different keys, potentially linked to the same
       logical "user account".  Also, the Provisiong Entity may not allow
-      the same cryptographic key be added to different physical devices.
-      3) When Provisioning Entity does not exist in the transfer flow.
-      For example, for a transfer of a digital car key both sender and
-      receiver devices are used to generate new credential's
-      cryptographic key matherial and sign over the new cryptographic
-      key for it to be trusted by the access point.
+      the same cryptographic key to be added to different physical
+      devices. 3) When Provisioning Entity does not exist in the
+      transfer flow.  For example, for a transfer of a digital car key
+      both sender and receiver devices are used to generate new
+      credential's cryptographic key matherial and sign over the new
+      cryptographic key for it to be trusted by the access point.
 
    *  Security: Communication between sender or receiver devices and
       Provisioning Entity should be trusted.  Since new credential's key
