@@ -8,16 +8,18 @@ docname: draft-tigress-requirements-latest
 submissiontype: IETF
 number:
 date:
-consensus: true
-v: 4
-area: ART
-workgroup: TIGRESS
-keyword: Internet-Draft
+consensus: false
+v: 3
+area: "Applications and Real-Time"
+workgroup: "Transfer dIGital cREdentialS Securely"
+keyword:
+ - tigress
+ - requirements
 venue:
-#  group: WG
-#  type: Working Group
-#  mail: WG@example.com
-#  arch: https://example.com/WG
+  group: "Transfer dIGital cREdentialS Securely"
+  type: "Working Group"
+  mail: "tigress@ietf.org"
+  arch: "https://mailarchive.ietf.org/arch/browse/tigress/"
   github: "dimmyvi/tigress-requirements"
   latest: "https://datatracker.ietf.org/doc/draft-tigress-requirements/"
 
