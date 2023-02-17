@@ -259,11 +259,11 @@ Table of Contents
       device may have just a subset of the sender's device access rights
       or receiver's device credential may be revoked independently of
       the sender's device credential.  As a result, Sender and Receiver
-      devices have 2 different keys, often linked to the same logical
-      "user account".  Provisiong Entity will not allow the same
-      cryptographic key be added to different physical devices. 3) When
-      Provisioning Entity does not exist in the transfer flow.  For
-      example, for a transfer of a digital car key both sender and
+      devices have 2 different keys, potentially linked to the same
+      logical "user account".  Also, the Provisiong Entity may not allow
+      the same cryptographic key be added to different physical devices.
+      3) When Provisioning Entity does not exist in the transfer flow.
+      For example, for a transfer of a digital car key both sender and
       receiver devices are used to generate new credential's
       cryptographic key matherial and sign on the new cryptographic key
       for it to be trusted by the access point.
