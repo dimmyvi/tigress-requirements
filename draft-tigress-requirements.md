@@ -77,7 +77,7 @@ This document presents the general requirements to possible solutions and  speci
 
 When sharing digital secure credentials, there are several actors involved. This document will focus on sharing information between two digital wallets, directly or through an intermediary server.
 
-Digital credentials provide access to property owned and / or operated by 3-rd party entities, such as hotel or residential building owners. The entity that is providing the digital credential for consumption by a digital wallet are referred to as Provisioning Entities.
+Digital credentials provide access to property owned and / or operated by 3-rd party entities, such as hotel or residential building owners. The entity that is providing the digital credential for consumption by a digital wallet is referred to as the Provisioning Entity.
 For some kind of credentials Provisioning Entity require to have control over digital credential issuance and life time management - for example, hotel is the owner of the rooms and allow guests to access them for the time of thier stay only.
 
 Digital wallet is a combination of software and hardware in a smartphone device, there are two devices involved in credentail transfer process - Sender and Receiver. They are defined in terms of which one is a transfer initiator (Sender) and which device is eventually consuming transferred credentials (Receiver). Device roles can change based on the transfer direction - in some transfers a device can act as a Sender, in other - as a Receiver.
