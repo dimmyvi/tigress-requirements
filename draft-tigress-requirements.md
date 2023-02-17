@@ -64,7 +64,7 @@ This document describes the use cases necessitating the secure transfer of digit
 
 # Introduction
 
-In this document we are identifying a problem of transferring digital credentials (e.g. a digital car key, a digital key a a hotel room or a digital key to a private house) from a wallet on one device (smartphone) to another, particularly, if these devices belong to two different platforms (e.g. one is iOS, another - Android).
+In this document we are identifying a problem of transferring digital credentials (e.g. a digital car key, a digital key to a hotel room or a digital key to a private house) from a wallet on one device (smartphone) to another, particularly, if these devices belong to two different platforms (e.g. one is iOS, another - Android).
 Today, there is no widely accepted way of transferring digital credentials securely between two digital wallets independent of hardware and software manufacturer. This document describes the problem space and the requirements for the solution the working group creates.
 
 A Working Group, called Tigress has been established to find a solution to the problem described above.
