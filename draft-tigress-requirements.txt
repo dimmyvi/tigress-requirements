@@ -2,7 +2,7 @@
 
 
 
-TIGRESS                                                     D. Vinokurov
+Transfer dIGital cREdentialS Securely                       D. Vinokurov
 Internet-Draft                                                  C. Astiz
 Intended status: Informational                              A. Pelletier
 Expires: 21 August 2023                                        Apple Inc
@@ -29,6 +29,12 @@ About This Document
    https://datatracker.ietf.org/doc/draft-tigress-requirements/.  Status
    information for this document may be found at
    https://datatracker.ietf.org/doc/draft-tigress-requirements/.
+
+   Discussion of this document takes place on the Transfer dIGital
+   cREdentialS Securely Working Group mailing list
+   (mailto:tigress@ietf.org), which is archived at
+   https://mailarchive.ietf.org/arch/browse/tigress/.  Subscribe at
+   https://www.ietf.org/mailman/listinfo/tigress/.
 
    Source for this draft and an issue tracker can be found at
    https://github.com/dimmyvi/tigress-requirements.
