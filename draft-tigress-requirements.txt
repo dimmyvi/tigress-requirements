@@ -87,7 +87,7 @@ Table of Contents
 1.  Introduction
 
    In this document we are identifying a problem of transferring digital
-   credentials (e.g. a digital car key, a digital key a a hotel room or
+   credentials (e.g. a digital car key, a digital key to a hotel room or
    a digital key to a private house) from a wallet on one device
    (smartphone) to another, particularly, if these devices belong to two
    different platforms (e.g. one is iOS, another - Android).  Today,
