@@ -331,13 +331,17 @@ Table of Contents
       provisioning data transferred (confidentiality, integrity and
       availability of provisioning information in transit).
 
-   *  (Req-Privacy) Transport protocol used to transfer provisioning
-      information ( e.g. secure E2E transfer protocol or intermediary
-      server) shall prevent from correlating users between exchanges or
-      create a social graph of users involved into transfer.
-      Intermediary server shall not be an arbiter of identity.  User
-      identities shall not be collected, stored and used for purpose
-      other then the credential transfer itself.
+   *  (Req-NonCorelation) Transport protocol used to transfer
+      provisioning information ( e.g. secure E2E transfer protocol or
+      intermediary server) shall prevent from correlating users between
+      exchanges or create a social graph of users involved into
+      transfer.
+
+   *  (Req-NonIdentity) Intermediary server shall not be an arbiter of
+      identity.
+
+   *  (Req-NonCollection) User identities shall not be collected, stored
+      and used for purpose other then the credential transfer itself.
 
    *  (Req-Connectivity) Sender and Receiver shall be allowed to be
       online at different times.  Sender and Receiver shall not need to
