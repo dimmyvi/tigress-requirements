@@ -5,10 +5,10 @@
 Transfer dIGital cREdentialS Securely                       D. Vinokurov
 Internet-Draft                                                  C. Astiz
 Intended status: Informational                              A. Pelletier
-Expires: 21 August 2023                                        Apple Inc
+Expires: 25 August 2023                                        Apple Inc
                                                                B. Lassey
                                                             Alphabet Inc
-                                                        17 February 2023
+                                                        21 February 2023
 
 
           Transfer Digital Credentials Securely - Requirements
@@ -54,7 +54,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 21 August 2023.
+   This Internet-Draft will expire on 25 August 2023.
 
 Copyright Notice
 
@@ -348,7 +348,7 @@ Table of Contents
 
    *  (Req-RoundTrips) Solution shall allow for multiple data exchanges
       between sender and receiver devices in the process of credential
-      transfer.  This requirement shall alighn with (Req-Connectivity)
+      transfer.  This requirement shall align with (Req-Connectivity)
       above.
 
    *  (Req-Opaque) In the case when an intermediary server is used to
