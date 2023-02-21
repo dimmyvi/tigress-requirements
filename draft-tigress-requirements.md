@@ -184,8 +184,8 @@ sequenceDiagram
 - (Req-P2P) A goal of credential transfer covered in this document shall include transfer from one device to another (group sharing shall not be a goal).
 - (Req-CredentialType) The solution shall support transfer of various digital credential types, based on symmetric and asymmetric cryptography, public and proprietary standards.
 - (Req-Security) Solution should provide security of the provisioning data transferred (confidentiality, integrity and availability of provisioning information in transit).
-- (Req-NonCorelation) Transport protocol used to transfer provisioning information ( e.g. secure E2E transfer protocol or intermediary server) shall prevent from correlating users between exchanges or create a social graph of users involved into transfer. 
-- (Req-NonIdentity) Intermediary server shall not be an arbiter of identity. 
+- (Req-NonCorelation) Transport protocol used to transfer provisioning information ( e.g. secure E2E transfer protocol or intermediary server) shall prevent from correlating users between exchanges or create a social graph of users involved into transfer.
+- (Req-NonIdentity) Intermediary server shall not be an arbiter of identity.
 - (Req-NonCollection) User identities shall not be collected, stored and used for purpose other then the credential transfer itself.
 - (Req-Connectivity) Sender and Receiver shall be allowed to be online at different times. Sender and Receiver shall not need to be online at the same time. This requirement allows devices to connect to network to only exchange the portion of information required during the transfer, allowing them upload or download data in turns to network servers.
 - (Req-RoundTrips) Solution shall allow for multiple data exchanges between sender and receiver devices in the process of credential transfer. This requirement shall alighn with (Req-Connectivity) above.
