@@ -172,7 +172,7 @@ end
 # Requirements
 
 - (Req-XPlatform) Solution shall support transfer of digital credential across different platforms (e.g. from Android to iOS).
-- (Req-P2P) A goal of credential transfer covered in this document shall include transfer from one device to another (group sharing shall not be a goal).
+- (Req-P2P) If credential transfer solution supports group sharing, it shall support limiting transfer to one device to another based on use case. 
 - (Req-CredentialType) The solution shall support transfer of various digital credential types, based on symmetric and asymmetric cryptography, public and proprietary standards.
 - (Req-Security) Solution should provide security of the provisioning data transferred (confidentiality, integrity and availability of provisioning information in transit).
 - (Req-NonCorelation) Transport protocol used to transfer provisioning information ( e.g. secure E2E transfer protocol or intermediary server) shall prevent from correlating users between exchanges or create a social graph of users involved into transfer.
