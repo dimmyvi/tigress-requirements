@@ -47,7 +47,6 @@ author:
 
 normative:
 
-
 informative:
   CCC-Digital-Key-30:
     author:
