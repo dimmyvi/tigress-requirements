@@ -379,8 +379,8 @@ Table of Contents
 
    *  (Req-Invitation) The Receiver must be able to establish a
       connection with the Sender for the secure credential transfer
-      using an invite that can be sent over any common communication
-      channel, like sms.
+      using an invite that can be sent over any generic communication
+      channel (e.g. sms, email, NFC).
 
 8.  Security Considerations
 
