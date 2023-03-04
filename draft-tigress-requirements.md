@@ -70,7 +70,7 @@ This document describes the use cases necessitating the secure transfer of digit
 
 # Introduction
 
-In this document we are identifying a problem of transferring digital credentials (e.g. a digital car key, a digital key to a hotel room) from one device (e.g. smartphone) to another. Today, there is no widely accepted way of transferring digital credentials securely between two devices from different manufacturers. 
+In this document we are identifying a problem of transferring digital credentials (e.g. a digital car key, a digital key to a hotel room) from one device (e.g. smartphone) to another. Today, there is no widely accepted way of transferring digital credentials securely between two devices from different manufacturers.
 
 A Working Group, called Tigress has been established to find a solution to the problem described above.
 Within the WG an initial solution was presented (https://datatracker.ietf.org/doc/draft-art-tigress). The community decided to generalize the requirements to the solution and consider alternative solutions within the WG.
@@ -92,31 +92,31 @@ General terms:
 - Sender (device) - a device initiating a transfer of Provisioning Information to a Receiver.
 - Receiver (device) - a device that receives Provisioning Information and uses it to provision a new credential.
 - Intermediary (server) - an optional server that provides a standardized and platform-independent way of transferring provisioning information between Sender and Receiver.
-- Digital Wallet - A device, service, and/or software that holds credentials. It faciliates transactions either online or in-person via a technology like NFC. Digital Wallet's typically support payments, drivers licenses, loyalty cards, access credentials and more.
+- Digital Wallet - A device, service, and/or software that holds credentials. It facilitates transactions either online or in-person via a technology like NFC. Digital Wallet's typically support payments, drivers licenses, loyalty cards, access credentials and more.
 
 
 # Credential Transfer Scenarios
 
 Credential types, provisioning entity policy can be proprietary or based published specifications. Based on credential type and Sender/Receiver - provisioning entity relationship, at least 3 types of transfer scenarios exist.
 
-  1) Sender's crededential is copied in the provisioning process on the receiver. In this case two credentails on both devices are indistinguashable. This scenario is currently used by a very limited number of entities.
-  2) Sender fetches a provisiong token from Provisiong entity and sends it to Receiver. Receiver can acquire new credential from Provisiong Entity by presenting the received provisiong token. In this case receiver's credential is different from sender's. Depending on the provisioning entity policy: Receiver credential may have same or less access rights and privileges; it may be revoked independently of the sender's credential; Sender and Receiver credentials can be linked to the same logical "user account" or differnet "user accounts".
-  3) Sender is the provisioning authority. In this case, sender generates provisioning information and sends it to receiver. Receiver uses the information to generate the cryptographic material for the credential. Then reciver sends a signing request to sender. Sender's signature cpmpletes the flow and receiver gets a signed credential that will be functional. The two credentials are certainly different from each other. Similar to case 2, access rights and privileges could be same or different, "user account" could be same or different. 
-  
-Note that same device could play role of Sender in one situation and that of receiver in other. 
+  1) Sender's credential is copied in the provisioning process on the receiver. In this case two credentials on both devices are indistinguishable. This scenario is currently used by a very limited number of entities.
+  2) Sender fetches a provisioning token from provisioning entity and sends it to Receiver. Receiver can acquire new credential from provisioning Entity by presenting the received provisioning token. In this case receiver's credential is different from sender's. Depending on the provisioning entity policy: Receiver credential may have same or less access rights and privileges; it may be revoked independently of the sender's credential; Sender and Receiver credentials can be linked to the same logical "user account" or different "user accounts".
+  3) Sender is the provisioning authority. In this case, sender generates provisioning information and sends it to receiver. Receiver uses the information to generate the cryptographic material for the credential. Then receiver sends a signing request to sender. Sender's signature completes the flow and receiver gets a signed credential that will be functional. The two credentials are certainly different from each other. Similar to case 2, access rights and privileges could be same or different, "user account" could be same or different.
 
-We need to accomodate all these types of credential transfers with a secure solution that preseves user privacy. Systems can be built based on a solution defined in Tigress WG to share various crdentials.
+Note that same device could play role of Sender in one situation and that of receiver in other.
+
+We need to accommodate all these types of credential transfers with a secure solution that preserves user privacy. Systems can be built based on a solution defined in Tigress WG to share various credentials.
 
 
 # Example Use Cases
 
-- Ben owns a vehicle that supports digital car keys. Ben is out of town and would like to let Amit borrow the car for the weekend. 
+- Ben owns a vehicle that supports digital car keys. Ben is out of town and would like to let Amit borrow the car for the weekend.
 
 - Bob booked a room at a hotel for the weekend, but will be arriving late at night. Alice, his partner, comes to the hotel first, so Bob wants to share his digital room key with Alice.
 
-- Anita has hired Jared to walk her dog. Anita would like to share hey apartment key with Jared so he can take the dog for a walk.
+- Anita has hired Jared to walk her dog. Anita would like to share her apartment key with Jared so he can take the dog for a walk.
 
-In all such cases, sender should be able to transfer the digital credential in a seamless manner. To the user it should feel to be equivalent of communication via instant message, email, etc. 
+In all such cases, sender should be able to transfer the digital credential in a seamless manner. To the user it should feel to be equivalent of communication via instant message, email, etc.
 
 
 
@@ -149,7 +149,7 @@ S -> R: send invite
 loop Provision credential
   R -> I: request additional provisioning information
   I -> S: optional forward request
-  S -> I: additional provisiniong information 
+  S -> I: additional provisioning information
   I -> R: deliver additional provisioning information
 end
 ~~~
@@ -158,11 +158,11 @@ end
 # Assumptions
 
 - Security: Communication between sender or receiver and Provisioning Entity should be trusted.
-- If an intermediary server is used during the credential transfer, the choice of intermediary shall be made by Sender. 
+- If an intermediary server is used during the credential transfer, the choice of intermediary shall be made by Sender.
 - Sender and Receiver shall both be able to stop the transfer before the credential is provisioned at the receiver.
 - Any device with a digital credential implementation adherent to Tigress solution shall be able to receive shared provisioning information.
-- In case where Sender is also the provisioning entity (e.g. Sharign of CarKey), multiple round trips may be necessary.
-- Some credentials require special HW (TEE - Trusted Execution Environment or SE - Secure Element orsimilar modules) to host and operate credential. But the transport protocol defined by Tigress does not set such requirements for the process of digital credentail transfer.
+- In case where Sender is also the provisioning entity (e.g. sharing of CarKey), multiple round trips may be necessary.
+- Some credentials can require special hardware (e.g. TEE - Trusted Execution Environment or SE - Secure Element) to host and operate. But the transport protocol defined by Tigress does not set such requirements for the process of digital credential transfer.
 
 # Requirements
 
@@ -178,7 +178,7 @@ end
 
 # Security Considerations
 
-- Threat model for implementation that uses an intermediary server to facilitate the credential transfer should consider trusted relationship between a sender device and the intermediary server. Intermediary server shall be able to verify that the sender device is in good standing and content generated by the sender device can be trusted by the intermediary. The trust mechanism could be proprietary or publicly verifiable ( e.g. WebAuthN). This is important because intermediary server shall have no visibility to the content of the provisiong information sent through it (Req-Opaque).
+- Threat model for implementation that uses an intermediary server to facilitate the credential transfer should consider trusted relationship between a sender device and the intermediary server. Intermediary server shall be able to verify that the sender device is in good standing and content generated by the sender device can be trusted by the intermediary. The trust mechanism could be proprietary or publicly verifiable ( e.g. WebAuthN). This is important because intermediary server shall have no visibility to the content of the provisioning information sent through it (Req-Opaque).
 - Threat model for implementation that uses an intermediary server to facilitate the credential transfer, should consider evaluation of the trustworthiness of the intermediary server by the receiver device based on agreed criteria.
 - Tigress implementation shall avoid collecting user or device identities, as well as storing and using such identities for purpose other then the credential transfer itself.
 
@@ -186,7 +186,7 @@ end
 
 - A single token of Provisioning Information shall be used for a single transfer of digital credential, shall not be redeemable for multiple additional transfer attempts. Sharing in a chain (when Receiver, after provisioning the credential to the device, becomes a new Sender using the same token of Provisioning Information) or sharing to multiple devices shall not be used with a single piece of Provisioning Information.
 - Implementation should be able to quickly and efficiently transfer data between Sender and Receiver devices. Mechanisms such as Push Notifications or Webhooks shall be used instead of mailbox polling to catch data updates in order to save device battery and network bandwidth.
-- An invitation for a shared credential transfer, sent to the Receiver device shall be a self-contained and self-sufficienct data (e.g. token, URL, or QR code) allowing a user of the Receiver device to start a process of transferring and adding a new credential. Such invitation should be allowed to be sent over any generic communication channel (e.g. sms, email, NFC).
+- An invitation for a shared credential transfer, sent to the Receiver device shall be a self-contained and self-sufficient data (e.g. token, URL, or QR code) allowing a user of the Receiver device to start a process of transferring and adding a new credential. Such invitation should be allowed to be sent over any generic communication channel (e.g. sms, email, NFC).
 
 
 TODO Security
