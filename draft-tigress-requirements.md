@@ -40,6 +40,11 @@ author:
     organization: Apple Inc
     email: a_pelletier@apple.com
  -
+    ins: Y. Karandikar
+    name: Yogesh Karandikar
+    organization: Apple Inc
+    email: ykarandikar@apple.com
+ -
     ins: B Lassey
     name: Brad Lassey
     organization: Alphabet Inc
