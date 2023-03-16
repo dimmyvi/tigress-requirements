@@ -183,7 +183,6 @@ end
 - (Req-NonCollection) User identities shall not be collected, stored and used for purpose other then the credential transfer itself.
 - (Req-Connectivity) Sender and Receiver shall be allowed to be online at different times. Sender and Receiver shall not need to be online at the same time. This requirement allows devices to connect to network to only exchange the portion of information required during the transfer, allowing them upload or download data in turns to network servers.
 - (Req-RoundTrips) Solution shall allow for multiple data exchanges between sender and receiver devices in the process of credential transfer. This requirement shall align with (Req-Connectivity) above.
-- (Req-Speed) When both Sender and Receiver are online at the same time they should be able to quickly and efficiently transfer data.
 - (Req-Opaque) In the case when an intermediary server is used to facilitate the credential transfer, message content between sender and receiver must be opaque to an intermediary, intermediary server shall not be able to recognize the content of provisioning information or use it to provision digital credential on its own.
 - (Req-SingleRedemption) The Provisioning Information shared by Sender can only be redeemed once by a single Receiver. The solution shall ensure that same Provisioning Information can not be redeemed multiple times by same Receiver or multiple Receivers.
 
@@ -199,7 +198,7 @@ end
 - A single token of Provisioning Information shall be used for a single transfer of Digital Credential. It shall not be redeemable for multiple additional transfer attempts. Receiver of a Digital Credential, can initiate a transfer of the same credential  after provisioning. But for that, the Receiver shall assume the Sender role and get new Provisioning Information to share.
 - Implementation should be able to quickly and efficiently transfer data between Sender and Receiver devices. Mechanisms such as Push Notifications or Webhooks shall be used instead of mailbox polling to catch data updates in order to save device battery and network bandwidth.
 - An invitation for a shared credential transfer, sent to the Receiver device shall be a self-contained and self-sufficienct data (e.g. token, URL, or QR code) allowing a user of the Receiver device to start a process of transferring and adding a new credential. Such invitation should be allowed to be sent over any generic communication channel (e.g. sms, email, NFC).
-
+- When both Sender and Receiver are online at the same time they should be able to quickly and efficiently transfer data. Polling does not generally meet these goals because it wastes battery life and cellular data. The protocol should optionally support some form of push to notify a device that a new message is available.
 
 TODO Security
 
