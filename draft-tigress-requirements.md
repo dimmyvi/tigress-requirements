@@ -198,7 +198,7 @@ end
 - A single token of Provisioning Information shall be used for a single transfer of Digital Credential. It shall not be redeemable for multiple additional transfer attempts. Receiver of a Digital Credential, can initiate a transfer of the same credential  after provisioning. But for that, the Receiver shall assume the Sender role and get new Provisioning Information to share.
 - Implementation should be able to quickly and efficiently transfer data between Sender and Receiver devices. Mechanisms such as Push Notifications or Webhooks shall be used instead of mailbox polling to catch data updates in order to save device battery and network bandwidth.
 - An invitation for a shared credential transfer, sent to the Receiver device shall be a self-contained and self-sufficienct data (e.g. token, URL, or QR code) allowing a user of the Receiver device to start a process of transferring and adding a new credential. Such invitation should be allowed to be sent over any generic communication channel (e.g. sms, email, NFC).
-- When both Sender and Receiver are online at the same time they should be able to quickly and efficiently transfer data. Polling does not generally meet these goals because it wastes battery life and cellular data. The protocol should optionally support some form of push to notify a device that a new message is available.
+- When both Sender and Receiver are online at the same time they should be able to quickly and efficiently transfer data. Implementor should consider performance factors such as battery power and network performance when implementing the solution for the data exchange. Notification-based approach is preferable comparing to polling-based.```
 
 TODO Security
 
