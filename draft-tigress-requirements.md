@@ -183,7 +183,7 @@ end
 - (Req-Connectivity) Sender and Receiver shall be allowed to be online at different times. Sender and Receiver shall not need to be online at the same time. This requirement allows devices to connect to network to only exchange the portion of information required during the transfer, allowing them upload or download data in turns to network servers.
 - (Req-RoundTrips) Solution shall allow for multiple data exchanges between Sender and receiver devices in the process of credential transfer. This requirement shall align with (Req-Connectivity) above.
 - (Req-Opaque) In the case when an intermediary server is used to facilitate the credential transfer, message content between Sender and Receiver must be opaque to an intermediary, intermediary server shall not be able to recognize the content of Provisioning Information or use it to provision Digital Credential on its own.
-- (Req-SingleRedemption) The Provisioning Information shared by Sender can only be redeemed once by a single Receiver. The solution shall ensure that same Provisioning Information can not be redeemed multiple times by same Receiver or multiple Receivers.
+- (Req-Retrievals) Sender should be able to specify the max number of participant devices that can participate in the credential transfer.
 
 # Security and Privacy Considerations
 
