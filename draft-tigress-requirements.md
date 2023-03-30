@@ -184,7 +184,7 @@ end
 - (Req-RoundTrips) Solution shall allow for multiple data exchanges between Sender and Receiver in the process of credential transfer. This requirement shall align with (Req-Connectivity) above.
 - (Req-ConnectionIntegrity) When Provisioning process requires multiple data exchanges (as described in Req-RoundTrips), no third party shall be allowed to interfere between Sender and Receiver. The solution shall provide integrity to the connection between Sender and Receiver for the duration of the transfer. The transfer ends when either Sender or Receiver ends it.
 - (Req-Opaque) In the case when an intermediary server is used to facilitate the credential transfer, message content between Sender and Receiver must be opaque to an intermediary, intermediary server shall not be able to recognize the content of Provisioning Information or use it to provision Digital Credential on its own.
-- (Req-Retrievals) : Sender should be able to specify the max number of unique Receivers that can receive Provisioning Information from the Togress solution.
+- (Req-Retrievals) : Sender should be able to specify the max number of unique Receivers that can receive Provisioning Information from the Tigress solution.
 
 # Security and Privacy Considerations
 
