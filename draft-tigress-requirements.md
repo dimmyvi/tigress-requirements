@@ -94,7 +94,7 @@ For some credential types the Provisioning Entity who issues new credential is a
 
 General terms:
 
-- Digital Credential - Cryptographic material and other data used to authorize User with an access point. The cryptogtaphic material can also be used for mutual authentication between user device and access point.
+- Digital Credential - Cryptographic material and other data used to authorize User with an access point. The cryptographic material can also be used for mutual authentication between user device and access point.
 - Provisioning - A process of adding a new Digital Credential to the device.
 - Provisioning Entity - an entity which facilitates Digital Credential lifecycle on a device. Lifecycle may include Provisioning, termination, credential update.
 - Provisioning Information - data transferred from Sender to Receiver device that is both necessary and sufficient for the Receiver to request a new credential from Provisioning Entity.
