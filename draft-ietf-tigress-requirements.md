@@ -4,7 +4,7 @@ title: "Transfer Digital Credentials Securely - Requirements"
 abbrev: "tigress-requirements"
 category: info
 
-docname: draft-tigress-requirements-latest
+docname: draft-ietf-tigress-requirements-latest
 submissiontype: IETF
 number:
 date:
@@ -21,7 +21,7 @@ venue:
   mail: "tigress@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/tigress/"
   github: "dimmyvi/tigress-requirements"
-  latest: "https://datatracker.ietf.org/doc/draft-tigress-requirements/"
+  latest: "https://datatracker.ietf.org/doc/draft-ietf-tigress-requirements/"
 
 author:
  -
